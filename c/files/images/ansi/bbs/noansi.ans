@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+# slf@dreamscape.org
+# strip out all ansi charactrers from piped input
+while(<STDIN>)
+{
+         s/\e\[.*?m//g;
+         print;
+}

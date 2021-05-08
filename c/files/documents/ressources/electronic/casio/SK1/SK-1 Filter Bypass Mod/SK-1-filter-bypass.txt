@@ -1,0 +1,45 @@
+STIKKA Casio SK-1
+Anti Aliasing filter bypass Mod
+By Synchro November 2006
+
+If you re-distribute this mod please do so as the original ZIP archive.
+Disclaimer: If you break it, it's not my fault.
+
+
+Sampling theory dictates that the anti-aliasing filter sits at around half the sampling frequency. In the Casio SK-1, which samples at the pathetic rate of 9.38 Khz this means that the reconstruction filter sits at somewhere around 4 or 5Khz, making it sound quite muffled & dull, not really what we want.
+
+This mod bypasses the "melody filter" completely resulting in a much brighter sound.
+Have a listen to the MP3, you can hear the preset sounds without the filter.
+Much brighter, and some lovely buzzy digital grunge thrown in for free!
+
+You only need to solder ONE resistor to one side of the board you have 2 options:
+
+
+OPTION 1 COMPONENT SIDE:
+
+The easiest way to do the mod is from the component side, follow the instructions
+on the picture "SK-1-filter-bypass.jpg". Make sure the legs of the resistor don't touch anything! You could put some electrical insulation tape around it.
+
+
+OPTION 2 PCB SIDE:
+
+If you can't get to the component side anymore because you already have bends installed that prevent you from folding the SK-1 open, you can also solder the 1K resistor to the PCB side.  
+"SK-1-filter-bypass-PCB-side.jpg" shows you where to connect it.
+
+If you can still get to R41 and cut it, that would give you the brightest sound.
+If you can't get at it, just leave it. The filter will still run in parallel with the mod but most of the signal will now go through the resistor.
+
+Enjoy your new found frequencies!
+
+Synchro.
+
+              _______..___________. __   __  ___  __  ___      ___
+             /       ||           ||  | |  |/  / |  |/  /     /   \
+            |   (----``---|  |----`|  | |  '  /  |  '  /     /  ^  \
+             \   \        |  |     |  | |    <   |    <     /  /_\  \
+         .----)   |       |  |     |  | |  .  \  |  .  \   /  _____  \
+         |_______/        |__|     |__| |__|\__\ |__|\__\ /__/     \__\
+
+    			 -->> 571XX4 15 TH3 NU 6R4FF171! <<-
+www.stikka.net
+www.myspace.com/stikkaisthenu

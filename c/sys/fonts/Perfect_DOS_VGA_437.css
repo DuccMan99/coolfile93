@@ -1,0 +1,10 @@
+﻿@font-face {
+	font-family:"Perfect_DOS_VGA_437";
+	src: url('Perfect_DOS_VGA_437/Perfect_DOS_VGA_437.eot');
+	src: url('Perfect_DOS_VGA_437/Perfect_DOS_VGA_437.eot?#iefix') format('embedded-opentype'),
+			 url("Perfect_DOS_VGA_437/Perfect_DOS_VGA_437.woff") format("woff"),
+			 url("Perfect_DOS_VGA_437/Perfect_DOS_VGA_437.ttf") format("truetype"),
+			 url("Perfect_DOS_VGA_437/Perfect_DOS_VGA_437.svg#PerfectDOSVGA437") format("svg");
+	font-weight:normal;
+	font-style:normal;
+}

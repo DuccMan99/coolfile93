@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head profile="http://gmpg.org/xfn/11">
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>PSS-270, 170, 140 and SHS-10 Tutorial — Circuit Bent</title>
+
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://circuit-bent.net/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://circuit-bent.net/wp-includes/wlwmanifest.xml"> 
+
+	<!-- Courtesy of Kimili Flash Embed - Version 1.4.3 -->
+	<script src="pss-270-tutorial_fichiers/swfobject.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="pss-270-tutorial_fichiers/a.js"></script><link type="text/css" rel="stylesheet" href="pss-270-tutorial_fichiers/sharethis.css"><link rel="stylesheet" href="pss-270-tutorial_fichiers/style.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="pss-270-tutorial_fichiers/custom.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="pss-270-tutorial_fichiers/content.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="pss-270-tutorial_fichiers/nav.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="pss-270-tutorial_fichiers/header.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="pss-270-tutorial_fichiers/headlines.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="pss-270-tutorial_fichiers/bylines.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="pss-270-tutorial_fichiers/multimedia.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="pss-270-tutorial_fichiers/sidebars.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="pss-270-tutorial_fichiers/footer.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="pss-270-tutorial_fichiers/widths.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="pss-270-tutorial_fichiers/deprecated.css" type="text/css" media="screen, projection">
+<!--[if lte IE 7]>
+<link rel="stylesheet" href="http://circuit-bent.net/wp-content/themes/thesis/lib/stylesheets/ie7.css" type="text/css" media="screen, projection" />
+<![endif]-->
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="http://circuit-bent.net/wp-content/themes/thesis/lib/stylesheets/ie6.css" type="text/css" media="screen, projection" />
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="Circuit Bent RSS Feed" href="http://circuit-bent.net/feed">
+<link rel="pingback" href="http://circuit-bent.net/xmlrpc.php">
+
+</head><body class="custom">
+
+<div id="container">
+<div id="page">
+
+<ul id="tabs">
+<li><a href="http://circuit-bent.net/" title="Home" rel="nofollow">Home</a></li>
+<li class="page_item page-item-2"><a href="http://circuit-bent.net/about" title="About">About</a></li>
+<li class="page_item page-item-19"><a href="http://circuit-bent.net/contact" title="Contact">Contact</a></li>
+<li class="page_item page-item-121"><a href="http://circuit-bent.net/effects-pedals" title="Effects Pedals">Effects Pedals</a></li>
+<li class="page_item page-item-33"><a href="http://circuit-bent.net/order" title="Orders">Orders</a></li>
+	<li class="cat-item cat-item-4"><a href="http://circuit-bent.net/category/custom-instruments" title="View all posts filed under Custom Instruments">Custom Instruments</a>
+</li>
+		<li class="rss"><a href="http://circuit-bent.net/feed" title="Circuit Bent RSS Feed" rel="nofollow">Subscribe</a></li>
+</ul>
+
+	<div id="header">
+		<p id="logo"><a href="http://circuit-bent.net/">Circuit Bent</a></p>
+		<p id="tagline">Circuit Bent Instruments</p>
+	</div>
+	
+	<div id="content_box">
+	
+		<div id="content" class="hfeed">
+
+			<div class="post_box hentry top">
+				<div class="headline_area">
+					<h1 class="entry-title">PSS-270, 170, 140 and SHS-10 Tutorial</h1>
+					<p class="author_and_date">by <span class="author">admin</span> on <abbr class="published" title="2008-06-03">June 3, 2008</abbr></p>
+				</div>
+				<div class="format_text entry-content">
+<p style="text-align: left;"><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270board1.jpg"></a><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270board2.jpg"></a><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270board2.jpg"></a><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270desoldered.jpg"></a><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270wired.jpg"></a><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270sw-wires.jpg"></a><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270wiredup.jpg"></a><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss140-2.jpg"></a><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270complete.jpg"></a><a href="http://circuit-bent.net/wp-content/uploads/2008/09/shs-10-wireda.jpg"></a>After
+some major diggin’ for info I found that no one had a specific guide
+for bending a Yamaha PSS-270, so I decided to make one. Credit to Sean
+“audioid” (myspace.com/audioidbentaudio), and Paul from
+circuitbenders.co.uk for the info on this bend. This bend involves
+cutting data lines that go from the FM synth chip (YM2413) to the main
+chip (XC194A0). The pins on the FM chip that go to the main chip are
+pins 2, 3, 4, 5, 6, 7, 17, and 18. You cut the traces, and then solder
+wires on either side of the cut. Take the pair of wires from one cut,
+and solder them to a switch, and this will allow you to turn the flow
+of data on and off.</p>
+<p><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270board1.jpg"><img class="alignleft size-medium wp-image-72" title="pss270board1" src="pss-270-tutorial_fichiers/pss270board1-300x225.jpg" alt="" height="225" width="300"></a></p>
+<p>This is a picture of the board flipped over. I have the FM chip out-lined in red, and you can see the big chip under it.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270board2.jpg"><img class="alignleft size-medium wp-image-74" title="pss270board2" src="pss-270-tutorial_fichiers/pss270board2-300x225.jpg" alt="" height="225" width="300"></a>In
+this picture I have the solder points from the FM chip marked in red
+dots, and the blue dots are where they go to the main chip. Ignore the
+green dots. The black line is where you *carefully* cut the data lines.
+I used a volt meter to check and make sure that the lines no longer had
+continuity.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270desoldered.jpg"><img class="alignleft size-medium wp-image-76" title="pss270desoldered" src="pss-270-tutorial_fichiers/pss270desoldered-300x225.jpg" alt="" height="225" width="300"></a>I’ve indicated the FM chip in this picture.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270wired.jpg"><img class="alignleft size-medium wp-image-78" title="pss270wired" src="pss-270-tutorial_fichiers/pss270wired-300x225.jpg" alt="" height="225" width="300"></a>Here’s
+all 16 wires in place. Some people recommend drilling very small holes
+on both sides of the trace cuts, and putting wires through them, or
+scraping the coating off so you can solder on it. I just soldered the
+wires onto the pins of the chip, which can be dangerous because you run
+the risk of overheating it. I used a pair of wires that are the same
+color for each connection to make wiring up the switches easier.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270sw-wires.jpg"><img class="alignleft size-medium wp-image-77" title="pss270sw-wires" src="pss-270-tutorial_fichiers/pss270sw-wires-300x225.jpg" alt="" height="225" width="300"></a>I’ve got the board back in place, and the wires bundled up nice and securely.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270wiredup.jpg"><img class="alignleft size-medium wp-image-69" title="pss270wiredup" src="pss-270-tutorial_fichiers/pss270wiredup-300x225.jpg" alt="" height="225" width="300"></a>Now all the switches are wired up, and we are ready to button her back up.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss270complete.jpg"><img class="alignleft size-medium wp-image-75" title="pss270complete" src="pss-270-tutorial_fichiers/pss270complete-300x225.jpg" alt="" height="225" width="300"></a>I
+found the most room for the 8 switches on the right side of the
+keyboard. Just measure and drill carefully, and it will come out
+looking great.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>What the Bends do:</p>
+<p>Each switch now controls the flow of data from the FM chip to the
+main chip. Turn the PSS on and select a patch (let’s pull up #89
+“ghost”), I usually play some keys(don’t know if you have to do this or
+not), then turn some switches off , now select a different patch, and
+turn the switches back on. Now try playing the new patch. If it went
+well some of the data from the all patch got held up, and then inserted
+into the new patch making a totally different sound. Sometimes leaving
+the connections off will change the sounds also. I’ve noticed them some
+of the bent up patches will only work when multiple keys are played.
+I’ve heard that this will effect the drums as well, but I haven’t
+gotten it to do much with them as of yet.</p>
+<p>Getting some good sounds out of this takes some tinkering, but it’s
+worth it. The only downer is that it’s hard to reproduce the sounds
+that you get, so if you have a good one be sure to grab a sample while
+you can. Using the keyboard this way can corrupt the data to the point
+where the chip crashes in a noisy mess, but all you have to do is turn
+all the data connections back on, and turn the keyboard off, then back
+on. All the data connection switches have to be on for the keyboard to
+work “normally”.</p>
+<p><a href="http://circuit-bent.net/wp-content/uploads/2008/06/pss140-2.jpg"><img class="alignleft size-medium wp-image-71" title="pss140-2" src="pss-270-tutorial_fichiers/pss140-2-300x212.jpg" alt="" height="212" width="300"></a>John
+from Bentpedals sent me these photos of a PSS-140 that he did up using
+this same mod. The main chip is colored in red, the FM chip in
+blue,&nbsp;ignore the yellow.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>I did the mod on a PSS-140 for Mjm using the info that John gave me.
+This is what he had to say about it “endless amounts of fun. endless
+unpredictable possibilities. i don’t want to stop messing with it”.
+Here’s some photos of that.</p>
+<p>Wesley did the same mod to a PSS-170, but his link seems to be dead.</p>
+<p>&nbsp;</p>
+<p><a href="http://circuit-bent.net/wp-content/uploads/2008/09/shs-10-wireda.jpg"><img class="alignnone size-medium wp-image-162 alignleft" style="float: left;" title="shs-10-wireda" src="pss-270-tutorial_fichiers/shs-10-wireda-300x246.jpg" alt="" height="246" width="300"></a></p>
+<p>&nbsp;I’ve successfully done this on a Yamaha SHS-10 Keytar , along
+with some other circuit bends. Tinsoldier sent me a diagram of his
+circuit bent SHS-10 which I will post here. I can’t comment on it at
+yet because I haven’t had the chance to try them myself.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Disclaimer:</p>
+<p>As always I won’t be held responsible if you try this bend and your
+Yamaha get’s hurt. I’ve done a lot of playing with this keyboard, and
+it seems real solid to me. This bend works on some of the other PSS
+series keyboards (like the 140) with a similar chip setup, but since
+I’ve only done a 270 and 140 so far I can’t gurantee it will work on
+all of them.</p>
+<p><script type="text/javascript">SHARETHIS.addEntry({ title: "PSS-270, 170, 140 and SHS-10 Tutorial", url: "http://circuit-bent.net/pss-270-tutorial.html" });</script><span id="sharethis_0"><a st_page="home" href="javascript:void(0)" title="ShareThis via email, AIM, social bookmarking and networking sites, etc." class="stbutton stico_default"><span st_page="home" class="stbuttontext">ShareThis</span></a></span></p>				</div>
+				<p class="post_tags">Tagged as:
+					<span rel="tag">Bending Tutorial</span>, 
+					<span rel="tag">Circuit Bend</span>, 
+					<span rel="tag">Circuit Bending</span>, 
+					<span rel="tag">Circuit Bent</span>, 
+					<span rel="tag">PSS-140</span>, 
+					<span rel="tag">PSS-270</span>, 
+					<span rel="tag">SHS-10</span>, 
+					<span rel="tag">Yamaha</span>, 
+					<span rel="tag">Yamaha Keyboards</span>
+				</p>
+			</div>
+
+			<div id="comments">
+
+				<div class="comments_intro">
+					<p><span class="bracket">{</span> <span>0</span> comments… <a href="#respond" rel="nofollow">add one now</a> <span class="bracket">}</span></p>
+				</div>
+
+				<div id="respond">
+					<p>Leave a Comment</p>
+				</div>
+
+				<form action="http://circuit-bent.net/wp-comments-post.php" method="post" id="comment_form">
+					<p><input class="text_input" name="author" id="author" value="" tabindex="1" type="text"><label for="author">Name</label></p>
+					<p><input class="text_input" name="email" id="email" value="" tabindex="2" type="text"><label for="email">E-mail</label></p>
+					<p><input class="text_input" name="url" id="url" value="" tabindex="3" type="text"><label for="url">Website</label></p>
+					<p class="comment_box"><textarea name="comment" id="comment" tabindex="4"></textarea></p>
+					<p class="allowed">
+						<span>
+<em>You can use these <acronym title="HyperText Markup Language">HTML</acronym> tags and attributes:</em>
+&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym
+title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt;
+&lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q
+cite=""&gt; &lt;strike&gt; &lt;strong&gt; </span>
+					</p>
+					<p>
+						<input name="submit" class="form_submit" id="submit" tabindex="5" value="Submit" type="submit">
+						<input name="comment_post_ID" value="50" type="hidden">
+					</p>
+					
+				</form>
+
+			</div>
+
+		</div>
+
+		<div id="sidebars">
+
+			<div id="multimedia_box">
+				<div id="video_box">
+<p><object height="344" width="425"><param name="movie" value="http://www.youtube.com/v/rckYgkg0tMQ&amp;hl=en&amp;fs=1"><param name="allowFullScreen" value="true"><embed src="pss-270-tutorial_fichiers/rckYgkg0tMQhlenfs1" type="application/x-shockwave-flash" allowfullscreen="true" height="344" width="425"></object></p>
+				</div>
+			</div>
+			<div id="sidebar_1" class="sidebar">
+				<ul class="sidebar_list">
+<li class="widget widget_calendar"><h3>&nbsp;</h3><div id="calendar_wrap"><table id="wp-calendar" summary="Calendar">
+	<caption>June 2009</caption>
+	<thead>
+	<tr>
+		<th abbr="Monday" scope="col" title="Monday">M</th>
+		<th abbr="Tuesday" scope="col" title="Tuesday">T</th>
+		<th abbr="Wednesday" scope="col" title="Wednesday">W</th>
+		<th abbr="Thursday" scope="col" title="Thursday">T</th>
+		<th abbr="Friday" scope="col" title="Friday">F</th>
+		<th abbr="Saturday" scope="col" title="Saturday">S</th>
+		<th abbr="Sunday" scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td abbr="October" colspan="3" id="prev"><a href="http://circuit-bent.net/2008/10" title="View posts for October 2008">« Oct</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr><td>1</td><td>2</td><td>3</td><td>4</td><td id="today">5</td><td>6</td><td>7</td>
+	</tr>
+	<tr>
+		<td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+	</tr>
+	<tr>
+		<td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+	</tr>
+	<tr>
+		<td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
+	</tr>
+	<tr>
+		<td>29</td><td>30</td>
+		<td class="pad" colspan="5">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></li><li class="widget widget_tag_cloud"><h3>Tags</h3><a href="http://circuit-bent.net/tag/bend" class="tag-link-19" title="2 topics" rel="tag" style="font-size: 10.3333pt;">Bend</a>
+<a href="http://circuit-bent.net/tag/bending" class="tag-link-18" title="1 topic" rel="tag" style="font-size: 8pt;">Bending</a>
+<a href="http://circuit-bent.net/tag/bending-tutorial" class="tag-link-23" title="2 topics" rel="tag" style="font-size: 10.3333pt;">Bending Tutorial</a>
+<a href="http://circuit-bent.net/tag/bending-tutorials" class="tag-link-5" title="1 topic" rel="tag" style="font-size: 8pt;">Bending Tutorials</a>
+<a href="http://circuit-bent.net/tag/bent" class="tag-link-17" title="1 topic" rel="tag" style="font-size: 8pt;">Bent</a>
+<a href="http://circuit-bent.net/tag/circuit" class="tag-link-16" title="1 topic" rel="tag" style="font-size: 8pt;">Circuit</a>
+<a href="http://circuit-bent.net/tag/circuit-bend" class="tag-link-26" title="1 topic" rel="tag" style="font-size: 8pt;">Circuit Bend</a>
+<a href="http://circuit-bent.net/tag/circuit-bending" class="tag-link-24" title="2 topics" rel="tag" style="font-size: 10.3333pt;">Circuit Bending</a>
+<a href="http://circuit-bent.net/tag/circuit-bent" class="tag-link-13" title="7 topics" rel="tag" style="font-size: 22pt;">Circuit Bent</a>
+<a href="http://circuit-bent.net/tag/circuit-bent-devices" class="tag-link-35" title="1 topic" rel="tag" style="font-size: 8pt;">Circuit Bent Devices</a>
+<a href="http://circuit-bent.net/tag/custom-instruments" class="tag-link-4" title="1 topic" rel="tag" style="font-size: 8pt;">Custom Instruments</a>
+<a href="http://circuit-bent.net/tag/delay" class="tag-link-10" title="1 topic" rel="tag" style="font-size: 8pt;">Delay</a>
+<a href="http://circuit-bent.net/tag/dub" class="tag-link-20" title="1 topic" rel="tag" style="font-size: 8pt;">Dub</a>
+<a href="http://circuit-bent.net/tag/effect-pedal" class="tag-link-8" title="1 topic" rel="tag" style="font-size: 8pt;">Effect Pedal</a>
+<a href="http://circuit-bent.net/tag/effects-pedals" class="tag-link-37" title="1 topic" rel="tag" style="font-size: 8pt;">Effects Pedals</a>
+<a href="http://circuit-bent.net/tag/fab-echo" class="tag-link-9" title="1 topic" rel="tag" style="font-size: 8pt;">Fab Echo</a>
+<a href="http://circuit-bent.net/tag/furby" class="tag-link-22" title="1 topic" rel="tag" style="font-size: 8pt;">Furby</a>
+<a href="http://circuit-bent.net/tag/fuzz" class="tag-link-40" title="1 topic" rel="tag" style="font-size: 8pt;">Fuzz</a>
+<a href="http://circuit-bent.net/tag/instruments" class="tag-link-36" title="1 topic" rel="tag" style="font-size: 8pt;">Instruments</a>
+<a href="http://circuit-bent.net/tag/modified" class="tag-link-14" title="1 topic" rel="tag" style="font-size: 8pt;">Modified</a>
+<a href="http://circuit-bent.net/tag/modulation" class="tag-link-21" title="2 topics" rel="tag" style="font-size: 10.3333pt;">Modulation</a>
+<a href="http://circuit-bent.net/tag/mutator" class="tag-link-34" title="2 topics" rel="tag" style="font-size: 10.3333pt;">Mutator</a>
+<a href="http://circuit-bent.net/tag/noise" class="tag-link-15" title="2 topics" rel="tag" style="font-size: 10.3333pt;">Noise</a>
+<a href="http://circuit-bent.net/tag/pedal" class="tag-link-39" title="1 topic" rel="tag" style="font-size: 8pt;">Pedal</a>
+<a href="http://circuit-bent.net/tag/pss-140" class="tag-link-30" title="1 topic" rel="tag" style="font-size: 8pt;">PSS-140</a>
+<a href="http://circuit-bent.net/tag/pss-270" class="tag-link-29" title="1 topic" rel="tag" style="font-size: 8pt;">PSS-270</a>
+<a href="http://circuit-bent.net/tag/reverb" class="tag-link-11" title="1 topic" rel="tag" style="font-size: 8pt;">Reverb</a>
+<a href="http://circuit-bent.net/tag/shs-10" class="tag-link-31" title="1 topic" rel="tag" style="font-size: 8pt;">SHS-10</a>
+<a href="http://circuit-bent.net/tag/stomp-box" class="tag-link-33" title="2 topics" rel="tag" style="font-size: 10.3333pt;">Stomp box</a>
+<a href="http://circuit-bent.net/tag/stomp-boxes" class="tag-link-38" title="1 topic" rel="tag" style="font-size: 8pt;">Stomp Boxes</a>
+<a href="http://circuit-bent.net/tag/tutorials" class="tag-link-32" title="1 topic" rel="tag" style="font-size: 8pt;">Tutorials</a>
+<a href="http://circuit-bent.net/tag/work-shop" class="tag-link-25" title="1 topic" rel="tag" style="font-size: 8pt;">Work Shop</a>
+<a href="http://circuit-bent.net/tag/yamaha" class="tag-link-28" title="1 topic" rel="tag" style="font-size: 8pt;">Yamaha</a>
+<a href="http://circuit-bent.net/tag/yamaha-keyboards" class="tag-link-27" title="1 topic" rel="tag" style="font-size: 8pt;">Yamaha Keyboards</a></li><li class="widget widget_categories"><h3>Categories</h3>		<ul>
+			<li class="cat-item cat-item-6"><a href="http://circuit-bent.net/category/asides" title="View all posts filed under Asides">Asides</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://circuit-bent.net/category/bending-tutorials" title="View all posts filed under Bending Tutorials">Bending Tutorials</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://circuit-bent.net/category/circuitbentdevices" title="Modified Keyboards, Toys, and whatever.">Circuit Bent Devices</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://circuit-bent.net/category/custom-instruments" title="View all posts filed under Custom Instruments">Custom Instruments</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://circuit-bent.net/category/effect-pedal" title="View all posts filed under Effect Pedal">Effect Pedal</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://circuit-bent.net/category/general" title="View all posts filed under General">General</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://circuit-bent.net/category/uncategorized" title="View all posts filed under Uncategorized">Uncategorized</a>
+</li>
+		</ul>
+</li>				</ul>
+			</div>			<div id="sidebar_2" class="sidebar">
+				<ul class="sidebar_list">
+		<li class="widget widget_recent_entries">			<h3>Recent Posts</h3>			<ul>
+						<li><a href="http://circuit-bent.net/new-stuff-up-on-ebay.html">New Stuff Up on Ebay </a></li>
+						<li><a href="http://circuit-bent.net/mutator-for-sale.html">Mutator for sale. </a></li>
+						<li><a href="http://circuit-bent.net/tutorial-repair-complete.html">Tutorial Repair Complete </a></li>
+						<li><a href="http://circuit-bent.net/circuit-bending-challenge.html">Circuit Bending Challenge </a></li>
+						<li><a href="http://circuit-bent.net/vss-30-tutorial.html">VSS-30 Tutorial </a></li>
+						<li><a href="http://circuit-bent.net/pss-270-tutorial.html">PSS-270, 170, 140 and SHS-10 Tutorial </a></li>
+						<li><a href="http://circuit-bent.net/furby-bending-tutorial.html">Furby Bending Tutorial </a></li>
+						<li><a href="http://circuit-bent.net/circuit-bent-samplessample-albums.html">Circuit Bent Samples/Sample Albums </a></li>
+						<li><a href="http://circuit-bent.net/instruments.html">Instruments </a></li>
+						<li><a href="http://circuit-bent.net/modified-fab-echo.html">Modified Fab Echo </a></li>
+						<li><a href="http://circuit-bent.net/redeaux.html">Redeaux </a></li>
+						<li><a href="http://circuit-bent.net/mutators.html">Mutators </a></li>
+						<li><a href="http://circuit-bent.net/clean-up-complete.html">Clean Up Complete </a></li>
+						<li><a href="http://circuit-bent.net/pardon-our-solder-smoke.html">Pardon our Solder Smoke </a></li>
+						<li><a href="http://circuit-bent.net/the-results.html">The results </a></li>
+						</ul>
+		</li>	<li class="widget widget_pages">		<h3>Pages</h3>		<ul>
+			<li class="page_item page-item-2"><a href="http://circuit-bent.net/about" title="About">About</a></li>
+<li class="page_item page-item-19"><a href="http://circuit-bent.net/contact" title="Contact">Contact</a></li>
+<li class="page_item page-item-16"><a href="http://circuit-bent.net/description" title="Description">Description</a></li>
+<li class="page_item page-item-121"><a href="http://circuit-bent.net/effects-pedals" title="Effects Pedals">Effects Pedals</a></li>
+<li class="page_item page-item-24"><a href="http://circuit-bent.net/links" title="Links">Links</a></li>
+<li class="page_item page-item-20"><a href="http://circuit-bent.net/musini" title="Musini">Musini</a></li>
+<li class="page_item page-item-33"><a href="http://circuit-bent.net/order" title="Orders">Orders</a></li>
+<li class="page_item page-item-17"><a href="http://circuit-bent.net/sitemap" title="Sitemap">Sitemap</a></li>
+		</ul>
+	</li><li class="widget widget_archive"><h3>Archives</h3>		<ul>
+			<li><a href="http://circuit-bent.net/2008/10" title="October 2008">October 2008</a></li>
+	<li><a href="http://circuit-bent.net/2008/07" title="July 2008">July 2008</a></li>
+	<li><a href="http://circuit-bent.net/2008/06" title="June 2008">June 2008</a></li>
+	<li><a href="http://circuit-bent.net/2008/05" title="May 2008">May 2008</a></li>
+	<li><a href="http://circuit-bent.net/2007/12" title="December 2007">December 2007</a></li>
+	<li><a href="http://circuit-bent.net/2007/11" title="November 2007">November 2007</a></li>
+	<li><a href="http://circuit-bent.net/2007/10" title="October 2007">October 2007</a></li>
+	<li><a href="http://circuit-bent.net/2007/09" title="September 2007">September 2007</a></li>
+	<li><a href="http://circuit-bent.net/2007/04" title="April 2007">April 2007</a></li>
+	<li><a href="http://circuit-bent.net/2007/02" title="February 2007">February 2007</a></li>
+		</ul>
+</li>				</ul>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div id="footer">
+		<p><a href="http://circuit-bent.net/">Circuit Bent Instruments</a> - 2008 - All Rights Reserved.</p>
+	</div>
+</div>
+</div>
+
+<!--[if lte IE 7]>
+<div id="ie_clear"></div>
+<![endif]-->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="pss-270-tutorial_fichiers/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3563377-9");
+pageTracker._trackPageview();
+</script>
+
+<div style="visibility: hidden; top: -999px; left: -999px;" class="stwrapper" id="stwrapper"><iframe src="pss-270-tutorial_fichiers/lightbox.html" style="top: 0px; left: 0px;" name="stframe" class="stframe" id="stframe" allowtransparency="true" frameborder="0" height="598" scrolling="no" width="353"></iframe><img style="position: absolute;" class="stclose" title="close" src="pss-270-tutorial_fichiers/pic3.gif" height="8" width="8"></div></body></html>

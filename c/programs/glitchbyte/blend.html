@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>glitch.js</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <header>
+    <input id="start" type="number" min="0" value="70">
+    <input id="from" type="number" min="0" value="70">
+    <input id="len" type="number" min="0" value="10">
+    <button>blend</button>
+  </header>
+  <section style="left:0">
+    <img id="imgDisplay"/>
+    <span id="errorOutput"></span>
+  </section>
+
+  <!-- le ECMAScript 6 today -->
+  <script src="./polyfill/promise.js"></script>
+  <script src="./polyfill/fetch.js"></script>
+
+  <!-- le glitch -->
+  <script src="./glitch.js"></script>
+
+  <script>
+
+  var
+     imgDisplay = document.getElementById("imgDisplay")
+    ,errorOutput = document.getElementById("errorOutput")
+    ,start = document.getElementById("start")
+    ,from = document.getElementById("from")
+    ,len = document.getElementById("len")
+
+  start.oninput = len.oninput = function() {
+    blend()
+  }
+
+  var img1 = './img/real-girl-windowlicker.jpg'
+  //var img2 = './img/kurt-smiley.jpg'
+  var img2 = './img/zuck.jpg'
+
+  function blend() {
+    $glitch(img1)
+      .then(function(inst) {
+        return inst.blend(img2, start.value*1,  from.value*1, len.value*1)
+      })
+      .then(function(inst) {
+        imgDisplay.src = inst.url;
+        errorOutput.textContent = '';
+      })
+      .catch(function(error) {
+        console.error(error.stack)
+        errorOutput.textContent = error.message;
+      })
+    ;
+  }
+
+  blend()
+
+  </script>
+</body>
+</html>

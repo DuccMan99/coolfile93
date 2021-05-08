@@ -1,0 +1,127 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<link rel="stylesheet" type="text/css" href="index2.php_fichiers/sail.css">
+<link rel="shortcut icon" href="http://www.sailormouth.org/favicon.ico">
+<title>
+Sailor Mouth, the Prettiest Porthole
+</title>
+<script language="javascript">
+<!--
+var popWindow;
+function newWindow(winID,howw,howt){
+var winURL = "window.php?winID=" + winID;
+var tom = 'width=' + howw +',height=' + howt;
+if (!popWindow || popWindow.closed){
+popWindow = window.open(winURL, 'popWindow',tom,'status=no,resizable=no,directories=no,location=no,menubar=no,toolbar=no,scrollbars=no,');
+}
+else {
+popWindow.close();
+newWindow(winID,howw,howt);
+}
+}
+//-->
+</script>
+<script language="javascript">
+<!--
+function helpme(huh) {
+	assistance=window.open(huh,'window','toolbar=no,scrollbars=no,resizable=no,menubar=no,status=no,directories=no,location=no,width=300,height=200')
+	}
+// end of script-->
+</script>
+</head><body topmargin="15" leftmargin="15" bgcolor="white" marginheight="15" marginwidth="15">
+		<table border="0" cellpadding="0" cellspacing="0" width="700">
+			<tbody><tr>
+				<td>
+					<nobr>
+					<img src="index2.php_fichiers/stool.gif" align="middle" border="0" height="49">
+					<a href="http://www.sailormouth.org/" alt="sailormouth.org" border="0"><img src="index2.php_fichiers/smt.gif" align="middle" border="0"></a>
+					<img src="index2.php_fichiers/mc.gif" align="top" border="0" height="50" width="420">
+				</nobr></td>
+			</tr>
+			<tr>
+				<td>
+					<br>
+					&nbsp;&nbsp;&nbsp;Bending = <a href="http://www.sailormouth.org/index2.php?pg=cbender.inc">Info</a> <b>::</b> <a href="http://www.sailormouth.org/index2.php?pg=instru.inc">Instruments</a> <b>::</b> <a href="http://www.sailormouth.org/index2.php?pg=mu.inc">Music</a> <br> 		
+					&nbsp;&nbsp;&nbsp;Art = <a href="http://www.sailormouth.org/index2.php?pg=state.inc">Statement</a> <b>::</b> <a href="http://www.sailormouth.org/index2.php?pg=shows.inc">Show List</a> <b>::</b> <a href="http://www.sailormouth.org/aw1.html">Pieces</a> <b>::</b> <a href="http://www.sailormouth.org/index2.php?pg=vid.inc">Videos</a> <br>
+				</td>
+			</tr>
+		</tbody></table>
+		<table border="0" cellpadding="0" cellspacing="0" width="700">
+			<tbody><tr>
+				<td width="25">
+					&nbsp;
+				</td>
+				<td valign="top" width="575">
+					<br>
+					<table width="575">
+<tbody><tr>
+<td align="center">
+<a href="http://www.sailormouth.org/index2.php?pg=cbender.inc">Bending Index</a><br><br>
+</td>
+</tr>
+<tr>
+<td>
+<b>Touch and Tell mods</b><br><br>
+&nbsp;&nbsp;I have done two Touch and Tells. They each had a different
+pcb. Here is the setup I used for the first Touch and Tell. I am
+working on putting together the second one.<br><br>
+&nbsp;&nbsp;The most obvious difference is the resistors between the ICs.<br><br>
+&nbsp;&nbsp;I have not listed the setup for selecting modes/cards or
+replacing the membrane pad. The modes/cards is just basic SPST switches
+or dipswitches. Membrane info can be found on the <a href="http://www.sailormouth.org/index2.php?pg=tandt_info.inc">Touch &amp; Tell membrane map</a> page. For the first T&amp;T I used momentary switches (<a href="javascript:newWindow('cb_tt1.jpg','400','263');">Photo</a>
+black buttons middle top), and for the second I used a combo of 1
+rotary switch, 1 SPST switch, and a "shorted" RCA plug with RCA jacks (<a href="javascript:newWindow('nbp_tt2.jpg','300','440');">Photo</a>
+knob, switch, and 10 jacks bottom of photo). I recommend going a
+non-momentary route because the T&amp;T will repeat if the switch is
+held down.<br><b>Update 7.3.06</b> Added membrane hook up info to bottom of page.<br><br>
+&nbsp;&nbsp;I think the schematic is pretty straight forward. With the
+4 glitches you could go rotary for one at a time or multi SPST switches
+to combine.<br>
+The Special Pitch is quite nice. I could not think of a good
+descriptive name, but it goes back and forth between pitch fast/pitch
+slow on its own. This can also be used with the pitch control but it
+will cutout halfway through the the pitch range (cuts out mid to slow,
+works fast to mid). This cutting out does not crash the T&amp;T turn
+back to the "usable range" and it is still going.<br><br>
+<img src="index2.php_fichiers/tandtschem.jpg" alt="t&amp;t mods 1" border="0"><br><br><br><br>
+<br><b>Updated info</b><br>
+What might not be clear from the photos of the two methods of replacing the membrane is how they are actually hooked up.<br><br>
+<img src="index2.php_fichiers/cb_tt1.jpg" border="0"><br><br>
+The 2 rows of buttons are N.O. mom buttons (8 on top row, 2 on bottom
+row left, and 4 bottom row right). They are wired up in the way below,
+and two buttons have to be pressed together for sound/word to be
+triggered.<br>
+<img src="index2.php_fichiers/ttnomomsw.gif" border="0"><br><br>
+<img src="index2.php_fichiers/nbp_tt2.jpg" border="0"><br><br>
+On the other T&amp;T 4 wires were connected to a rotary switch with the
+center pole connected to a SPST switch. The SPST will make or break
+connection to a common point for the other 10 wires. For aesthetic
+reasons I used RCA patchbays for nearly all switch functions. The RCA
+plugs have the center and rings shorted together. The RCA patchbays are
+wired so that plugging in the RCA plug completes a signal path.
+Otherwise the signal path is open, and that is how I used RCA patchbays
+to act like/replicate/function like a set of N.O. momentary switches.
+Dial the rotary, plug in the RCA plug, and use the SPST to trigger the
+sound/word.<br>
+<img src="index2.php_fichiers/ttrotspstrcasw.gif" border="0"><br><br>
+To loop/repeat sounds/words with the all N.O. mom setup you have to
+keep the 2 buttons held down. The other setup just flip the SPST to ON.
+This looping/repeating is just like pressing and holding the original
+membrane buttons, not the stuttered phenome looping. <br><br>
+</td>
+</tr>
+</tbody></table>
+
+					<br><br>
+					<center>
+						<a href="mailto:cappy@sailormouth.org">cappy@sailormouth.org</a>
+					</center>
+				</td>
+				<td valign="top" width="50">
+					
+					<br>
+				</td>
+			</tr>
+		</tbody></table>
+</body></html>

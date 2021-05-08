@@ -1,0 +1,154 @@
+hr {
+  margin-top: 2px;
+}
+
+td, th {
+  padding-left: 1ex;
+}
+
+th {
+  text-align: left;
+  font-weight: normal;
+}
+
+#footer {
+  padding: 3px
+}
+.hbox {
+  padding: 3px;
+}
+.listbox {
+  margin-bottom: 5px;
+  flex: 1;
+}
+
+.listbox:last-child {
+  margin-bottom: 0;
+}
+.head:first-child {
+  margin-top: 0;
+}
+
+#Equips {
+  height: 196px
+}
+
+.head {
+  margin-top: 11px;
+  padding-left: 3px
+}
+
+main.overflow {
+  overflow: auto;
+  overflow-x: hidden;
+}
+main.scroll {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.selected {
+  background-color: #eee;
+}
+.label {
+  padding-left: 3px;
+}
+
+fieldset {
+  border: solid 1px #aaa;
+}
+fieldset table {
+  width: 100px;
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+
+#newguy fieldset {
+  height: 100%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  position: relative;
+  top: 3px;
+}
+
+#newguy .vbox button {
+  width: 75px;
+  margin: 4px;
+}
+
+.vbox table,
+.vbox table thead,
+.vbox table body {
+  width: 100%
+}
+
+div.hint {
+  padding: 1px;
+  z-index: 20;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #060;
+}
+
+#paused {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 76px;
+  text-align: center;
+  background-color: silver;
+  opacity: 0.6;
+}
+
+/* newguy */
+
+.td_num {
+  width: 40px;
+  text-align: right;
+}
+
+/* index */
+
+.brag {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 5px 10px;
+}
+.lit {
+  border: solid 2px #66ccee;
+}
+.bs {
+  opacity: .3;
+}
+.brag img {
+  margin-top: 6px;
+  margin-right: 16px;
+}
+.sig {
+  color: #808080;
+}
+.sig a, .sig a:visited {
+  color: #808080;
+  text-decoration: none;
+}
+img {
+  border-style: none;
+}
+header {
+  padding-left: 4px;
+  padding-bottom: 3px;
+}
+
+.delete_btn {
+  font-size: 22px;
+  line-height: 29px;
+  padding: 4px;
+}

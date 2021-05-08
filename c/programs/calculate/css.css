@@ -1,0 +1,64 @@
+#buttons {
+  display: flex;
+}
+.block {
+  width: 50%;
+}
+
+.inactive {
+  opacity:  .5;
+}
+#screen {
+  background-color: #000;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 13px;
+}
+
+#screen #top, #screen #bottom {
+  color:#c3ff00;
+  font-family:_tomo, "Courier New", monospace;
+  text-align:right;
+}
+
+#screen #top {
+  font-size: 8px;
+  height: 16px;
+  line-height:16px;
+  text-align:right;
+  padding-right: 5px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  vertical-align:bottom;
+}
+
+#screen #top sup {
+  vertical-align:super;
+  font-size:12px;
+}
+
+#screen #bottom {
+  font-size: 32px;
+  line-height: 1;
+  position:relative;
+  padding-top: 4px;
+}
+#buttons button {
+  flex: 1;
+  padding: 5px 2px
+}
+#basic {
+  margin-left: 5px;
+}
+#buttons .basics button {
+  font-family: _tomo;
+  flex: 0 20%
+}
+#buttons .basics #equals {
+  flex: 0 40%
+}
+
+.commands {
+  margin-bottom: 5px;
+}

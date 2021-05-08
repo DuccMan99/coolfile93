@@ -1,0 +1,2123 @@
+<!-- 
+    __ __      ________ _____
+   / //_/___  / __/ __ \__  /
+  / ,< / __ \/ /_/ /_/ //_ < 
+ / /| / /_/ / __/\__, /__/ / 
+/_/ |_\____/_/  /____/____/ 
+
+  version 2
+
+  ## special moves ##
+
+  # gief #
+  fireball    ↓↘→ Q 
+  tatsu       ↓↙← Q 
+
+  # honda #
+  fireball    ↓↘→ SPACE
+  honda-press ↓2sec ↑ SPACE  
+
+  # dash invincible #
+  dash        →→
+  backdash    ←←
+
+DESIGN + CODE = @JANKENPOPP
+HTTP://JANKENPOPP.COM
+HTTP://WINDOWS93.NET
+-->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  <link rel="icon" type="image/gif" href="gief.gif">  
+  <title>KOF93</title>
+  <style>
+
+
+  @font-face {
+    font-family: 'dist';
+    src: url('fonts/Distortion-Of-The-Brain-And-Mind.eot');
+    src: url('fonts/Distortion-Of-The-Brain-And-Mind.eot?#iefix') format('embedded-opentype'),
+      url('fonts/Distortion-Of-The-Brain-And-Mind.woff') format('woff'),
+      url('fonts/Distortion-Of-The-Brain-And-Mind.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+    @font-face {
+    font-family: '04b11';
+      src:  url('fonts/04b11.ttf.woff') format('woff'),
+      url('fonts/04b11.ttf.svg#04b11') format('svg'),
+      url('fonts/04b11.ttf.eot'),
+      url('fonts/04b11.eot?#iefix') format('embedded-opentype'); 
+      font-weight: normal;
+      font-style: normal;
+    }
+
+  html{
+  
+      overflow: none;
+      overflow: -moz-hidden-unscrollable;
+      color: white;
+      margin: 0;
+      padding: 0;
+      border:none;
+      /* vapor */
+      background-color: rgba(255,0,255,1);
+      background: -moz-linear-gradient(10deg, rgba(255,0,255,1) 0%, rgba(17,212,212,1) 100%);
+      background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,0,255,1)), color-stop(100%, rgba(17,212,212,1)));
+      background: -webkit-linear-gradient(10deg, rgba(255,0,255,1) 0%, rgba(17,212,212,1) 100%);
+      background: -o-linear-gradient(10deg, rgba(255,0,255,1) 0%, rgba(17,212,212,1) 100%);
+      background: -ms-linear-gradient(10deg, rgba(255,0,255,1) 0%, rgba(17,212,212,1) 100%);
+      background: linear-gradient(10deg, rgba(255,0,255,1) 0%, rgba(17,212,212,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff00ff', endColorstr='#11d4d4', GradientType=1 );
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -webkit-crisp-edges;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      margin: 0;
+      padding: 0;
+      /*cursor: none;*/
+  }
+    body {
+      /*cursor: none;*/
+      background-color: black;
+      overflow: hidden;
+      overflow: -moz-hidden-unscrollable;
+      font-family: "04b11", sans-serif;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height:100%;
+    }
+    .red-block, .green-block {
+      /*
+      padding:5px;
+      border: 2px solid black;
+      border-radius:4px;
+      */
+    }
+    .red-block {
+      background-color: #f46;
+    }
+    .green-block {
+      background-color: #4b6;
+     /* opacity: 0.1; */
+    }
+    .p1, .p2{
+      /*background-color: yellow; */
+
+        z-index: 300;
+        pointer-events:none;
+    
+    }
+    .p1 {
+        z-index: 301;
+    }
+  img, div {
+    margin: 0px;
+    padding-left: 0px;
+    image-rendering: pixelated;
+  }
+  .flip{
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+  }
+  #p1-run, #p1-jump, #p1-attack, #p1-hit, #p1-win, #p2-run, #p2-jump, #p2-attack, #p2-hit, #p2-win {
+    display: none;
+  }
+  .p1 img, .p2 img{
+    position: relative;
+    left:-15%;
+    top:-5%;
+     pointer-events:none;   
+  }
+   .flip{
+  
+  }
+.blink {
+  animation: blink-animation 2s steps(5, start) infinite;
+  -webkit-animation: blink-animation 2s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+  body{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    background-color: black;
+    /*cursor: none;*/
+  }
+
+  #screen{
+    z-index: 700;
+    background-image: url('img/fx/B42.gif');
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events:none;
+    /*cursor: none;*/
+  }
+
+  .life{
+    background-color: black;
+    z-index: 400;
+    position: absolute;
+    width: calc( 50% - 170px );
+    height: 25px;
+    top: 50px;
+    border: 6px solid white;
+    
+-webkit-box-shadow: 0px 5px 21px -6px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 5px 21px -6px rgba(0,0,0,0.5);
+box-shadow: 0px 5px 21px -6px rgba(0,0,0,0.5);
+pointer-events:none;
+
+
+  }
+
+ #p1Life div{
+    position: absolute;
+    left: 0px;
+    background-color: black;
+    width: 0%;
+    height: 25px;
+    pointer-events:none;
+    max-width: 100%;
+     
+  }
+
+  #p2Life div{
+   position: absolute;
+    right: 0px;
+    background-color: black;
+    width: 0%;
+    height: 25px;
+    pointer-events:none;
+    max-width: 100%;
+   
+  }
+
+  #p1Life{
+    left: 100px;
+    background-color: #00ffff;
+    pointer-events:none;
+  }
+  
+  #p2Life{
+    right: 100px;
+    background-color: #ff00ff;
+    pointer-events:none;
+  }
+
+  #logow{
+    position: absolute;
+    top: 20px;
+    left: calc( 50% - 50px );
+    width: auto;
+    height: auto;
+    background-image: url('');
+    z-index: 401;
+      pointer-events:none;
+
+
+  }
+  #logow img{
+    width:100px;
+    height: auto;
+  }
+
+  #wallpaper{
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* vapor */
+    background: rgba(255,0,255,1);
+    background: -moz-linear-gradient(10deg, rgba(255,0,255,1) 0%, rgba(17,212,212,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,0,255,1)), color-stop(100%, rgba(17,212,212,1)));
+    background: -webkit-linear-gradient(10deg, rgba(255,0,255,1) 0%, rgba(17,212,212,1) 100%);
+    background: -o-linear-gradient(10deg, rgba(255,0,255,1) 0%, rgba(17,212,212,1) 100%);
+    background: -ms-linear-gradient(10deg, rgba(255,0,255,1) 0%, rgba(17,212,212,1) 100%);
+    background: linear-gradient(10deg, rgba(255,0,255,1) 0%, rgba(17,212,212,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff00ff', endColorstr='#11d4d4', GradientType=1 );
+    pointer-events:none;
+    opacity: 1;
+
+    display: none;
+
+  }
+
+
+  #timer{
+    
+    font-family: dist, sans-serif;
+    color: white;
+    position: absolute;
+    font-size: 150px;
+    width: 100%;
+     top: 93px;
+    left: -18px;
+    text-align: center;
+   text-shadow: 0px 3px 18px rgba(0, 0, 0, 0.6);   
+    z-index: 500;
+    pointer-events:none;
+  }
+
+
+
+
+  #message{
+    font-family: dist;
+    color: white;
+    position: absolute;
+    font-size: 250px;
+    width: 100%;
+    z-index: 400;
+    text-align: center;
+    text-shadow: 0px 3px 18px rgba(0, 0, 0, 0.6);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    vertical-align: middle;
+    padding: 0;
+    height: 300px;
+    pointer-events:none;
+  }
+
+
+
+
+  /* FLASH */
+  @-webkit-keyframes argh-my-eyes {
+    0%   { background-color: #fff; }
+    49% { background-color: #fff; }
+    50% { background-color: #000; }
+    99% { background-color: #000; }
+    100% { background-color: #fff; }
+  }
+  @-moz-keyframes argh-my-eyes {
+    0%   { background-color: #fff; }
+    49% { background-color: #fff; }
+    50% { background-color: #000; }
+    99% { background-color: #000; }
+    100% { background-color: #fff; }
+  }
+  @keyframes argh-my-eyes {
+    0%   { background-color: #fff; }
+    49% { background-color: #fff; }
+    50% { background-color: #000; }
+    99% { background-color: #000; }
+    100% { background-color: #fff; }
+  }
+
+
+ #flash {
+  background-color: white;
+  /*
+  -webkit-animation: argh-my-eyes 0.1s infinite;
+  -moz-animation:    argh-my-eyes 0.1s infinite;
+  animation:         argh-my-eyes 0.1s infinite;
+  */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: none;
+    z-index: 600;
+    pointer-events:none;
+}
+
+
+#p1Fireball{
+  width:88px;
+  height:112px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  /*background-color: yellow; */
+  display: none;
+  pointer-events:none;
+}
+#p2Fireball{
+  width:88px;
+  height:112px;
+  position: absolute;
+  top: 0;
+  left: 300;
+  z-index: 500;
+ /* background-color: yellow; */
+  display: none;
+  pointer-events:none;
+}
+
+
+#p1Combo{
+  font-family: dist;
+ position: absolute;
+ top: 120px;
+ left: 100px;
+ font-size: 100px; 
+ text-shadow: 0px 3px 18px rgba(0, 0, 0, 0.6); 
+ display: none;
+ line-height: 47px;
+ z-index: 500;
+ color: #fff;
+ text-align: left;
+ pointer-events:none;
+ 
+}
+#p2Combo{
+  font-family: dist;
+ position: absolute;
+ top: 120px;
+ right: 100px;
+ font-size: 100px; 
+ text-shadow: 0px 3px 18px rgba(0, 0, 0, 0.6); 
+ display: none;
+ line-height: 47px;
+ z-index: 500;
+ color: #fff;
+ text-align: right;
+ pointer-events:none;
+}
+
+
+.force, .recovery, .jump, .speed, .fb, .hk, .char{
+  display: none;
+}
+
+
+#p1, #p2 {
+  position: absolute;
+}
+
+#tuto{
+  width: 600px;
+  height: 400px;
+  z-index: 701;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+ position: absolute;
+ display: block;
+  
+}
+
+#tuto h1{
+    font-family: dist;
+    font-size: 400px;
+    font-weight: normal;
+    line-height: 190px;
+    margin-bottom: -50px;
+    background: -webkit-linear-gradient(#00FFFF, #FF00FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 100%;
+    padding: 60px;
+    margin-left: -60px;
+    position: relative;
+    margin-top: -80px;
+}
+
+#tuto:hover{
+  /*cursor:pointer;*/
+  /*cursor: none;*/
+}
+
+
+
+.dark{
+   width: 100%;
+  height: 100%;
+  z-index: 599;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding:0px;
+  position: absolute;
+  text-align: center; 
+  background-color: black;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+  background-image: url('img/bg/bliss_night.jpg');
+}
+
+.cyan{
+  color:#00FFFF;
+}
+.magenta{
+  color:#FF00FF;
+}
+
+
+#p1Bictory{
+display: none;
+font-size: 43px;
+position: absolute;
+top: 11px;
+left: 100px;
+text-align: left;
+font-weight: bolder;
+color:#fff;
+z-index: 500;
+   text-shadow: 0px 3px 18px rgba(0, 0, 0, 0.6); 
+}
+
+#p2Bictory{
+  display: none;
+font-size: 43px;
+position: absolute;
+top: 11px;
+right: 95px;
+text-align: right;
+font-weight: bolder;  
+color:#fff;
+z-index: 500;
+   text-shadow: 0px 3px 18px rgba(0, 0, 0, 0.6); 
+}
+
+
+  @-moz-document url-prefix() { 
+  #timer {
+     top: 60px;
+  }
+  #tuto h1{
+    margin-top: -90px;
+  }
+}
+
+#p1, #p2 {
+   pointer-events:none;
+}
+
+
+  </style>
+</head>
+<body>
+
+<div class="dark"></div>
+<div id="tuto" onclick="/*initMatch();*/">
+  <h1>KOF<br>93</h1>
+  <p>
+  <!--
+  <span class='cyan'><i>PLAYER 1 KEYS :</span><br>Q, E,  S, D, F</i><br><br> 
+  <span class='magenta'><i>PLAYER 2 KEYS :</span><br> SPACE,  UP, LEFT, RIGHT, DOWN</i><br><br>
+  -->
+  <span style="font-family:dist;font-size:70px;color:#C3FF00;" class="blink">press any button</span><br><br><br>
+  <i>windows93.net</i>
+    
+  </p>
+
+</div>
+
+
+
+  <!-- Create DOM elements to animate -->
+  <!--
+    <div class="p2-dynamic-body red-block" style="position:absolute;left:175px;width:468px;height:472px;">
+      <img src="img/z0.gif" width="468px" height="472px">
+    </div>
+  -->
+
+
+<div id="wallpaper"></div>
+<div id="flash"></div>
+<div id="black"></div>
+
+<div id="logow"><img src="img/logow.png"></div>
+<div id="timer"><span></span></div>
+<div id="message"><span></span></div>
+
+
+<div id="p1Life" class="life"><div></div></div>
+<div id="p2Life" class="life"><div></div></div>
+
+<div id="p1Bictory">0</div>
+<div id="p2Bictory">0</div>
+
+<div id="p1Combo">3hit</div>
+<div id="p2Combo">3hit</div>
+
+
+<div id="p1Fireball"><img src="img/fireball2.png"></div>
+<div id="p2Fireball"><img src="img/fireball2.png"></div>
+
+
+  <!-- zanglief --> 
+ <div id="p1" class="p2-dynamic-body" style="position:absolute;width:298px;height:420px;">
+    <img src="img/z0.gif" width="468px" height="472px" id="p1-base">
+    <img src="img/z1.gif" width="468px" height="472px" id="p1-run">
+    <img src="img/z2.gif" width="468px" height="472px" id="p1-jump">
+    <img src="img/z3.gif" width="468px" height="472px" id="p1-attack">
+    <img src="img/z4.gif" width="468px" height="472px" id="p1-hit">
+    <img src="img/z5.gif" width="364px" height="584px" id="p1-win" style="top:-160px; left:-30px;">
+    <span class="force">10</span>
+    <span class="recovery">250</span>
+    <span class="jump">80</span>
+    <span class="speed">30</span>
+    <span class="fb">1</span>
+    <span class="hk">1</span>
+  </div>
+   <!-- bonus car --> 
+ <div id="p2" class="p2-dynamic-body" style="width:640px;height:370px;">
+    <img src="img/bonusCar.png" width="748px" height="356px" id="p2-base" style="top:10px;">
+    <img src="img/bonusCar.png" width="748px" height="356px" id="p2-run" style="top:10px;">
+    <img src="img/bonusCar.png" width="748px" height="356px" id="p2-jump" style="top:10px;">
+    <img src="img/bonusCarStrike.png" width="748px" height="356px" id="p2-attack" style="top:10px;">
+    <img src="img/bonusCarHit.png" width="748px" height="356px" id="p2-hit" style="top:10px;">
+    <img src="img/bonusCar.png" width="748px" height="356px" id="p2-hit" style="top:10px;">
+    <img src="img/bonusCar.png" width="748px" height="356px" id="p2-win" style="top:10px;">
+    <span class="force">15</span>
+    <span class="recovery">500</span>
+    <span class="jump">40</span>
+    <span class="speed">60</span>
+    <span class="fb">1</span>
+    <span class="hk">0</span>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="screen"></div>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/p2.min.js"></script>
+  <script type="text/javascript" src="js/soundmanager2-jsmin.js"></script>
+
+  <script type="text/javascript">
+
+    var lastButtons1 = [];
+    var lastButtons2 = [];
+    var gameStart=1;
+    var bims = [];
+      soundManager.setup({
+
+
+
+        // where to find the SWF files, if needed
+        url: '',
+
+        onready: function() {
+
+
+
+          bims[0] = soundManager.createSound({
+          url: 'sfx/bam.mp3'
+          ,autoLoad:true
+          ,autoPlay:false
+          });
+
+          bims[1] = soundManager.createSound({
+          url: 'sfx/bim.mp3'
+          ,autoLoad:true
+          ,autoPlay:false
+          });
+
+          bims[2] = soundManager.createSound({
+          url: 'sfx/bom.mp3'
+          ,autoLoad:true
+          ,autoPlay:false
+          });
+
+          bims[3] = soundManager.createSound({
+          url: 'sfx/bum.mp3'
+          ,autoLoad:true
+          ,autoPlay:false
+          });
+
+          male = soundManager.createSound({
+          url: 'sfx/male.mp3'
+          ,autoLoad:true
+          ,autoPlay:false
+          });
+        
+          klaxon = soundManager.createSound({
+          url: 'sfx/klaxon.mp3'
+          ,autoLoad:true
+          ,autoPlay:false
+          });        
+
+          musicBonus = soundManager.createSound({
+          url: 'music/bonus.wav'
+          ,autoLoad:true
+          ,autoPlay:false
+          });  
+
+          musicEnd = soundManager.createSound({
+          url: 'music/end.wav'
+          ,autoLoad:true
+          ,autoPlay:false
+          });  
+
+          musicKen = soundManager.createSound({
+          url: 'music/ken.wav'
+          ,autoLoad:true
+          ,autoPlay:true
+          });  
+
+          musicStaff = soundManager.createSound({
+          url: 'music/staff.wav'
+          ,autoLoad:true
+          ,autoPlay:false
+          });  
+
+        },
+
+        ontimeout: function() {
+          // Uh-oh. No HTML5 support, SWF missing, Flash blocked or other issue
+        }
+
+    });
+    //soundManager.setup({debugMode: true});
+  function isOnRight(a,b){
+    if (b-a<0) {
+      return true;
+    }else{
+      return false;
+    }
+  }
+  function collision($div1, $div2) {
+      var x1 = $div1.offset().left;
+      var y1 = $div1.offset().top;
+      var h1 = $div1.outerHeight(true);
+      var w1 = $div1.outerWidth(true);
+      var b1 = y1 + h1;
+      var r1 = x1 + w1;
+      var x2 = $div2.offset().left;
+      var y2 = $div2.offset().top;
+      var h2 = $div2.outerHeight(true);
+      var w2 = $div2.outerWidth(true);
+      var b2 = y2 + h2;
+      var r2 = x2 + w2;
+
+      if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
+      return true;
+    }
+
+  function sfxBim(){
+    x = parseInt(Math.random()*bims.length);
+    bims[x].play();
+  }
+
+
+  var p1hitTimer;
+  function hitOff1(){
+       p1Sprite("#p1-base");  
+  }
+  function p1Hit(){
+    clearTimeout(p1hitTimer);
+     sfxBim();
+    p1Sprite("#p1-hit");
+    p1hitTimer = setTimeout(hitOff1, 300);   
+  }
+
+  var p2hitTimer;
+  function hitOff2(){
+       p2Sprite("#p2-base");  
+  }
+  function p2Hit(){
+    clearTimeout(p2hitTimer);
+     sfxBim();
+    p2Sprite("#p2-hit");
+    p2hitTimer = setTimeout(hitOff2, 300);   
+  }
+
+    var mOff;
+    function messageOff(){
+       $("#message").hide("slow");
+     
+    }
+
+  // message("PLAYER1<br>WIN");
+  function message(message, time){
+    
+    clearTimeout(mOff);
+
+    $("#message").css("display","none");
+    $("#message").html(message);
+    $("#message").show("fast");
+    if (time==0) {
+    }else{
+      mOff = setTimeout(messageOff, 1000);     
+    };
+  }
+
+    function flashOff(){
+      jQuery( "#flash" ).css({"display":"none"});
+    }
+    function flash(){
+      jQuery( "#flash" ).css({"display":"block"});
+      setTimeout(flashOff, 20);
+    }
+
+var bgs = [
+    'img/bg/bliss.jpg'
+   ,'img/bg/bliss2.jpg'
+   ,'img/bg/bliss3.jpg'
+   ,'img/bg/bliss5.jpg'
+   ,'img/bg/bliss7.png'
+   ,'img/bg/bliss9.jpg'
+   ,'img/bg/bliss10.jpg'
+];
+        // Init materials
+        var characterMaterial = new p2.Material(),
+            boxMaterial = new p2.Material();
+
+
+      var buttons1 = {
+        up: 0,
+        space: 0,
+        left: 0,
+        right: 0,
+        down:0
+      };      
+      var buttons2 = {
+        up: 0,
+        space: 0,
+        left: 0,
+        right: 0,
+        down:0
+      };
+
+  var p1Body, p2Body;
+  var roundTimer;
+  var chrono;
+  var win;
+  var p1Damage;
+  var p2Damage;
+  var p1Attack;
+  var p2Attack;
+  var level;
+
+  var p1Recovery, p2Recovery;
+  var p1Jump, p2Jump;
+  var p1Speed, p2Speed;
+
+  var world;
+
+  var p1Bict=0;
+  var p2Bict=0;
+
+  var fixedTimeStep;
+  var physicsToDOMScale;
+  var body, html, height, planeBottomBody, planeTopBody,planeLeftBody, planeRightBody, staticElements;
+
+    // Create a World
+    world = new p2.World({
+      gravity : [0,-300],
+      broadphase : new p2.SAPBroadphase()
+    });
+
+    fixedTimeStep = 1 / 30;
+    physicsToDOMScale = 30; // Multiply physics coordinate with this and you get the number of pixels in the dom
+
+    // Create dynamic bodies
+    elements = document.querySelectorAll('.p2-dynamic-body');
+    for(var i=0; i< 2; i++){
+      var element = elements[i];
+      createBody(element, 5);
+    }
+    p1Body = world.bodies[0];
+    p2Body = world.bodies[1];
+    $("div.p2-dynamic-body:first").addClass("p1");
+    $("div.p2-dynamic-body:last").addClass("p2");
+    // Create static bodies
+    staticElements = document.querySelectorAll('.p2-static-body');
+    for(var i=0; i<staticElements.length; i++){
+      var element = staticElements[i];
+      createBody(element, 0);
+    }
+    // Add planes for browser window "walls"
+    body = document.body;
+    html = document.documentElement;
+    height = Math.max( body.scrollHeight, body.offsetHeight,
+                           html.clientHeight, html.scrollHeight, html.offsetHeight );
+    planeBottomBody = new p2.Body({
+      position: [0, - (height*0.92) / physicsToDOMScale]
+    });
+    planeBottomBody.addShape(new p2.Plane());
+    world.addBody(planeBottomBody);
+    planeTopBody = new p2.Body({
+      position: [0, 0]
+    });
+    planeTopBody.addShape(new p2.Plane(),[0,0],Math.PI);
+    world.addBody(planeTopBody);
+    planeLeftBody = new p2.Body();
+    planeLeftBody.addShape(new p2.Plane(),[0,0],-Math.PI/2);
+    world.addBody(planeLeftBody);
+    planeRightBody = new p2.Body({
+      position: [ (document.body.getBoundingClientRect().width) / physicsToDOMScale,0]
+    });
+    planeRightBody.addShape(new p2.Plane(),[0,0],Math.PI/2);
+    world.addBody(planeRightBody);
+
+//  }
+ // initWorld();
+
+characters = ["zangief","bonusCar"];
+
+var resetGameTimer;
+var isReset=false;
+function resetGame() {
+    location.reload();
+}
+function abortReset(){
+   /* console.log("abort!"); */
+    clearTimeout(resetGameTimer);
+    isReset=false;
+}
+function resetTehGame() {
+  if (isReset==false) {
+   /*  console.log("reset..."); */
+     isReset=true;
+     resetGameTimer = setTimeout(resetGame, 15000);   
+  };
+}
+
+function initMatch(){
+
+    gameStart=0;
+    abortReset();
+    $('.dark').css('display','none');
+    $('#tuto').css('display','none');
+    
+    flash();
+    //vgm.playSong('bonus.vgm;6');
+    if (musicKen.playState==1) {musicKen.stop();};
+    if (musicEnd.playState==1) {musicEnd.stop();};
+    musicBonus.play({volume: 100});
+
+    $('#p1Combo').hide("fast");
+    $('#p2Combo').hide("fast");
+
+
+    p1Body.shapes[0].width  = $('#p1').width()/30;
+    p1Body.shapes[0].height = $('#p1').height()/30;
+    p2Body.shapes[0].width  = $('#p2').width()/30;
+    p2Body.shapes[0].height = $('#p2').height()/30;
+
+    p1Force = parseInt( $('#p1 .force').text());
+    p2Force = parseInt( $('#p2 .force').text());
+    p1Recovery = parseInt( $('#p2 .recovery').text());
+    p2Recovery = parseInt( $('#p2 .recovery').text());    
+    p1Jump = parseInt( $('#p1 .jump').text());
+    p2Jump = parseInt( $('#p2 .jump').text());
+    p1Speed = parseInt( $('#p1 .speed').text());
+    p2Speed = parseInt( $('#p2 .speed').text());
+    p1fb = parseInt( $('#p1 .fb').text());
+    p2fb = parseInt( $('#p2 .fb').text());
+    p1hk = parseInt( $('#p1 .hk').text());
+    p2hk = parseInt( $('#p2 .hk').text());
+   
+
+    level = 0;
+    if (parseInt(Math.random()*10)==0) {
+     level =  parseInt(Math.random()*bgs.length);     
+    };
+
+    //console.log(bgs[level]);
+    //level =  0;
+    $(body).css("background-image","url('" + bgs[level] + "')");
+
+    $('#p1Life div').css('width', p1Damage+'%');
+    $('#p2Life div').css('width', p2Damage+'%');
+
+    //clearInterval(chrono);
+    
+    $("#p1Bictory,#p2Bictory").hide('fast');
+
+    flash();
+    message("READY");
+    setTimeout(function(){ message("FIGHT!"); }, 800);
+    //setTimeout(message("FIGHT!");, 2500);
+
+      roundTimer = 15;
+      $("#timer span").html(roundTimer);
+
+      win=0;
+      p1Damage = 0;
+      p2Damage = 0;
+      p1Attack = 0;
+      p2Attack = 0;
+      $('#p1Life div').css('width', p1Damage+'%');
+      $('#p2Life div').css('width', p2Damage+'%');
+
+      jQuery( "#wallpaper" ).css({"display":"none"});
+
+      p1Sprite("#p1-base"); 
+      p2Sprite("#p2-base"); 
+
+      world.bodies[0].angle = 0;
+      world.bodies[1].angle = 0;
+      world.bodies[0].position[1] = 0;
+      world.bodies[1].position[1] = 0;
+      world.bodies[0].position[0] = (parseInt($(window).width()*0.25)) / physicsToDOMScale;
+      world.bodies[1].position[0] = ($(window).width()- (parseInt($(window).width()*0.25)) ) / physicsToDOMScale;
+
+      clearInterval(chronoTimer);
+      chrono();
+}
+
+    // Create a body from an element in the DOM, with the given mass
+    function createBody(element, mass){
+      var rect = element.getBoundingClientRect();
+      var body = new p2.Body({
+        mass : mass,
+        position: [
+          (rect.left + rect.width / 2) / physicsToDOMScale,
+          -(rect.top + rect.height / 2) / physicsToDOMScale
+        ],
+        angle:0
+      });
+      var shape = new p2.Box({
+        width: rect.width / physicsToDOMScale,
+        height: rect.height / physicsToDOMScale
+      });
+      body.addShape(shape);
+      world.addBody(body);
+
+      element.style.position = 'absolute';
+      element.style.top = 0;
+      element.style.left = 0;
+      element.style.transformOrigin = '50% 50%';
+      updateTransform(body, element);
+    }
+
+    // The animation loop
+    var lastTimeMilliSeconds;
+    function update(timeMilliSeconds){
+      requestAnimationFrame(update);
+      if(lastTimeMilliSeconds){
+        var deltaTime = (timeMilliSeconds - lastTimeMilliSeconds) / 1000;
+        world.step(fixedTimeStep, deltaTime, 5);
+        updateTransforms();
+      }
+      lastTimeMilliSeconds = timeMilliSeconds;
+    }
+
+    function updateTransform(body, element){
+
+        // Convert physics coordinates to pixels
+        var x = physicsToDOMScale * (body.interpolatedPosition[0] - body.shapes[0].width/2);
+        var y = -physicsToDOMScale * (body.interpolatedPosition[1] + body.shapes[0].height/2);
+        
+        // Set element style
+        //var style = 'translate(' + x + 'px, ' + y + 'px) rotate(0deg)';
+        var style = 'translate(' + x + 'px, ' + y + 'px) rotate(' + (-body.interpolatedAngle * 57.2957795) + 'deg)';
+        element.style.transform = style;
+        element.style.WebkitTransform = style + ' translateZ(0)'; // Force HW Acceleration
+        element.style.MozTransform = style;
+        element.style.OTransform = style;
+        element.style.msTransform = style;
+    
+    }
+
+
+   
+
+    function endMatch(){
+      clearInterval(chronoTimer);
+      jQuery( "#wallpaper" ).css({"display":"block"});
+      resetTehGame();
+
+    }
+
+    var p1ComboCounter = 0;
+    var p1ComboTimer;
+    function p1Combo(){
+      clearTimeout(p1ComboTimer);
+      if ( p1ComboCounter>0) {
+        $('#p1Combo').html((p1ComboCounter+1)+" hit<br>combo!")
+        $('#p1Combo').show("fast")
+      };
+      p1ComboCounter = p1ComboCounter + 1;
+      p1ComboTimer = setTimeout(function(){ 
+            p1ComboCounter = 0;
+            setTimeout(function(){ 
+              if (win==0) { $('#p1Combo').hide("fast");};
+           
+            }, 1000);
+      }, 300);
+    }
+
+    var p2ComboCounter = 0;
+    var p2ComboTimer;
+    function p2Combo(){
+      clearTimeout(p2ComboTimer);
+      if ( p2ComboCounter>0) {
+        $('#p2Combo').html((p2ComboCounter+1)+" hit<br>combo!")
+        $('#p2Combo').show("fast")
+      };
+      p2ComboCounter = p2ComboCounter + 1;
+      p2ComboTimer = setTimeout(function(){ 
+            p2ComboCounter = 0;
+            setTimeout(function(){ 
+            if (win==0) { $('#p2Combo').hide("fast");};
+            }, 1000);
+      }, 300);
+    }
+
+
+
+    var waitNextBattle = 0;
+    var p1Force;
+    var p2Force;
+
+
+    function p2Damaged(force){
+      if($("#p2").css("opacity")=="1"){
+          p1Combo();
+          flash();
+          p2Damage = p2Damage + force;
+          p2Hit();
+          $('#p2Life div').css('width', p2Damage+'%');
+          if (p2Damage>=100) {
+            p2Damage = 100;
+            if (win==0) {
+              p1Bict = p1Bict + 1;
+              $("#p1Bictory").text(p1Bict);
+              $("#p1Bictory,#p2Bictory").show('fast');
+            };
+            win = 1;
+            message('GIEF WIN',0);
+            //vgm.pause();
+            musicBonus.stop()
+            if (musicEnd.playState==0) {musicEnd.play({volume: 100});};
+            //vgm.playSong('end.vgm');
+            clearTimeout(p2hitTimer);
+            p2Sprite("#p2-hit");
+            p1Sprite("#p1-win");
+            setTimeout(function(){ 
+              p1Sprite("#p1-win");
+              p2Sprite("#p2-hit");
+            }, 250);
+             p2Body.velocity[0] = 300;
+             p2Body.velocity[1] = 100;
+             endMatch();
+             buttons1 = {up: 0, space: true, left: 0, right: 0, down: 0};
+             buttons2 = {up: 0, space: true, left: 0, right: 0, down: 0};
+          };
+
+      }
+
+    }
+    function p1Damaged(force){
+      if($("#p1").css("opacity")=="1"){
+          p2Combo();
+          flash();
+          p1Damage = p1Damage + force;
+          p1Hit();
+          $('#p1Life div').css('width', p1Damage+'%');
+          if (p1Damage>=100) {
+            p1Damage = 100;
+            if (win==0) {
+              p2Bict = p2Bict + 1;
+              $("#p2Bictory").text(p2Bict);
+              $("#p1Bictory,#p2Bictory").show('fast');
+            };
+            win = 2;
+            message('HONDA WIN',0);
+            /*vgm.pause();
+            vgm.playSong('end.vgm');*/
+            musicBonus.stop()
+            if (musicEnd.playState==0) {musicEnd.play({volume: 100});};
+            p1Body.velocity[0] = -300;
+            p1Body.velocity[1] = 100;
+            endMatch();
+            clearTimeout(p1hitTimer);
+            p1Sprite("#p1-hit");
+            p2Sprite("#p2-win");
+             setTimeout(function(){ 
+              p1Sprite("#p1-hit");
+              p2Sprite("#p2-win");
+            }, 250);
+             p1Body.velocity[0] = 300;
+             p1Body.velocity[1] = 100;
+             endMatch();
+             buttons1 = {up: 0, space: true, left: 0, right: 0, down: 0};
+             buttons2 = {up: 0, space: true, left: 0, right: 0, down: 0};
+          };
+      }
+    }
+
+    // Update all element transforms
+    function updateTransforms(){
+
+
+
+
+
+      updatep1FireBall();
+      updatep2FireBall();
+
+
+      //flip
+      if (hKick1<1) {
+        // p1
+        if(isOnRight(world.bodies[0].position[0],world.bodies[1].position[0])==true) {
+          $(".p1 img").addClass( "flip" );
+          $(".p1 img").css("left","-125px");
+        }else{
+          $(".p1 img").removeClass( "flip" );
+          $(".p1 img").css("left","-45px");
+        }     
+      };
+
+        // p2
+      if (hKick2<1) {
+        if(isOnRight(world.bodies[1].position[0],world.bodies[0].position[0])==true) {
+          $(".p2 img").addClass( "flip" );
+          $(".p2 img").css("left","-125px");
+        }else{
+            $(".p2 img").removeClass( "flip" );
+            $(".p2 img").css("left","-45px");
+        }        
+      };
+
+
+
+
+      if (win>0) {
+        waitNextBattle = waitNextBattle + 1;
+      };
+
+
+
+      if (p1Attack==1){
+        if ( collision($('.p1'), $('.p2')) ) {
+          p1Attack=2;
+          buttons2 = {up: 0,space: 0,left: 0,right: 0, down:0};
+          if(isOnRight(world.bodies[0].position[0],world.bodies[1].position[0])==false) {
+            p2Body.velocity[0] = 20;
+          }else{
+            p2Body.velocity[0] = -20;
+          }
+          p2Body.velocity[1] = 50;
+          p2Damaged(p1Force);
+        };
+      }
+
+      if (p2Attack==1){
+        if ( collision($('.p1'), $('.p2')) ) {
+          p2Attack=2;
+          buttons1 = {up: 0,space: 0,left: 0,right: 0, down:0};
+          // checker 
+          if(isOnRight(world.bodies[1].position[0],world.bodies[0].position[0])==false) {
+            p1Body.velocity[0] = 20;
+          }else{
+            p1Body.velocity[0] = -20;
+          }
+          p1Body.velocity[1] = 50;
+
+          facteur = 1;
+          if (hKick2>0) {
+            facteur = 0.35;
+          };
+
+
+          p1Damaged(p2Force*facteur);
+
+        };
+      }
+
+      if (p1Attack==0){
+        if (buttons1.right == 1) { p1Body.velocity[0] = p1Speed}
+        if (buttons1.left == 1) { p1Body.velocity[0] = -p1Speed}        
+      } else{
+        if(checkIfCanJump1()==true) {
+            p1Body.velocity[0] = 0;
+        }
+      }
+      if (p2Attack==0){
+        if (buttons2.right == 1) { p2Body.velocity[0] = p2Speed}
+        if (buttons2.left == 1) { p2Body.velocity[0] = -p2Speed}        
+      } else{
+        if(checkIfCanJump2()==true) {
+            p2Body.velocity[0] = 0;
+        }
+      }
+
+       
+
+      // Update dynamic bodies
+      for ( i = 0; i < elements.length; i++ ) {
+        var body = world.bodies[i];
+        var element = elements[i];
+        updateTransform(body, element);
+      }
+
+
+
+      // Update static bodies
+      for ( i = 0; i < staticElements.length; i++ ) {
+        var body = world.bodies[elements.length + i];
+        var element = staticElements[i];
+        updateTransform(body, element);
+
+
+      }      
+
+    }
+
+    var p1Fire = 0;
+    var p2Fire = 0;
+
+//
+    function p1FireBall(sens){
+      dashCounter1 = 0;
+      p1Fire = sens;
+      if (sens==-1) {
+          $("#p1Fireball").addClass( "flip" ); 
+          x = parseInt($('.p1').offset().left) - parseInt($('.p1').css('width'))/2 + parseInt( $('#p1Fireball').css('width'));
+          y = parseInt($('.p1').offset().top) + parseInt($('.p1').css('height'))/4 + parseInt( $('#p1Fireball').css('height'))/4;
+          $('#p1Fireball').css('left',x);
+          $('#p1Fireball').css('top',y);    
+      }
+       if (sens==1) {
+        $("#p1Fireball").removeClass( "flip" ); 
+        x = parseInt($('.p1').offset().left) + parseInt($('.p1').css('width'))/2 + parseInt( $('#p1Fireball').css('width'));
+        y = parseInt($('.p1').offset().top) + parseInt($('.p1').css('height'))/4 + parseInt( $('#p1Fireball').css('height'))/4;
+        $('#p1Fireball').css('left',x);
+        $('#p1Fireball').css('top',y); 
+      }
+
+      $("#p1Fireball").css( "display","block" ); 
+      male.play();
+
+    }
+
+    function p1FireBallRemove(){
+                p1Fire = 0;
+                $("#p1Fireball").css( "display","none" );
+    }
+
+    function p1FireBallDamage(){
+                p1Fire = 0;
+                $("#p1Fireball").css( "display","none" );
+                p2Damaged(10);
+                if(isOnRight(world.bodies[0].position[0],world.bodies[1].position[0])==false) {
+                  p2Body.velocity[0] = 20;
+                }else{
+                  p2Body.velocity[0] = -20;
+                }
+                p2Body.velocity[1] = 50;
+
+    }
+
+    function updatep1FireBall(){
+
+      if (p1Fire!=0) {
+
+          x = parseInt($('#p1Fireball').css('left')) + (20*p1Fire);
+          $('#p1Fireball').css('left',x);
+
+
+
+          if (p1Fire==1) {
+             if ( parseInt($('#p1Fireball').css('left')) > $(window).width() ) {
+                p1FireBallRemove();
+             };
+          };
+          if (p1Fire==-1) {
+             if ( parseInt($('#p1Fireball').css('left')) < -parseInt($('#p1Fireball').css('width')) ) {
+                p1FireBallRemove();
+             };
+          };     
+
+          if ( collision($('#p1Fireball'), $('.p2')) ) {
+
+            if (p2Attack==0) {
+
+              p1FireBallDamage();
+            };
+            
+          };
+
+          if ( collision($('#p1Fireball'), $('#p2Fireball')) ) {
+            p1FireBallRemove(); p2FireBallRemove();
+          }
+
+      };
+
+    }
+
+
+function p2FireBall(sens){
+      dashCounter2 = 0;
+      p2Fire = sens;
+      if (sens==-1) {
+          $("#p2Fireball").addClass( "flip" ); 
+          x = parseInt($('.p2').offset().left) - parseInt($('.p2').css('width'))/2 + parseInt( $('#p2Fireball').css('width'));
+          y = parseInt($('.p2').offset().top) + parseInt($('.p2').css('height'))/4 + parseInt( $('#p2Fireball').css('height'))/4;
+          $('#p2Fireball').css('left',x);
+          $('#p2Fireball').css('top',y);    
+      }
+       if (sens==1) {
+        $("#p2Fireball").removeClass( "flip" ); 
+        x = parseInt($('.p2').offset().left) + parseInt($('.p2').css('width'))/2 + parseInt( $('#p2Fireball').css('width'));
+        y = parseInt($('.p2').offset().top) + parseInt($('.p2').css('height'))/4 + parseInt( $('#p2Fireball').css('height'))/4;
+        $('#p2Fireball').css('left',x);
+        $('#p2Fireball').css('top',y); 
+      }
+
+      $("#p2Fireball").css( "display","block" ); 
+      klaxon.play({volume: 40});
+
+    }
+
+    function p2FireBallRemove(){
+                p2Fire = 0;
+                $("#p2Fireball").css( "display","none" );
+    }
+
+    function p2FireBallDamage(){
+                p2Fire = 0;
+                $("#p2Fireball").css( "display","none" );
+                p1Damaged(10);
+                if(isOnRight(world.bodies[0].position[0],world.bodies[1].position[0])==false) {
+                  p1Body.velocity[0] = -20;
+                }else{
+                  p1Body.velocity[0] = 20;
+                }
+                p1Body.velocity[1] = 50;
+    }
+
+    function updatep2FireBall(){
+
+      if (p2Fire!=0) {
+
+          x = parseInt($('#p2Fireball').css('left')) + (20*p2Fire);
+          $('#p2Fireball').css('left',x);
+
+
+
+          if (p2Fire==1) {
+             if ( parseInt($('#p2Fireball').css('left')) > $(window).width() ) {
+                p2FireBallRemove();
+             };
+          };
+          if (p2Fire==-1) {
+             if ( parseInt($('#p2Fireball').css('left')) < -parseInt($('#p2Fireball').css('width')) ) {
+                p2FireBallRemove();
+             };
+          };     
+
+          if ( collision($('#p2Fireball'), $('.p1')) ) {
+
+            if (p1Attack==0) {
+
+              p2FireBallDamage();
+            };
+            
+          };
+
+      };
+
+    }
+
+
+
+    var hKickTimer1, hKick1 = 0;
+    function huKick1(sens){
+      dashCounter1 = 0;
+      male.play();
+      clearInterval(hKickTimer1);
+      hKick1 = 1;
+      p1Sprite("#p1-attack");   
+      p1Attack = 1; 
+      world.bodies[0].velocity[1] = p1Jump+20;
+      hKickTimer1 = setInterval(function(){ 
+        if (win==0) {
+          p1Attack = 0; 
+          world.bodies[0].velocity[0] = world.bodies[0].velocity[0]+sens;
+        };
+        p1Attack = 1; 
+        hKick1 = hKick1 + 1;
+        if (hKick1==2) {
+          $(".p1 img").addClass( "flip" ); 
+        };
+        if (hKick1==3) {
+          $(".p1 img").removeClass( "flip" );
+          hKick1 = 1;
+        };          
+      }, 100);    
+      setTimeout(function(){ 
+        clearInterval(hKickTimer1);
+        $(".p1 img").removeClass( "flip" );
+        p1Sprite("#p1-base");   
+        p1Attack = 0;
+        hKick1 = 0;
+      }, 1000);
+    }
+
+    var hKickTimer2, hKick2 = 0;
+    function huKick2(sens){
+      dashCounter2 = 0;
+      klaxon.play();
+      clearInterval(hKickTimer2);
+      hKick2 = 1;
+      p2Sprite("#p2-attack");   
+      p2Attack = 1; 
+      world.bodies[1].velocity[1] = p2Jump+20;
+      hKickTimer2 = setInterval(function(){ 
+        if (win==0) {
+          p2Attack = 0; 
+          world.bodies[1].velocity[0] = world.bodies[0].velocity[0]+sens;
+        };
+        p2Attack = 1; 
+        hKick2 = hKick2 + 1;
+        if (hKick2==2) {
+          $(".p2 img").addClass( "flip" ); 
+        };
+        if (hKick2==3) {
+          $(".p2 img").removeClass( "flip" );
+          hKick2 = 1;
+        };          
+      }, 100);    
+      setTimeout(function(){ 
+        clearInterval(hKickTimer2);
+        $(".p2 img").removeClass( "flip" );
+        p2Sprite("#p2-base");   
+        p2Attack = 0;
+        hKick2 = 0;
+      }, 1500);
+    }
+
+
+var chronoTimer;
+  //$("#timer span").html(roundTimer);
+  function chrono(){
+    chronoTimer = setInterval(function(){ 
+      roundTimer = roundTimer - 1;
+      zero = "";
+      if (roundTimer<=9) {zero="0"};
+      $("#timer span").html(zero+roundTimer);
+      if (roundTimer == 0){
+        win = 3;
+        message("draw",0);
+        /*vgm.pause();
+        vgm.playSong('end.vgm');*/
+        musicBonus.stop();
+        if (musicEnd.playState==0) {musicEnd.play({volume: 100});};
+        clearTimeout(p1hitTimer);
+        p1Sprite("#p1-hit");       
+        clearTimeout(p2hitTimer);
+        p2Sprite("#p2-hit");
+
+        endMatch();
+      }
+    }, 1000);    
+  }
+
+
+
+
+      function checkIfCanJump1(){
+        for(var i=0; i<world.narrowphase.contactEquations.length; i++){
+          var c = world.narrowphase.contactEquations[i];
+          if(c.bodyA === p1Body || c.bodyB === p1Body){
+            var d = c.normalA[1];
+            if(c.bodyA === p1Body) d *= -1;
+            if(d > 0.5) return true;
+          }
+        }
+        return false;
+      }
+      function checkIfCanJump2(){
+        for(var i=0; i<world.narrowphase.contactEquations.length; i++){
+          var c = world.narrowphase.contactEquations[i];
+          if(c.bodyA === p2Body || c.bodyB === p2Body){
+            var d = c.normalA[1];
+            if(c.bodyA === p2Body) d *= -1;
+            if(d > 0.5) return true;
+          }
+        }
+        return false;
+      }
+
+
+      function p1Sprite(e){
+
+        $( ".p1 img" ).each(function( index ) { 
+          $(this).hide(); 
+
+
+
+
+        });
+        $( e ).show(); 
+
+      };
+
+      function p2Sprite(e){
+
+        $( ".p2 img" ).each(function( index ) {
+          $(this).hide(); 
+        });
+        $( e ).show(); 
+
+      };
+
+
+      var p1Keys, p2Keys;
+      /*
+      p1Keys = [ 38, 32, 39, 37, 40 ];
+      p2Keys = [ 69, 81, 70, 83, 68 ];
+      */
+      // two player mode
+      p1Keys = [ 69, 81, 70, 83, 68 ];
+      p2Keys = [ 38, 32, 39, 37, 40 ]; //76
+
+
+
+
+      // Array Remove
+      Array.prototype.remove = function(from, to) {
+        var rest = this.slice((to || from) + 1 || this.length);
+        this.length = from < 0 ? this.length + from : from;
+        return this.push.apply(this, rest);
+      };
+
+      function arraysAreIdentical(arr1, arr2){
+          if (arr1.length !== arr2.length) return false;
+          for (var i = 0, len = arr1.length; i < len; i++){
+              if (arr1[i] !== arr2[i]){
+                  return false;
+              }
+          }
+          return true; 
+      }
+
+     
+
+
+      var p2Press=0;
+
+
+
+      function hondaPress(){
+        
+        klaxon.play();
+      //  console.log('honda press');
+        p2Body.velocity[1] = 500;
+        //p2Body.position[1] = p2Body.position[1] + 10;
+
+        setTimeout( function(){
+         
+          p2Body.velocity[1] = 500;
+
+        },50);
+
+        setTimeout( function(){
+          speedo = 100;
+          if ($('#p2 img').hasClass('flip')) {p2Body.velocity[0] = -speedo; }else{p2Body.velocity[0] = speedo; }
+           p2Body.position[1] = p2Body.position[1] + 10;
+          p2Body.velocity[1] = 500;
+        },100);
+        setTimeout( function(){
+          speedo = 200;
+          if ($('#p2 img').hasClass('flip')) {
+            p2Body.velocity[0] = -speedo; 
+            huKick2(-20);
+          }else{
+            p2Body.velocity[0] = speedo; 
+            huKick2(20);
+          }
+          p2Body.velocity[1] = 500;
+
+        },200);
+
+      }
+
+      dashTempo = 1500;
+      var dashCounter1=0;
+      function dashDetect1(sens){
+
+        dashCounter1 = dashCounter1+sens
+        if (Math.abs(dashCounter1)==2) {  
+          
+          dash1(sens);
+          dashCounter1 = 0;
+        };
+        setTimeout(function(){ 
+          dashCounter1 = 0;
+        }, dashTempo);
+      }
+      var dashCounter2=0;
+      function dashDetect2(sens){
+        dashCounter2 = dashCounter2+sens
+        
+        if (Math.abs(dashCounter2)==2) {   
+          dash2(sens);
+          dashCounter2 = 0;
+        };
+        setTimeout(function(){ 
+          dashCounter2 = 0;
+        }, dashTempo);
+      } 
+
+      window.onkeydown = function(event){
+
+       //console.log(event.keyCode);
+
+       if (gameStart==1) {initMatch();};
+
+        if (win==0) {
+
+        // special
+
+          lastButtons1.unshift(event.keyCode);
+          if (lastButtons1.length>10) {
+               lastButtons1.remove(lastButtons1.length-1);     
+          };
+          lastButtons2.unshift(event.keyCode);
+          if (lastButtons2.length>10) {
+               lastButtons2.remove(lastButtons2.length-1);     
+          };
+        
+          p1Special = "";
+          p2Special = "";
+
+          // P1
+          // quart right
+          a = [];
+          for (var i = 0; i < 3; i++) { a[i]=lastButtons1[i];};
+          b = [p1Keys[1], p1Keys[2], p1Keys[4]];
+          if (arraysAreIdentical(a,b)==true) {
+           // console.log('P1 Q.RIGHT');
+            p1Special = "p1.q.r";
+          };
+          // quart left
+          a = [];
+          for (var i = 0; i < 3; i++) { a[i]=lastButtons1[i];};
+          b = [p1Keys[1], p1Keys[3], p1Keys[4]];
+          if (arraysAreIdentical(a,b)==true) {
+          //  console.log('P1 Q.LEFT');
+            p1Special = "p1.q.l";
+          };
+          if(isOnRight(world.bodies[0].position[0],world.bodies[1].position[0])==false) {
+            if (p1Special=="p1.q.r") {
+              //console.log('FIREBALL');
+              if (p1fb==1) {p1FireBall(1);};
+            };
+            if (p1Special=="p1.q.l") {
+              //console.log('HKICK');
+              if (p1hk==1) {huKick1(20);};
+            };
+            if (p1Special=="p1.d.r") {
+              //console.log('DRAGON PUNCH');
+            };
+            if (p1Special=="p1.d.l") {
+              //console.log('DRAGON KICK');
+            };
+          }else{
+            if (p1Special=="p1.q.r") {
+              if (p1hk==1) {huKick1(-20);}; 
+              //console.log('HKICK');
+            };
+            if (p1Special=="p1.q.l") {
+              //console.log('FIREBALL');
+              if (p1fb==1) {p1FireBall(-1);};
+            };
+            if (p1Special=="p1.d.r") {
+              //console.log('DRAGON KICK');
+            };
+            if (p1Special=="p1.d.l") {
+              //console.log('DRAGON PUNCH');
+            };     
+          }
+
+
+          //P2
+          // hondapress
+           a = [];
+          for (var i = 0; i < 2; i++) { a[i]=lastButtons2[i];};
+          b = [p2Keys[1],"charge"];
+          if (arraysAreIdentical(a,b)==true) {
+           // console.log('P2 Q.RIGHT');
+           hondaPress();
+            //p2Special = "p2.q.r";
+          };           
+
+
+          // quart right
+          a = [];
+          for (var i = 0; i < 3; i++) { a[i]=lastButtons2[i];};
+          b = [p2Keys[1], p2Keys[2], p2Keys[4]];
+          if (arraysAreIdentical(a,b)==true) {
+           // console.log('P2 Q.RIGHT');
+            p2Special = "p2.q.r";
+          };
+          // quart left
+          a = [];
+          for (var i = 0; i < 3; i++) { a[i]=lastButtons2[i];};
+          b = [p2Keys[1], p2Keys[3], p2Keys[4]];
+          if (arraysAreIdentical(a,b)==true) {
+          //  console.log('P2 Q.LEFT');
+            p2Special = "p2.q.l";
+          };
+          if(isOnRight(world.bodies[1].position[0],world.bodies[0].position[0])==false) {
+            if (p2Special=="p2.q.r") {
+              //console.log('FIREBALL');
+              if (p2fb==1) {p2FireBall(1);};
+            };
+            if (p2Special=="p2.q.l") {
+              //console.log('HKICK');
+              if (p2hk==1) {huKick2(20);};
+            };
+            if (p2Special=="p2.d.r") {
+              //console.log('DRAGON PUNCH');
+            };
+            if (p2Special=="p2.d.l") {
+              //console.log('DRAGON KICK');
+            };
+          }else{
+            if (p2Special=="p2.q.r") {
+              if (p2hk==1) {huKick2(-20);};
+              //console.log('HKICK');
+            };
+            if (p2Special=="p2.q.l") {
+              //console.log('FIREBALL');
+               if (p2fb==1) {p2FireBall(-1);};
+            };
+            if (p2Special=="p2.d.r") {
+              //console.log('DRAGON KICK');
+            };
+            if (p2Special=="p2.d.l") {
+              //console.log('DRAGON PUNCH');
+            };     
+          }                      
+
+
+        
+          switch(event.keyCode){
+           
+
+            // P1
+            case p1Keys[0]: // up
+              if(!buttons1.up){
+                if(checkIfCanJump1()) {
+                  if (p1Attack==0) {
+                    p1Sprite("#p1-jump");
+                  };
+                  p1Body.velocity[1] = p1Jump;
+                  p1Body.position[1] = p1Body.position[1] + 4;
+                  buttons1.up = true;
+                }
+              }
+              break;
+            case p1Keys[1]:
+              if(!buttons1.space){
+                buttons1.space = 1;
+                  if (p1Attack==0) {
+                    p1Sprite("#p1-attack");   
+                    p1Attack = 1; 
+                    setTimeout(function(){ 
+                      p1Attack = 0; 
+                      p1Sprite("#p1-base"); 
+                    }, p1Recovery);
+                  }                  
+              }
+              break;
+            case p1Keys[2]: 
+              buttons1.right = 1; 
+              //dashDetect1(1);
+              if(checkIfCanJump1()) {
+                  if (p1Attack==0) {
+                    p1Sprite("#p1-run");
+                  }; 
+              }
+
+            break;
+            case p1Keys[3]: 
+              buttons1.left = 1; 
+              //dashDetect1(-1);
+              if(checkIfCanJump1()) {          
+               
+                  if (p1Attack==0) {
+                    p1Sprite("#p1-run");
+                  }; 
+              }
+              break;
+              // END P1
+
+            // P2
+
+
+
+
+            case p2Keys[0]: // up
+              if(!buttons2.up){
+                if(checkIfCanJump2()) {
+                  if (p2Attack==0) {
+                    p2Sprite("#p2-jump");
+                  };
+                  p2Body.velocity[1] = p2Jump;
+                  p2Body.position[1] = p2Body.position[1] + 4;
+                  buttons2.up = true;
+                }
+                if (p2Press>=4) {
+                 // hondaPress
+                   lastButtons2.unshift("charge");
+                  p2Press = 0;
+                };
+
+              }
+              break;
+            case p2Keys[1]:
+              if(!buttons2.space){
+                buttons2.space = 1;
+                  if (p2Attack==0) {
+                    p2Sprite("#p2-attack");   
+                    p2Attack = 1; 
+                    setTimeout(function(){ 
+                      p2Attack = 0; 
+                      p2Sprite("#p2-base"); 
+                    }, p1Recovery);
+                  }                  
+              }
+              break;
+            case p2Keys[2]: 
+              buttons2.right = 1; 
+              if(checkIfCanJump2()) {
+                  if (p2Attack==0) {
+                    p2Sprite("#p2-run");
+                  }; 
+              }
+ 
+              break;
+            case p2Keys[3]: 
+              buttons2.left = 1; 
+              if(checkIfCanJump2()) {          
+               
+                  if (p2Attack==0) {
+                    p2Sprite("#p2-run");
+                  }; 
+              }
+ 
+
+         
+
+              break;
+              case p2Keys[4]:
+              p2Press = p2Press + 1;
+              break;
+
+
+              // END P2
+
+
+
+
+
+
+          } // switch
+
+
+
+        }else{
+
+
+
+          switch(event.keyCode){
+
+
+            //P1
+            case p1Keys[1]:
+              if(!buttons1.space){
+                buttons1.space = 1;
+
+                
+                if (waitNextBattle>50) {   
+                  flash();
+                  initMatch();
+                  waitNextBattle = 0;
+                };
+                
+              }
+              break;
+
+            //P2
+            case p2Keys[1]:
+              if(!buttons2.space){
+                buttons2.space = 1;
+                if (waitNextBattle>50) { 
+                  flash();
+                  initMatch();
+                  waitNextBattle = 0;
+                };
+                
+              }
+              break;
+
+
+          }
+
+           
+        }
+
+
+      }
+
+      function dash1(sens){
+        $("#p1").css("opacity","0.5");
+        p1Body.position[1] =  p1Body.position[1]+1;
+       // p1Body.velocity[1] = 20;
+        p1Body.velocity[0] = 100*sens; 
+        setTimeout(function(){
+          p1Body.velocity[0]=0
+          $("#p1").css("opacity","1");
+        },100);
+      }
+
+      function dash2(sens){
+        $("#p2").css("opacity","0.5");
+        p2Body.position[1] =  p2Body.position[1]+1;
+        //p2Body.velocity[1] = 20;
+        p2Body.velocity[0] = p2Body.velocity[0]+100*sens; 
+        setTimeout(function(){
+          p2Body.velocity[0]=0
+          $("#p2").css("opacity","1");
+        },100);
+      }
+
+      window.onkeyup = function(event){
+
+       switch(event.keyCode){
+            case 27:
+             // parent.kofHide();
+              break;
+        };
+     
+
+
+        if (win==0) {
+
+          //p1Keys
+          /*
+            up
+            space
+            right
+            left
+          */
+
+          switch(event.keyCode){
+
+            case p1Keys[0]: 
+              if (p1Attack==0){
+                p1Sprite("#p1-base");   
+                if (buttons1) {};   
+              }
+              buttons1.up = 0; 
+              break;
+            case p1Keys[1]: 
+              
+              buttons1.space = 0; 
+              break;
+            case p1Keys[2]: 
+               if (p1Attack==0){
+                p1Sprite("#p1-base"); 
+              }
+              buttons1.right = 0;  
+              dashDetect1(1);           
+              break;
+            case p1Keys[3]: 
+              if (p1Attack==0){
+                p1Sprite("#p1-base"); 
+              }
+              buttons1.left = 0; 
+              dashDetect1(-1); 
+              break;
+
+
+            case p2Keys[0]: 
+              if (p2Attack==0){
+                p2Sprite("#p2-base");   
+                if (buttons2) {};   
+              }
+              buttons2.up = 0; 
+              break;
+            case p2Keys[1]: 
+              
+              buttons2.space = 0; 
+              break;
+            case p2Keys[2]: 
+               if (p2Attack==0){
+                p2Sprite("#p2-base"); 
+              }
+              buttons2.right = 0;  
+              dashDetect2(1);           
+              break;
+            case p2Keys[3]: 
+              if (p2Attack==0){
+                p2Sprite("#p2-base"); 
+              }
+              buttons2.left = 0; 
+              dashDetect2(-1);    
+              break;
+              case p2Keys[4]:
+             
+              setTimeout(function(){
+                 //console.log(p2Press);
+                p2Press = 0;
+              },500);
+          }
+   
+        }else{
+          buttons1 = {up: 0,space: 0,left: 0,right: 0, down:0};
+          buttons2 = {up: 0,space: 0,left: 0,right: 0, down:0};
+        }
+
+      }
+    // Start animation
+    requestAnimationFrame(update);
+
+  </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf540
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs24 \cf0 Pour changer le mot de passe administrateur ou celui du root sans avoir les CDs en mode single-user, voici la manip (attention, il faut ma\'eetriser le qwerty 
+\f1 {{\NeXTGraphic tongue.gif \width400 \height400
+}¬}
+\f0 ) :\
+- D\'e9marrer en mode single-user (pomme-S maintenu)\
+- Monter le disque en \'e9criture :\
+CODE\
+/sbin/mount -uw /\
+\
+- Lancer les d\'e9mons (vous pouvez utiliser tab pour l'auto-compl\'e9tion)\
+--> Sur Tiger :\
+CODE\
+/bin/sh /etc/rc\
+\
+--> Sur Panther :\
+CODE\
+/usr/libexec/register_mach_bootstrap_servers /etc/mach_init.d\
+cd /var/db/netinfo\
+netinfod -s local\
+SystemStarter\
+\
+--> Sur Jaguar et pr\'e9c\'e9dents :\
+CODE\
+SystemStarter\
+\
+- Changer le passe :\
+--> Pour le passe root :\
+CODE\
+passwd root\
+\
+--> Pour tout autre passe :\
+CODE\
+passwd nom_login\
+\
+- Rebooter :\
+CODE\
+reboot\
+}

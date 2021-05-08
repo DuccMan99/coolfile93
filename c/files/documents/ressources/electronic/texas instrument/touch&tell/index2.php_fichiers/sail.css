@@ -1,0 +1,12 @@
+td { font-size: 12px; font-family: Geneva, Verdana, Arial; }
+body { font-size: 12px; font-family: Geneva, Verdana, Arial; }
+a { color: blue; text-decoration: none; }
+a:link { color: blue; text-decoration: none; }
+a:visited { color: blue; text-decoration: none; }
+a:hover { color: red; text-decoration: none; }
+a:active { color: red; text-decoration: none; }
+p.big { font-size: 50px; font-family: Geneva, Verdana, Arial; }
+#jss {position: absolute; top:67; left: 452; z-index: 1; text-align: left;}
+#liljss {position: absolute; top:87; left: 451; z-index: 5; background-color: white;}
+ul {color: black;}
+li {color: black; line-height:99%; list-style-image : url(http://www.sailormouth.org/images/dblarw.jpg);}

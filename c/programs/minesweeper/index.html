@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MineSweeper</title>
+  <style>
+    * {
+      line-height: 0;
+    }
+    button {
+      line-height: 1;
+    }
+    html, body {
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      cursor: url('/c/sys/cursors/default.cur'), default;
+    }
+    body {
+      background-color: #C0C0C0;
+    }
+    a {
+      cursor: url('/c/sys/cursors/pointer.cur'), pointer;
+    }
+    #cntBombs,
+    #cntTime {
+      vertical-align: top;
+      display: inline-block;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="divBoard" style="white-space: nowrap; display:inline-block"></div>
+
+<script>
+  var troll = true;
+</script>
+<script src="minesweeper.js"></script>
+<script>
+
+var divBoard = document.getElementById('divBoard');
+
+function init(gameFormat, x, y, b) {
+  initGame(gameFormat, x, y, b);
+  createBoard();
+}
+
+function createBoard() {
+
+  var html = '';
+
+  // Build the top line
+  html += '<img src="images/bordertl.gif" alt="" />';
+  for (j = 0; j <= maxX; j++) {
+    html += '<img src="images/bordertb.gif" height="10" width="16" alt="" />';
+  }
+  html += '<img src="images/bordertr.gif" alt="" /><br />';
+
+  // Build the top display (# bombs, face, clock)
+  html += '<img src="images/borderlr.gif" height="25" width="10" alt="" />';
+  html += '<a id="cntBombs" onclick="return bombCountClick()"><img src="images/time0.gif" border="0" name="bomb100s" width="13" height="23" alt="" /><img src="images/time0.gif" border="0" name="bomb10s" width="13" height="23" alt="" /><img src="images/time0.gif" border="0" name="bomb1s" width="13" height="23" alt="" /></a>';
+  html += '<a id="face" onclick="return faceClick()"><img src="images/faceclock.gif" name="face" hspace="' + smileMargin + '" border="0" width="26" height="25" alt="" /></a>';
+  html += '<span id="cntTime"><img src="images/time0.gif" border="0" name="time100s" width="13" height="23" alt="" /><img src="images/time0.gif" border="0" name="time10s" width="13" height="23" alt="" /><img src="images/time0.gif" border="0" name="time1s" width="13" height="23" alt="" /></span>';
+  html += '<img src="images/borderlr.gif" height="25" width="10" alt="" /><br />';
+
+  // Line between title stuff and the board
+  html += '<img src="images/borderjointl.gif" alt="" />';
+  for (j = 0; j <= maxX; j++) {
+    html += '<img src="images/bordertb.gif" height="10" width="16" alt="" />';
+  }
+  html += '<img src="images/borderjointr.gif" alt="" /><br />';
+
+  // Build the main grid itself, placing it on-screen.  Note the l/r edge
+  // Also, using a temp string to build line before display.  Speeds up display.
+  for (i = 0; i <= maxY; i++) {
+    html += '<img src="images/borderlr.gif" height="16" width="10" alt="" />';
+    for (j = 0; j <= maxX; j++) {
+      // IE requires onDragStart, Netscape requires onDrag. Click is handled via onmouseup.
+      html += '<a onclick="" onmouseover="cursorHoldLoc(' + j + ',' + i + ')" onmouseout="cursorClearLoc(' + j + ',' + i + ')" ondragstart="ignoreDragging()" ondrag="ignoreDragging()" onmousedown="showMouseDown(event);" onmouseup="cellClick(' + j + ',' + i + ', event)">';
+      html += '<img src="images/blank.gif" name="cellIm' + j + '_' + i + '" border="0" alt="" /></a>';
+    }
+    html += '<img src="images/borderlr.gif" border="0" height="16" width="10" alt="" /><br />';
+  }
+
+  // Build the bottom line, including corners
+  html += '<img src="images/borderbl.gif" alt="" />';
+  for (j = 0; j <= maxX; j++) {
+    html += '<img src="images/bordertb.gif" height="10" width="16" alt="" />';
+  }
+  html += '<img src="images/borderbr.gif" alt="" /><br />';
+
+
+  // Final settings - populate the board, focus, make the smile face, and create the menus
+
+  divBoard.innerHTML = html;
+  faceClick_first();
+}
+
+init("Beginner");
+
+</script>
+
+</body>
+</html>

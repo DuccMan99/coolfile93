@@ -1,0 +1,1197 @@
+/* Edited with EditCSS */
+/**** LINK-tag style sheet style.css ****/
+
+/* Edited with EditCSS */
+/**** LINK-tag style sheet style.css ****/
+
+/* Edited with EditCSS */
+/**** LINK-tag style sheet style.css ****/
+
+/* Edited with EditCSS */
+/**** LINK-tag style sheet style.css ****/
+
+/*  
+Theme Name: mallow
+Theme URI: http://somefoolwitha.com/mallow
+Description: Mallow is based on my sflwa.com which in turn includes much from the Kubrick theme.
+Version: 1.54 (18-2-4)
+Author: Matthew Maber
+Author URI: http://somefoolwitha.com/
+
+This is derived from Kubrick for WP 1.3 by Ryan Boren.
+Anything that does not work is probably Matthews fault. Don't bug Michael or Ryan.
+
+    Mallow for WordPress 1.3
+    http://somefoolwitha.com/mallow  mallow@somefoolwitha.com
+    
+    Elements of Kubrick v1.3.0-rc2 for WordPress 1.3
+    http://boren.nu/archives/2004/10/10/kubrick-130-rc2/
+    
+	Inturn from Kubrick
+	http://binarybonsai.com/kubrick/
+
+
+    Im not too up on this GPL license stuff but IMO youre free to 
+    do with it what you will just so long as you give relevant credits.
+    Please dont sell it on commercially though (yeah right!) 
+    or distribute it on CDs etc without asking first.
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+	
+	Have fun, and don't be afraid to contact me if you have questions.
+*/
+
+
+
+
+
+/* text colours */
+
+#supernav a:hover { color: white; } /* main top nav */
+
+p, body { color: white;}  
+	
+body#single .meta a:link, body#home .meta a:link, body#archives .meta a:link { color: #06c; } /* meta links, probably dont need to specify each one though */
+
+.storycontent, #wp-calendar td:hover, #wp-calendar #today, h4 { color: white; } /* the story text and calendar today and hover*/
+
+a:visited { color: #06c; } /* visited links */
+
+a:link, .feedback, .meta span, #blogtitle h1 a, #blogtitle h1 a:visited { color: #06c; } /* links, the blog title in the band (not sure what feedback is ;-) ) */
+
+h1, h2, h3, h4 { color: white; }
+
+a:hover {color: #FF9933; }
+
+
+.storytitle a:hover { color: #FF9933; } /* story titles hover */
+
+body#single .meta a:hover, body#home .meta a:hover, body#archives .meta a:hover, a:hover, #blogtitle h1 a:hover { color: #FF9933; }
+
+.storytitle a, .storytitle a:visited,  .highlight { color: white; } /* hover, story titles */
+
+
+
+#menu ul ul li, #wp-calendar td, .storytitle span a, .storytitle span a:visited {color: #777681;} /* menu + calendar text, comment count next to story title */
+
+
+#menu ul li { color: white; } /* menu titles */
+
+#bottommeta { color: #777681; } /* footer  text */
+
+#menu a { color: #06c; } /* menu links */
+
+#menu a:hover { color: #FF9933; } /* menu links hover */
+
+.navigation { color: #737373; } /* page nav */
+
+body#single .meta, body#home .meta, body#archives .meta, #blogtitle h1 span, #supernav a, body .commentlist blockquote, body blockquote, .commentlist cite, #menu input#s, code, .commentlist small { color: #696969; } /*meta on single pages, blog title description, main nav, quotes and code */
+
+.storytitle span a:hover { color: #b4271e; } /* story titles hover */
+
+
+/* end text colours */
+
+/* other colours */
+
+#blogtitle, #supernav a, #wp-calendar a:hover { background-color: #301010; } /* area behind the name of your blog and the main nav and hover calendar*/
+
+#rap {
+	background-color: #000000;
+	border-right-color: #767A7F;
+	border-left-color: #767A7F; } /* the main blog content page background and left and right inner borders */
+	
+	#shadow {
+border-right-color: #d3d3d3;
+	border-left-color: #d3d3d3;	} /* the outer thin borders */
+	
+	body, #wp-calendar td:hover, #wp-calendar #today{	background-color: #737373;	} /* just set the background of the site to white and today on calendar */
+
+#commentarea { background-color: #222222;	} /* regular comment backgrounds */
+
+.authorcomment { background-color: white;		} /* author comments backgrounds */
+
+.highlight { background-color: #fadfde;		} /* highlight backgrounds */
+
+#supernav a:hover { background-color: #701010;		} /* main nav background */
+
+.notedcomment { background-color: #f7f7ff;	} /* noted comments background */
+
+#bottommeta { background-color: #301010; } /* bottom meta info (admin login, design credits etc) background */
+
+.commentlist blockquote, blockquote {
+	border-left: 4px solid #ba4942; } /* quote border colors */
+
+/* end other colours */
+
+
+/* images */
+
+#content img { max-width:530px; }
+
+body#single #content img { max-width:800px; }
+
+
+body#home #rap, body#archives #rap, body#about #rap, body#e404 #rap {
+	background-image: url(images/rap.gif);
+	background-repeat: repeat-y; } /* pages with sidebar */
+	 	
+	body {
+/*
+	background-image: url(images/back.gif);
+*/
+	background-repeat: repeat-x;
+	background-position: top; } /* very back image (top stripes either side of page by default)  */
+
+	
+#topimage { 	background-image: url(images/banner001.jpg); 
+	background-position: center top;
+} /* grad.jpg top banner image */
+
+
+/* end images */
+
+
+/* other .. in no particular order */
+
+/*
+p.navlink
+{font-weight: bold;
+text-align: center;
+margin-bottom: 1px;
+margin-top: 0px;}
+
+p.navlink a
+{text-decoration: none;
+display: block;
+color: #ff7d00;
+background-color: #4c4c4c;
+padding-top: 4px;
+padding-bottom: 4px;}
+*/
+
+.blogsticker
+{
+position:absolute;
+bottom:20px;
+right:20px;
+} 
+
+.navlink 
+{font-size: 15px;}
+
+
+#commenttitle {
+font-size:150%;
+font-weight:normal;
+margin-bottom:5px;
+}
+
+#commentarea { 
+display:block; 
+clear:both;
+padding-top:10px;
+}
+
+.storytitle span { 
+font-weight: normal; 
+font-size: 90%;
+} /* comment count next to story title  */
+
+#wp-calendar {
+	letter-spacing: normal;
+	padding: 2px 0;
+	text-align: center;
+	empty-cells: show;
+	margin: 0;
+	width: 80%;
+} /* calendar */
+
+#wp-calendar #next a {
+	padding-right: 10px;
+	text-align: right;
+} /* calendar next */
+
+#wp-calendar #prev a {
+	padding-left: 10px;
+	text-align: left;
+} /* calendar prev */
+
+#wp-calendar a {
+	display: block;
+	text-decoration: none;
+} /* calendar link */
+
+#wp-calendar caption {
+	text-align: left;
+} /* calendar (not sure what) */
+
+
+#wp-calendar tbody, #wp-calendar tfoot {
+	font-size: 80%;
+} /* calendar text */
+
+#wp-calendar th {
+	font-size: 80%;
+	font-style: normal;
+	text-transform: capitalize;
+} /* calendar weekdays I think */
+
+
+.highlight {
+	margin: 5px 5px 0 0;
+	padding: 10px;
+	} /* highlight div */
+
+#supernavcontainer
+{
+	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	float: left;
+	margin-left: 13px;
+	margin-top: 123px;
+	text-align: left;
+	} /* top title nav */
+
+#supernav
+{
+	padding: 0;
+	margin: 0;
+} /* top title nav */
+
+#supernav li {
+	display: inline;
+	text-transform: lowercase;
+	margin-left: 1px;
+	margin-right: 1px;
+}  /* top title tabs */
+
+#supernav a {
+	text-decoration: none;
+	padding: 3px 8px 5px;
+} /* top title tabs */
+
+#supernav a:hover {
+	text-decoration: none;
+} /* top title tabs hover */
+
+.post {
+	display: block;
+		float: left;
+    padding-bottom: 40px;
+} /* position each post */
+
+body#single .post{
+width: 100%; } /* single page post */
+
+#sidebarcurrent {
+font-size: 90%;
+padding-bottom: 15px;
+} /* eer not sure */
+
+#titlesearch {
+font-size: 100%;
+margin: 8px 30px;
+ padding: 0; 
+float:right;
+} /* search it title bar */
+
+#blogtitle {
+	clear: both;
+height:39px;  
+width: 826px;
+margin-bottom: 30px;
+} /* the name of the blog in the title bar */
+
+#blogtitle h1 {font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 200%;
+	margin: 0px;
+	padding-top:13px;
+font-weight: normal;
+	padding-left:15px;} /* the name of the blog in the title bar */
+	
+	h1 span {	font-size: 70%;;
+		font-weight: normal;
+} /* the description of the blog in the title bar */
+
+h1 {
+	font-size: 120%;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+}
+
+h2, .feedback {
+	font-size: 110%;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+}
+
+h3 {
+font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+font-size:100%;
+} 
+
+h4 {
+	font-size: 100%;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+#menu a:hover, .meta a:hover, .navigation a:hover, .navbottom a:hover  { 	text-decoration: none; } /* various hovers */
+
+
+.storycontent {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	
+} /* actual post content */
+.storycontent p {
+	padding-top: 3px;
+	
+}/* actual post content */
+
+p 	{ 
+	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+} /* just the p tag */
+
+body#home .storycontent {
+	width: 530px;
+} /* actual post home */
+
+body#single .storycontent {
+	width: 740px;
+} /* actual post single post */
+
+
+#rap {
+	width: 826px;
+	margin-right: auto;
+	margin-left: auto;
+	border-right-style: solid;
+	border-right-width: 3px;
+	border-left-style: solid;
+	border-left-width: 3px;
+} /* this is a container divfor the page */
+	
+
+#shadow {
+	width: 832px;
+	margin-right: auto;
+	margin-left: auto;
+	border-left-width: 1px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	} /* not a shadow, its the side grey borders */
+
+
+a {
+	text-decoration: none;
+}
+
+a img {
+	border: none;
+}
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+acronym, abbr {
+	border-bottom: 1px dashed #333;
+}
+
+acronym, abbr, span.caps {
+	cursor: help;
+	font-size: 90%;
+	letter-spacing: .01em;
+}
+
+.commentlist blockquote, blockquote {
+    font-size:90%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 8px;
+	padding-right: 8px;
+} /* quotes */
+
+.storycontent li {			
+padding-top: 3px;
+        list-style-type: disc;
+        list-style-position: outside;
+} /* lists */
+
+
+code { font-family: 'Courier New', Courier, Fixed, sans-serif;
+font-size: 120%; } 
+
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+	line-height: normal;
+	}
+
+cite {
+	font-size: 100%;
+	font-style: normal;
+}
+
+
+
+.navigation {
+	display: block;
+	text-align: center;
+	padding-bottom: 40px;
+	padding-top: 10px;
+	font-size: 80%;
+	font-family: "Lucida Grande", "Lucida Sans Unicode",  Verdana, Arial, Helvetica, sans-serif;
+}  /* prev/next page buttons */
+
+
+ol#comments li p {
+	font-size: 100%;
+}
+
+
+/* classes used by the_meta() */
+ul.post-meta {
+	list-style: none;
+}
+
+ul.post-meta span.post-meta-key {
+	font-weight: bold;
+}
+
+
+body#single .meta {
+    width:740px;
+    	padding-bottom: 20px;
+    	padding-top: 0px;
+}
+
+body#home .meta {
+width:530px;
+   	padding-top: 5px;
+}
+
+
+.meta {
+	text-align: left;
+	font-size: 80%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	margin-top: 0px;
+    margin-bottom: 0px;
+	clear : left;
+}
+
+
+.meta span {
+    font-style: italic;
+}
+
+
+.meta li, ul.post-meta li {
+	display: inline;
+}
+
+.meta ul {
+	display: inline;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.storytitle a {
+	text-decoration: none;
+}
+
+.storytitle a:hover {
+	text-decoration: none;
+}
+
+.storytitle {
+width:530px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode",  Verdana, Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	font-size: 200%;	
+	margin: 0;
+    padding-bottom: 2px;
+} /* post titles */
+
+body#single .storytitle {
+    padding-top: 0px;
+	font-size: 150%;	
+    margin-bottom: 8px;
+} /* post titles on single pages */
+
+#commentform #author, #commentform #email, #commentform #url, #commentform textarea {
+	background: #fff;
+	border: 1px solid #333;
+	padding: .2em;
+}
+
+#commentform textarea {
+	width: 100%;
+}
+
+
+
+.commentlist cite {
+	font-weight:normal;
+	font-size: 110%;
+	text-align: left;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.commentlist cite small {
+	font-size: 80%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+	
+#commentlist {
+	margin: 20px 10px 0 0;
+}
+
+
+.comments {
+	list-style: none;
+ margin: 0px 0px 10px 0px;
+ width: 530px;
+	padding: 10px 10px 5px 8px;
+}
+
+.pings {
+	list-style: none;
+ margin: 0px;
+ width: 530px;
+}
+
+.authorcomment {
+	list-style: none;
+ width: 530px;
+ margin: 0px 50px 10px 0px;
+	padding: 10px 10px 5px 8px;
+	}
+
+	
+	.notedcomment {
+	list-style: none;
+ width: 530px;
+ margin: 0px 50px 10px 0px;
+	padding: 10px 10px 5px 8px;
+	}
+
+body#single #content {
+	padding-bottom: 10px;
+		width: 730px;
+			margin-right: auto;
+	margin-left: auto;
+}
+
+body#home #content, body#archives #content, body#e404 #content {
+	padding-left: 15px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+		width: 530px;
+}
+
+
+#topimage {
+	clear: both;
+	width: 826px;
+	height: 140px;
+	z-index: -1;
+}
+
+
+#bottommeta {
+	width: 826px;
+	height: 45px;
+	text-align: center;
+	padding-top: 8px;
+	font-size: 75%;
+	clear: both;
+}
+
+
+
+#nicearchives {
+	margin-top: 20px;
+	margin-bottom: 40px;
+    margin-left: 4px;
+}
+
+
+
+#menu li ul li small
+{
+display: block;
+margin: 0px;
+margin-left: 10px;
+font-size: 90%;
+}
+
+#menu {
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 15px;
+	text-align: left;
+	float: right;
+	width: 205px;
+}
+
+#menu input#s {
+	background: black;
+}
+
+#menu ul li {
+	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	list-style-type: none;
+	margin-top: 10px;
+    font-size: 100%;
+	padding-left: 0px;
+}
+
+#menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 3px;
+}
+
+#menu ul ul li {
+	margin: 0;
+	padding-left: 3px;
+    font-weight: normal;
+	list-style-type: none;
+    font-size: 80%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-align: left;
+}
+
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+#topimage {background-image:url(http://www.burnkit2600.com/gear/wp-content/themes/mallow/images/banner002.jpg);}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+.-noscript-blocked { -moz-outline-color: red !important; -moz-outline-style: solid !important; -moz-outline-width: 1px !important; background: white url("chrome://noscript/skin/icon32.png") no-repeat left top !important; opacity: 0.6 !important; cursor: pointer !important; margin-top: 0px !important; margin-bottom: 0px !important }
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+#topimage {background-image:url(http://www.burnkit2600.com/wp-content/themes/mallow/images/banner004.jpg);}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+.-noscript-blocked { -moz-outline-color: red !important; -moz-outline-style: solid !important; -moz-outline-width: 1px !important; background: white url("chrome://noscript/skin/icon32.png") no-repeat left top !important; opacity: 0.6 !important; cursor: pointer !important; margin-top: 0px !important; margin-bottom: 0px !important }
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+#topimage {background-image:url(http://www.burnkit2600.com/wp-content/themes/mallow/images/banner002.jpg);}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+.-noscript-blocked { -moz-outline-color: red !important; -moz-outline-style: solid !important; -moz-outline-width: 1px !important; background: white url("chrome://noscript/skin/icon32.png") no-repeat left top !important; opacity: 0.6 !important; cursor: pointer !important; margin-top: 0px !important; margin-bottom: 0px !important }
+
+
+/**** LINK-tag style sheet iac_style.css ****/
+
+/************************************************
+ *	AJAX Comments			        *
+ ************************************************/
+.ajax-comments-wrapper {
+	border: 1px solid #D0D0D0;
+	background: #F5F5F5;
+	clear: both;
+	display: block;
+	margin: 0px;
+	display: block;
+	/*-moz-border-radius: 10px;*/
+}
+.ajax-comment, .ajax-comment-alt {
+	position: relative;
+	display: block;
+	margin: 5px 5px 10px 5px;
+	padding: 0 0 1px 0;
+	clear: both;
+	font-family: lucida sans unicode, lucida grande, verdana, helvetica, arial, sans-serif;
+	color: #222;
+	font-size: small;
+	font-weight: normal;
+	line-height: 120%;
+	border: 1px solid #D0D0D0;
+	/*-moz-border-radius: 10px;*/
+	overflow: hidden;
+}
+.ajax-comment-header, .ajax-comment-header-alt {
+	top: 1px;
+	width: 100%;
+	position: relative;
+	color: #515151;
+	font-family: tahoma, verdana, helvetica, arial, sans-serif;
+	font-size: x-small;
+	padding: 1px 1px 1px -1px;
+	margin: 0;
+	clear: both;
+	/*-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;*/
+}
+.ajax-comment-header {
+	background: #E5E1C8;
+}
+.ajax-comment {
+	background: #F1EDD2;
+}
+.ajax-comment-header-alt {
+	background: #ACB3C0;
+}
+.ajax-comment-alt {
+	background: #CACFD8;
+}
+.ajax-comment-header a, .ajax-comment-header-alt a {	
+	color: #BB4444;
+}
+.ajax-comment-header a:hover, .ajax-comment-header-alt a:hover {
+	text-decoration: none;
+	color: #3C657B;
+}
+.ajax-comment-info {
+	color: #666666;
+	float: right;
+	margin-right: 11px;
+}
+.ajax-comment-author {
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 1.0em;
+}
+.ajax-comment-text {
+	padding: 5px;
+	margin: 0;
+	font-size: 8pt;
+	line-height: 12pt;
+	clear: both;
+	display: block;
+}
+.ajax-options a{
+	color: #BB4444;
+	text-decoration: none;
+	margin-left: 15px;
+}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+#topimage {background-image:url(http://burnkit2600.com/gear/wp-content/themes/mallow/images/banner003.jpg);}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+.-noscript-blocked { -moz-outline-color: red !important; -moz-outline-style: solid !important; -moz-outline-width: 1px !important; background: white url("chrome://noscript/skin/icon32.png") no-repeat left top !important; opacity: 0.6 !important; cursor: pointer !important; margin-top: 0px !important; margin-bottom: 0px !important }
+
+
+/**** LINK-tag style sheet iac_style.css ****/
+
+/************************************************
+ *	AJAX Comments			        *
+ ************************************************/
+.ajax-comments-wrapper {
+	border: 1px solid #D0D0D0;
+	background: #F5F5F5;
+	clear: both;
+	display: block;
+	margin: 0px;
+	display: block;
+	/*-moz-border-radius: 10px;*/
+}
+.ajax-comment, .ajax-comment-alt {
+	position: relative;
+	display: block;
+	margin: 5px 5px 10px 5px;
+	padding: 0 0 1px 0;
+	clear: both;
+	font-family: lucida sans unicode, lucida grande, verdana, helvetica, arial, sans-serif;
+	color: #222;
+	font-size: small;
+	font-weight: normal;
+	line-height: 120%;
+	border: 1px solid #D0D0D0;
+	/*-moz-border-radius: 10px;*/
+	overflow: hidden;
+}
+.ajax-comment-header, .ajax-comment-header-alt {
+	top: 1px;
+	width: 100%;
+	position: relative;
+	color: #515151;
+	font-family: tahoma, verdana, helvetica, arial, sans-serif;
+	font-size: x-small;
+	padding: 1px 1px 1px -1px;
+	margin: 0;
+	clear: both;
+	/*-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;*/
+}
+.ajax-comment-header {
+	background: #E5E1C8;
+}
+.ajax-comment {
+	background: #F1EDD2;
+}
+.ajax-comment-header-alt {
+	background: #ACB3C0;
+}
+.ajax-comment-alt {
+	background: #CACFD8;
+}
+.ajax-comment-header a, .ajax-comment-header-alt a {	
+	color: #BB4444;
+}
+.ajax-comment-header a:hover, .ajax-comment-header-alt a:hover {
+	text-decoration: none;
+	color: #3C657B;
+}
+.ajax-comment-info {
+	color: #666666;
+	float: right;
+	margin-right: 11px;
+}
+.ajax-comment-author {
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 1.0em;
+}
+.ajax-comment-text {
+	padding: 5px;
+	margin: 0;
+	font-size: 8pt;
+	line-height: 12pt;
+	clear: both;
+	display: block;
+}
+.ajax-options a{
+	color: #BB4444;
+	text-decoration: none;
+	margin-left: 15px;
+}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+#topimage {background-image:url(http://burnkit2600.com/gear/wp-content/themes/mallow/images/banner002.jpg);}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+.-noscript-blocked { -moz-outline-color: red !important; -moz-outline-style: solid !important; -moz-outline-width: 1px !important; background: white url("chrome://noscript/skin/icon32.png") no-repeat left top !important; opacity: 0.6 !important; cursor: pointer !important; margin-top: 0px !important; margin-bottom: 0px !important }
+
+
+/**** LINK-tag style sheet iac_style.css ****/
+
+/************************************************
+ *	AJAX Comments			        *
+ ************************************************/
+.ajax-comments-wrapper {
+	border: 1px solid #D0D0D0;
+	background: #F5F5F5;
+	clear: both;
+	display: block;
+	margin: 0px;
+	display: block;
+	/*-moz-border-radius: 10px;*/
+}
+.ajax-comment, .ajax-comment-alt {
+	position: relative;
+	display: block;
+	margin: 5px 5px 10px 5px;
+	padding: 0 0 1px 0;
+	clear: both;
+	font-family: lucida sans unicode, lucida grande, verdana, helvetica, arial, sans-serif;
+	color: #222;
+	font-size: small;
+	font-weight: normal;
+	line-height: 120%;
+	border: 1px solid #D0D0D0;
+	/*-moz-border-radius: 10px;*/
+	overflow: hidden;
+}
+.ajax-comment-header, .ajax-comment-header-alt {
+	top: 1px;
+	width: 100%;
+	position: relative;
+	color: #515151;
+	font-family: tahoma, verdana, helvetica, arial, sans-serif;
+	font-size: x-small;
+	padding: 1px 1px 1px -1px;
+	margin: 0;
+	clear: both;
+	/*-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;*/
+}
+.ajax-comment-header {
+	background: #E5E1C8;
+}
+.ajax-comment {
+	background: #F1EDD2;
+}
+.ajax-comment-header-alt {
+	background: #ACB3C0;
+}
+.ajax-comment-alt {
+	background: #CACFD8;
+}
+.ajax-comment-header a, .ajax-comment-header-alt a {	
+	color: #BB4444;
+}
+.ajax-comment-header a:hover, .ajax-comment-header-alt a:hover {
+	text-decoration: none;
+	color: #3C657B;
+}
+.ajax-comment-info {
+	color: #666666;
+	float: right;
+	margin-right: 11px;
+}
+.ajax-comment-author {
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 1.0em;
+}
+.ajax-comment-text {
+	padding: 5px;
+	margin: 0;
+	font-size: 8pt;
+	line-height: 12pt;
+	clear: both;
+	display: block;
+}
+.ajax-options a{
+	color: #BB4444;
+	text-decoration: none;
+	margin-left: 15px;
+}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+#topimage {background-image:url(http://burnkit2600.com/gear/wp-content/themes/mallow/images/banner003.jpg);}
+
+
+/**** LINK-tag style sheet iac_style.css ****/
+
+/************************************************
+ *	AJAX Comments			        *
+ ************************************************/
+.ajax-comments-wrapper {
+	border: 1px solid #D0D0D0;
+	background: #F5F5F5;
+	clear: both;
+	display: block;
+	margin: 0px;
+	display: block;
+	/*-moz-border-radius: 10px;*/
+}
+.ajax-comment, .ajax-comment-alt {
+	position: relative;
+	display: block;
+	margin: 5px 5px 10px 5px;
+	padding: 0 0 1px 0;
+	clear: both;
+	font-family: lucida sans unicode, lucida grande, verdana, helvetica, arial, sans-serif;
+	color: #222;
+	font-size: small;
+	font-weight: normal;
+	line-height: 120%;
+	border: 1px solid #D0D0D0;
+	/*-moz-border-radius: 10px;*/
+	overflow: hidden;
+}
+.ajax-comment-header, .ajax-comment-header-alt {
+	top: 1px;
+	width: 100%;
+	position: relative;
+	color: #515151;
+	font-family: tahoma, verdana, helvetica, arial, sans-serif;
+	font-size: x-small;
+	padding: 1px 1px 1px -1px;
+	margin: 0;
+	clear: both;
+	/*-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;*/
+}
+.ajax-comment-header {
+	background: #E5E1C8;
+}
+.ajax-comment {
+	background: #F1EDD2;
+}
+.ajax-comment-header-alt {
+	background: #ACB3C0;
+}
+.ajax-comment-alt {
+	background: #CACFD8;
+}
+.ajax-comment-header a, .ajax-comment-header-alt a {	
+	color: #BB4444;
+}
+.ajax-comment-header a:hover, .ajax-comment-header-alt a:hover {
+	text-decoration: none;
+	color: #3C657B;
+}
+.ajax-comment-info {
+	color: #666666;
+	float: right;
+	margin-right: 11px;
+}
+.ajax-comment-author {
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 1.0em;
+}
+.ajax-comment-text {
+	padding: 5px;
+	margin: 0;
+	font-size: 8pt;
+	line-height: 12pt;
+	clear: both;
+	display: block;
+}
+.ajax-options a{
+	color: #BB4444;
+	text-decoration: none;
+	margin-left: 15px;
+}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+#topimage {background-image:url(http://burnkit2600.com/gear/wp-content/themes/mallow/images/banner003.jpg);}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+.-noscript-blocked { -moz-outline-color: red !important; -moz-outline-style: solid !important; -moz-outline-width: 1px !important; background: white url("chrome://noscript/skin/icon32.png") no-repeat left top !important; opacity: 0.6 !important; cursor: pointer !important; margin-top: 0px !important; margin-bottom: 0px !important }
+
+
+/**** LINK-tag style sheet iac_style.css ****/
+
+/************************************************
+ *	AJAX Comments			        *
+ ************************************************/
+.ajax-comments-wrapper {
+	border: 1px solid #D0D0D0;
+	background: #F5F5F5;
+	clear: both;
+	display: block;
+	margin: 0px;
+	display: block;
+	/*-moz-border-radius: 10px;*/
+}
+.ajax-comment, .ajax-comment-alt {
+	position: relative;
+	display: block;
+	margin: 5px 5px 10px 5px;
+	padding: 0 0 1px 0;
+	clear: both;
+	font-family: lucida sans unicode, lucida grande, verdana, helvetica, arial, sans-serif;
+	color: #222;
+	font-size: small;
+	font-weight: normal;
+	line-height: 120%;
+	border: 1px solid #D0D0D0;
+	/*-moz-border-radius: 10px;*/
+	overflow: hidden;
+}
+.ajax-comment-header, .ajax-comment-header-alt {
+	top: 1px;
+	width: 100%;
+	position: relative;
+	color: #515151;
+	font-family: tahoma, verdana, helvetica, arial, sans-serif;
+	font-size: x-small;
+	padding: 1px 1px 1px -1px;
+	margin: 0;
+	clear: both;
+	/*-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;*/
+}
+.ajax-comment-header {
+	background: #E5E1C8;
+}
+.ajax-comment {
+	background: #F1EDD2;
+}
+.ajax-comment-header-alt {
+	background: #ACB3C0;
+}
+.ajax-comment-alt {
+	background: #CACFD8;
+}
+.ajax-comment-header a, .ajax-comment-header-alt a {	
+	color: #BB4444;
+}
+.ajax-comment-header a:hover, .ajax-comment-header-alt a:hover {
+	text-decoration: none;
+	color: #3C657B;
+}
+.ajax-comment-info {
+	color: #666666;
+	float: right;
+	margin-right: 11px;
+}
+.ajax-comment-author {
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 1.0em;
+}
+.ajax-comment-text {
+	padding: 5px;
+	margin: 0;
+	font-size: 8pt;
+	line-height: 12pt;
+	clear: both;
+	display: block;
+}
+.ajax-options a{
+	color: #BB4444;
+	text-decoration: none;
+	margin-left: 15px;
+}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+#topimage {background-image:url(http://burnkit2600.com/gear/wp-content/themes/mallow/images/banner003.jpg);}
+
+
+/**** Inline STYLE-tag style sheet ****/
+
+.-noscript-blocked { -moz-outline-color: red !important; -moz-outline-style: solid !important; -moz-outline-width: 1px !important; background: white url("chrome://noscript/skin/icon32.png") no-repeat left top !important; opacity: 0.6 !important; cursor: pointer !important; margin-top: 0px !important; margin-bottom: 0px !important }
+
+

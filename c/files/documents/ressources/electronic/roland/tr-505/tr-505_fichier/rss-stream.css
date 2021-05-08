@@ -1,0 +1,22 @@
+#RSS_Stream table{border-collapse:collapse; width:100%}
+#RSS_Stream table td{}
+
+.RSSS_blog { background: #F5F5F5; color: #455; }
+.RSSS_delicious { background: #ECEDEE; color: #555; }
+.RSSS_facebook { background: #B3C4DF; color: #555; }
+.RSSS_flickr { background: #fde; color: #645; }
+.RSSS_lastfm { background: #fee;	color: #655; }
+.RSSS_pownce { background: #C1FFC1; color: #555; }
+.RSSS_twitter { background: #CAE1FF; color: #565; }
+.RSSS_jaiku { background: #E5F5F6; color: #565; } 
+.RSSS_plurk { background: #FFBF9C; color: #565; }
+.RSSS_generic{}
+.RSSS_photobucket{}
+
+.RSSS_hour{text-align:center; padding:0.5em; color:#777}
+.RSSS_credits{text-align:right; font-size:smaller}
+.RSSS_date{text-align:left; margin-bottom:5px}
+.RSSS_icon{width:5%}
+.RSSS_msg{ padding:0 1em}
+
+img{border:0px none}

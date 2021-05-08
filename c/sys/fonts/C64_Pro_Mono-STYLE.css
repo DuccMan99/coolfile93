@@ -1,0 +1,11 @@
+@font-face {
+	font-family: "C64_Pro_Mono-STYLE";
+  src: url('C64_TrueType_v1.2-STYLE/C64_Pro_Mono-STYLE.eot');
+  src: url('C64_TrueType_v1.2-STYLE/C64_Pro_Mono-STYLE.eot?#iefix') format('embedded-opentype'),
+       url("C64_TrueType_v1.2-STYLE/C64_Pro_Mono-STYLE.woff2") format("woff2"),
+       url("C64_TrueType_v1.2-STYLE/C64_Pro_Mono-STYLE.woff") format("woff"),
+       url("C64_TrueType_v1.2-STYLE/C64_Pro_Mono-STYLE.ttf") format("truetype"),
+       url('C64_TrueType_v1.2-STYLE/C64_Pro_Mono-STYLE.svg#C64ProMono') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

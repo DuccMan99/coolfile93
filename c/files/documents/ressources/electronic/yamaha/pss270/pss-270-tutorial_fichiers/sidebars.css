@@ -1,0 +1,52 @@
+
+/*---:[ sidebar headings ]:---*/
+
+.sidebar h3 { font-size: 1em; line-height: 1.385em; margin-bottom: 0.615em; font-variant: small-caps; letter-spacing: 2px; }
+
+
+
+/*---:[ sidebar styles ]:---*/
+
+.sidebar { }
+
+ul.sidebar_list { list-style: none; }
+
+	li.widget { font-size: 1.3em; line-height: 1.385em; margin-bottom: 2.769em; }
+	
+	li.tag_cloud { line-height: 1.692em; }
+
+		li.widget p { margin-bottom: 1.231em; }
+
+			li.widget ul li { margin-bottom: 0.692em; }
+
+				li.widget li ul { margin: 0.692em 0 0 1.385em; }
+
+	/*---:[ google custom search ]:---*/
+
+	li.thesis_widget_google_cse form input[type="text"] { padding: 0.308em; }
+
+	li.thesis_widget_google_cse form input[type="submit"] { font-size: 1em; margin-top: 0.462em; padding: 0.154em 0.231em; }
+	
+	/*---:[ calendar widget ]:---*/
+
+	#calendar_wrap a, #calendar_wrap a:visited { padding: 0.077em; }
+
+	#calendar_wrap a:hover { padding: 0.077em; }
+
+		table#wp-calendar caption { font-size: 0.846em; line-height: 2em; }
+
+		table#wp-calendar th { font-size: 0.846em; line-height: 2em; padding-top: 0.091em; }
+
+		table#wp-calendar td { font-size: 1em; line-height: 1.692em; }
+
+		table#wp-calendar td#next, table#wp-calendar td#prev { font-size: 0.846em; line-height: 2em; }
+
+		table#wp-calendar td#next { padding-right: 0.545em; }
+
+		table#wp-calendar td#prev { padding-left: 0.545em; }
+
+/*---:[ sidebar form inputs ]:---*/
+
+.sidebar .text_input { padding: 0.308em; }
+
+.sidebar input[type="text"] { }

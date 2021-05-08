@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Refused to display in iframe</title>
+  <link rel="stylesheet" href="/c/system42.css">
+  <link rel="stylesheet" href="/c/skins/w93.css" id="w93_skin">
+
+  <style>
+    /*
+    body, html {background: #003366; background:#003366 url(stars.gif) repeat; color:#fff; height: 100%; padding: 0; margin: 0;}
+*/
+    body, html {background: url(nyancathead.gif) center 32% no-repeat; color:#333; height: 100%; padding: 0; margin: 0;}
+
+    a, a:visited {
+      color: #FF9AFE;
+    }
+
+    div {
+      display: -webkit-flexbox;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+    }
+
+    section {
+      width: 70%;
+      margin: auto;
+      position: relative;
+    }
+
+    #url, #go {
+      font-size: 16px;
+      line-height: 28px;
+      height: 48px;
+      padding: 0 10px;
+      border: 0 none;
+      margin: 0;
+    }
+    #url {
+      width: 100%;
+      box-shadow: 8px 0 #000, -8px 0 #000, 0 8px #000, 0 -8px #000;
+      /*padding-right: 62px;*/
+      right: -6px;
+    }
+    #go {
+      box-shadow: 0 0 transparent;
+      text-shadow: 0 0 transparent;
+      position: absolute;
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <section><input autofocus placeholder="search some cats..." type="text" id="url"><button id="go">GO</button></section>
+</div>
+
+<script>
+
+  var url = document.getElementById('url'),
+  go = document.getElementById('go');
+
+  function nyan() {
+    if (url.value) {
+      window.parent.$exe('catex https://duckduckgo.com/?q=' + encodeURI(url.value));
+    }
+
+  }
+
+  go.onclick = function() {
+    nyan()
+  }
+  url.onkeyup = function(e) {
+    e = e || window.event;
+    if (typeof e.which !== 'number') e.which = e.keyCode; // http://stackoverflow.com/a/4285801
+    if (e.which == 13) {
+      nyan()
+    }
+  }
+
+
+</script>
+</body>
+</html>

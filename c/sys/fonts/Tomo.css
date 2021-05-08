@@ -1,0 +1,10 @@
+@font-face {
+  font-family: '_tomo';
+  src: url('/c/sys/fonts/tomo/tomo.eot');
+  src: url('/c/sys/fonts/tomo/tomo.eot?#iefix') format('embedded-opentype'),
+       url('/c/sys/fonts/tomo/tomo.woff2') format('woff2'),
+       url('/c/sys/fonts/tomo/tomo.woff') format('woff'),
+       url('/c/sys/fonts/tomo/tomo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

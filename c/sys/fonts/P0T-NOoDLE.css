@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'P0T-NOoDLE';
+  src: url('t!s-af10/eot/P0T-NOoDLE_v1.0.eot');
+  src: url('t!s-af10/eot/P0T-NOoDLE_v1.0.eot?#iefix') format('embedded-opentype'),
+       url('t!s-af10/woff/P0T-NOoDLE_v1.0.woff2') format('woff2'),
+       url('t!s-af10/woff/P0T-NOoDLE_v1.0.woff') format('woff'),
+       url('t!s-af10/ttf/P0T-NOoDLE_v1.0.ttf') format('truetype'),
+       url('t!s-af10/svg/P0T-NOoDLE_v1.0.svg#p0t-noodleregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

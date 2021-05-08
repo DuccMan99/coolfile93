@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'px_sans_nouveaux';
+  src: url('px_sans_nouveaux/px_sans_nouveaux.eot');
+  src: url('px_sans_nouveaux/px_sans_nouveaux.eot?#iefix') format('embedded-opentype'),
+       url('px_sans_nouveaux/px_sans_nouveaux.woff2') format('woff2'),
+       url('px_sans_nouveaux/px_sans_nouveaux.woff') format('woff'),
+       url('px_sans_nouveaux/px_sans_nouveaux.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

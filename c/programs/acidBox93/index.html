@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+
+<!--
+            ttt######ttt
+         t##""**********##t
+       t#JJ*******"##"****#Mt
+      MJJJ********MMMM#***MMMM
+     MJJJ"********MMMMM#**"MMMM
+    t#JJJ*********"MMMMM***"MMMt
+    MJJJJ**********"#MM#****"##M
+    MJJJJ**********************M
+    t#JJJ"******MM************#t
+     MJJJJ******"#M#*********#M
+ ''!!!MJJJJ*******"#M##***##MM
+!!!!!!!$#JJJ"********"######t
+ '!!!!!!!$##JJJ""*******##t
+     ''''!!!$$$######ttt
+ -->
+
+<html>
+<head>
+
+<script src="/c/libs/codef/codef_core.js"></script>
+<script src="/c/libs/codef/codef_starfield.js"></script>
+<script src="/c/libs/codef/codef_gradient.js"></script>
+<script src="/c/libs/codef/codef_scrolltext.js"></script>
+<script src="/c/libs/codef/codef_fx.js"></script>
+<script src="/c/libs/codef/codef_3d.js"></script>
+<script src="/c/libs/howler.min.js"></script>
+
+<script>
+
+
+
+
+var mycanvas;
+var my2dstarfield;
+var my2dstarsparams=[
+		{nb:30, speedy:2, speedx:-1, params:0},
+		{nb:30, speedy:0.8, speedx:0.8, params:1},
+		{nb:30, speedy:0.6, speedx:0.6, params:2},
+              ];
+
+var bubble = new Array();
+//bubble[0]=new image('data/zip.gif');
+bubble[0]=new image('data/cursor.png');
+bubble[1]=new image('data/file16.png');
+bubble[2]=new image('data/file.png');
+
+var mygrad;
+var mygradcolor=
+	[
+	{color: 'rgb(255,0,255)' ,  offset:0},
+	{color: 'rgb(0,255,255)', offset:0.25},
+	{color: 'rgb(255,0,255)' ,  offset:0.5},
+	{color: 'rgb(0,255,255)', offset:0.75},
+	{color: 'rgb(255,0,255)' ,  offset:1}
+
+	];
+
+var myfont = new image('data/font.png');
+var mycanvas;
+var myscrolltext;
+
+
+var myscrollparam=[
+                   {myvalue: 0, amp: 125, inc:0.2, offset: -0.04},
+                  ];
+
+
+var myimage = new image('data/logo.png');
+var mycanvas;
+var myoffscreencanvas;
+var myfx;
+var myfxparam=[
+		{value: 0, amp: 30, inc:0.03, offset: -0.05},
+		{value: 0, amp: 30, inc:0.01, offset:  0.08}
+	      ];
+
+
+var my3d;
+
+var myobj = new Array();
+var myobjvert = new Array();
+myobjvert=[
+        {x:-300, y:0, z: 300},
+        {x: 300, y:0, z: 300},
+        {x: 300, y:0, z: -300},
+        {x:-300, y:0, z: -300},
+        {x:0, y: 400, z: 0},
+        {x:0, y:-400, z: 0},
+       ];
+
+myobj=[
+        {p1:1, p2:4, p3:0, params:new MeshBasicMaterial({ color: 0x00FFFF, opacity:0.7})},
+        {p1:2, p2:4, p3:1, params:new MeshBasicMaterial({ color: 0xeeeeee, opacity:0.7})},
+        {p1:3, p2:4, p3:2, params:new MeshBasicMaterial({ color: 0xFF00FF, opacity:0.7})},
+        {p1:0, p2:4, p3:3, params:new MeshBasicMaterial({ color: 0xeeeeee, opacity:0.7})},
+        {p1:0, p2:5, p3:1, params:new MeshBasicMaterial({ color: 0xeeeeee, opacity:0.7})},
+        {p1:1, p2:5, p3:2, params:new MeshBasicMaterial({ color: 0x00FFFF, opacity:0.7})},
+        {p1:2, p2:5, p3:3, params:new MeshBasicMaterial({ color: 0xeeeeee, opacity:0.7})},
+        {p1:3, p2:5, p3:0, params:new MeshBasicMaterial({ color: 0xFF00FF, opacity:0.7})},
+      ];
+
+
+
+
+
+function init(){
+
+	window.addEventListener('resize', onWindowResize, false);
+
+	mycanvas=new canvas(window.innerWidth,window.innerHeight,"main");
+	my2dstarfield=new starfield2D_img(mycanvas,bubble,my2dstarsparams);
+	mygrad=new grad(mycanvas,mygradcolor);
+
+
+	myfont.initTile(32,32,32);
+	myscrolltext = new scrolltext_horizontal();
+	myscrolltext.scrtxt="HELLO AND WELCOME TO        WINDOWS93        DJ INVISIBLE PINK IS IN DA HOUSE        ZOMBECTRO IZ IN DA HOUSE        JANKENPOOP IZ IN DA HOUSE        DOCTOR HOUSE IZ IN DA...         HOUSE          BIG UP TO DATABIT.ME          :)";
+	myscrolltext.init(mycanvas,myfont,1,myscrollparam);
+
+	myoffscreencanvas=new canvas(208,170);
+	myimage.draw(myoffscreencanvas,0,0);
+	myfx=new FX(myoffscreencanvas,mycanvas,myfxparam);
+
+	my3d=new codef3D(mycanvas, 900, 40, 1, 1600 );
+	my3d.faces(myobjvert,myobj, true, false );
+
+
+	//sound
+
+    //
+
+    var invisiblepink = new Howl({ buffer: true, urls: ['data/DJ_Invisible_Pink_-_Live_Acid_at_Databit.ogg'] });
+    invisiblepink.play();
+
+	go();
+}
+
+function go(){
+
+
+
+
+
+	//mycanvas.fill('#000000');
+	mygrad.drawV();
+
+
+	my3d.group.rotation.x+=0.01;
+	my3d.group.rotation.y+=0.02;
+	my3d.group.rotation.z+=0.04;
+	my3d.draw();
+
+
+	my2dstarfield.draw();
+
+
+
+
+
+
+	myfx.siny(window.innerWidth/2-104,window.innerHeight/2-85);
+
+	myscrolltext.draw(240-16);
+
+	requestAnimFrame( go );
+}
+
+
+function onWindowResize() {
+
+  console.log(mycanvas);
+  //console.log('??');
+  mycanvas.canvas.width=window.innerWidth;
+  mycanvas.canvas.height=window.innerHeight;
+	mycanvas.canvas.style.width=window.innerWidth + 'px';
+	mycanvas.canvas.style.height=window.innerHeight + 'px';
+
+  //console.log('resize');
+
+  //document.location.reload(true);
+}
+
+</script>
+
+
+<style type="text/css" media="screen">
+	body, html{
+		margin:0px;
+		padding: 0px;
+		overflow: hidden;
+	}
+</style>
+
+</head>
+<body onLoad="init();">
+<div id="main"></div>
+</body>
+</html>

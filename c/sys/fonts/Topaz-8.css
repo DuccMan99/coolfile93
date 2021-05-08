@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Topaz-8';
+  src: url('Topaz-8/Topaz-8.eot');
+  src: url('Topaz-8/Topaz-8.eot?#iefix') format('embedded-opentype'),
+       url('Topaz-8/Topaz-8.woff2') format('woff2'),
+       url('Topaz-8/Topaz-8.woff') format('woff'),
+       url('Topaz-8/Topaz-8.ttf') format('truetype'),
+       url('Topaz-8/Topaz-8.svg#topaz-8regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,155 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fswiss\fcharset0 Helvetica;\f2\ftech\fcharset77 Symbol;
+\f3\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;\red0\green30\blue230;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww15820\viewh11140\viewkind0
+\deftab720
+\pard\pardeftab720\sa280
+
+\f0\b\fs36 \cf0 Exploring the Sony XV-T33F \'93Family Studio\'94
+\b0\fs24 \
+\pard\pardeftab720\sa240
+\cf0 I saw this beauty on eBay and it looked so good that even without knowing anything I wanted it. It\'92s a Sony Family Studio XV-T33F which allows text and graphics to be overlaid on to an incoming video. It\'92s all driven through the touch-pad interface.\
+
+\f1 {{\NeXTGraphic xv-t33f.jpg \width13960 \height9080 \noorient
+}¬}
+\f0 \
+When it arrived I rushed to plug it in. All looks good until I start trying to draw \'96 though the smaller buttons work the big touch pad in the middle doesn\'92t do anything! Disaster! A bit of work with Google and my own observation provides a solution \'96 find the connector to the flexible plastic PCB on the daughter board inside \'96 open and then reconnect this. It seems to be a common problem that this connector fails to make proper contact. My machine was missing screws in the base and it looked like it had been opened before \'96 I wander if the problem is not a new one. Anyway with the connector reseated everything is working. It really is a blast from the past with vivid blocky graphics all based around the Japanese {\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/MSX"}}{\fldrslt \cf2 \ul \ulc2 MSX}} standard.\
+Now that everything works it\'92s time to break it again. Andrew Coleman has some really good info on {\field{\*\fldinst{HYPERLINK "http://www.animalsonwheels.co.uk/index.php/2007/03/15/circuit-bending-the-sony-xv-t33f-family-studio/"}}{\fldrslt \cf2 \ul \ulc2 his blog}} about the architecture and bending possibilities of the XV-T33F. I would only argue with one thing in his comments. He identifies the three main chips on the logic board and explains two of them \'96 the third (labelled Sony LH534HSY) he suggests is the video overlay chip. I\'92ve looked at this some more and I am convinced it\'92s not an overlay controller. It appears to be a mask-programmed ROM for the Z80 CPU based on the {\field{\*\fldinst{HYPERLINK "http://cn.alldatasheet.com/view.jsp?Searchword=LH534B00"}}{\fldrslt \cf2 \ul \ulc2 Sharp LH534B00}} IC. The video mixing is done entirely on the second board in the base.\
+\pard\pardeftab720
+
+\f1 \cf0 {{\NeXTGraphic logic-labelled.jpg \width15360 \height11520 \noorient
+}¬}\pard\pardeftab720
+
+\f0 \cf0 \
+\pard\pardeftab720\sa240
+\cf0 Logic board on Sony XV-T33F\
+Andrew suggests various bends by shorting-out different pins on the MSX video chip, and they do indeed work very nicely. As an engineer though I was interested to know why this process doesn\'92t just blow-up the chip. ICs don\'92t normally like having outputs shorted together. It turns out that the MSX chip (and I assume the RAM too) are based on the {\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/NMOS_logic"}}{\fldrslt \cf2 \ul \ulc2 NMOS}} logic family. The interesting property of NMOS for this purpose is that outputs can be pulled to ground by an external component without any damage. Connecting multiple outputs creates a \'93wire NOR\'94 effect. So I think Andrew\'92s bends are safe with one exception. NMOS outputs won\'92t like being pulled up to a hard \'93VCC\'94 as this will put the transistors under a lot of stress. VCC on the MSC chip is on pin 58 which is one of the pins Andrew suggests using for bending. I haven\'92t tried myself (and nor do I plan to), but if you care about your MSX IC I wouldn\'92t try connecting this pin to any of the outputs.\
+\pard\pardeftab720
+
+\f1 \cf0 {{\NeXTGraphic xv-t33f-components.jpg \width11540 \height10520 \noorient
+}¬}\pard\pardeftab720
+
+\f0 \cf0 \
+\pard\pardeftab720\sa240
+\cf0 Main boards on Sony XV-T33F\
+The video mixing board on the XV-T33F isn\'92t very easy to understand. There are a lot of different video processing chips and lots of TTL analog switches that route things in different directions. It appears to operate in different modes depending on whether the input is composite or S-video (the XV-T33F doesn\'92t generate S-video output if it only has composite input). There are a number of buttons and one switch on the board which I assume are there as part of the manufacturing testing process. Pressing the buttons produces various interesting distortions, but it often also breaks the sync in the video signal. I am not sure I will be using that as a bend.\
+One thing that is interesting is trying to work out the signals on the connectors between the two boards. There are two 10 way connectors that are labelled \'93CN4
+\f2 \uc0\u8243 
+\f0  and \'93CN5
+\f2 \uc0\u8243 
+\f0  on the logic board. Pin numbering is shown on the video mixing board. Here is my assessment of the functions:\
+Connector CN4:
+\f3 \uc0\u8232 
+\f0 1: Ground
+\f3 \uc0\u8232 
+\f0 2: Red video from logic board
+\f3 \uc0\u8232 
+\f0 3: Ground
+\f3 \uc0\u8232 
+\f0 4: Dunno
+\f3 \uc0\u8232 
+\f0 5: Dunno
+\f3 \uc0\u8232 
+\f0 6: Dunno
+\f3 \uc0\u8232 
+\f0 7: Overlay on/off \'96 Low = logic board output, High = Video
+\f3 \uc0\u8232 
+\f0 8: Some kind of HSYNC I think
+\f3 \uc0\u8232 
+\f0 9: Dunno
+\f3 \uc0\u8232 
+\f0 10: Dunno\
+Connector CN5:
+\f3 \uc0\u8232 
+\f0 1: Ground
+\f3 \uc0\u8232 
+\f0 2: Dunno
+\f3 \uc0\u8232 
+\f0 3: Dunno
+\f3 \uc0\u8232 
+\f0 4: Power
+\f3 \uc0\u8232 
+\f0 5: Power
+\f3 \uc0\u8232 
+\f0 6: Power
+\f3 \uc0\u8232 
+\f0 7: Ground
+\f3 \uc0\u8232 
+\f0 8: Blue video from logic board
+\f3 \uc0\u8232 
+\f0 9: Ground
+\f3 \uc0\u8232 
+\f0 10: Green video from logic board\
+This information provides some interesting bending possibilities. I plan to cut the R/G/B video signals and the overlay signal to allow these to be modified or processed as they go through.\
+\
+\
+-------------------\
+\
+This project was my first video bending attempt. I\'92ve been on the lookout for a visual/vid machine to work on and my luck was in when I found the SONY xv-t33f.\
+\pard\pardeftab720\sa240
+{\field{\*\fldinst{HYPERLINK "http://animalsonwheels.co.uk/blog/wp-content/uploads/2007/03/sony_xv-t33f.jpg"}}{\fldrslt 
+\f1 \cf0 {{\NeXTGraphic sony_xv-t33f.thumbnail.jpg \width2560 \height1920 \noorient
+}¬}}}\pard\pardeftab720\sa240
+\cf0 \
+The xv-t33f was originally released in the early 90
+\f2 \uc0\u8242 
+\f0 s as a device to add custom titles to home videos. It has a touch tablet for drawing and various touch buttons for colour changing, brush thickness, circle and square drawing, type entry and a menu button which allows the user to select various pre-drawn and rather cheesy shapes (christmas trees and birthday cakes etc). To draw you press a plastic stylus on the tablet whilst holding down the \'91draw\'92 button. Once happy with your artistic efforts you can scroll them across the screen like film titles with a video input playing underneath.\
+After a quick doodle or two I unscrewed the case and started investigating the innards of the machine. Now for an important point. This device is not a battery operated toy, it is mains powered. Touching the wrong part of the internal circuit can result in a serious electric shock. Luckily for us, the mains power is converted inside the machine by a small transformer circuit as pictured below. Avoid going anywhere near this area.\
+\pard\pardeftab720\sa240
+{\field{\*\fldinst{HYPERLINK "http://animalsonwheels.co.uk/blog/wp-content/uploads/2007/03/danger.jpg"}}{\fldrslt 
+\f1 \cf0 {{\NeXTGraphic danger.jpg \width6400 \height4800 \noorient
+}¬}}}\pard\pardeftab720\sa240
+\cf0 \
+Ok, back to the fun stuff. There are a number of IC\'92s inside but my attention was drawn to the three biggest. These are:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0\cf0 {\listtext	\'95	}Yamaha V9938\
+{\listtext	\'95	}Sony LH534HSY\
+{\listtext	\'95	}Zilog Z0840004PSC CPU\
+\pard\pardeftab720\sa240
+\cf0 The sony is probably for video overlay (not all that much info on this one) and the yamaha chip is the heart of painting part of the machine, a \'91video display processor\'92. The zilog chip is the CPU. In my experience of bending, it\'92s generally advisable to avoid fiddling with CPU chips. Doing so nearly aways ends in crashing the machine or locking it up and indeed, this was the case with the zilog. So, my bending efforts were centred around the yamaha VDP or the sony chip.\
+After some probing around I found very little of interest on the sony chip whereas the yamaha was full of glitching and colour changing bend potenial. There were too many bends to be able to mount controls on the existing housing of the xv-t33f so i decided to make an external controller. The list below shows the bendable chip pins I have wired up along with the components I used to connect them. Most of the other pins would result in a reset or lockup. Sony were kind enough to mark the pin numbers on the circuit board so you should find this list easy to use.\
+\pard\pardeftab720\sa240
+{\field{\*\fldinst{HYPERLINK "http://animalsonwheels.co.uk/blog/wp-content/uploads/2007/03/threechips.jpg"}}{\fldrslt 
+\f1 \cf0 {{\NeXTGraphic threechips.thumbnail.jpg \width2560 \height1920 \noorient
+}¬}}}\pard\pardeftab720\sa240
+\cf0 \
+The external controller contains the following components:\
+Six toggle switches connected to the following pins:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls2\ilvl0\cf0 {\listtext	\'95	}pins 4 + 20 \'97 a picture twisting horizontal hold mashup effect\
+{\listtext	\'95	}pins 8 + 23 \'97 pink/orange colour change\
+{\listtext	\'95	}pins 10 + 23 \'97 a black on orange silhouette effect\
+{\listtext	\'95	}pins 19 + 22 \'97 neon green effect\
+{\listtext	\'95	}pins 19 + 23 \'97 neon orange effect\
+{\listtext	\'95	}pins 20 + 22 \'97 purple/red colour change\
+\pard\pardeftab720\sa240
+\cf0 A 20 point patch bay using mini jack sockets connected to the following pins:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls3\ilvl0\cf0 {\listtext	\'95	}41 to 61 \'97 glitching, noise, mirroring and crazy data mashups.\
+\pard\pardeftab720\sa240
+{\field{\*\fldinst{HYPERLINK "http://animalsonwheels.co.uk/blog/wp-content/uploads/2007/03/controller.jpg"}}{\fldrslt 
+\f1 \cf0 {{\NeXTGraphic controller.thumbnail.jpg \width1920 \height2560 \noorient
+}¬}}}\pard\pardeftab720\sa240
+\cf0 \
+I connected the controller to the xv-t33f using a 37-way d-sub plug and socket. This is so the bending controller can be disconnected for ease of transport.\
+\pard\pardeftab720\sa240
+{\field{\*\fldinst{HYPERLINK "http://animalsonwheels.co.uk/blog/wp-content/uploads/2007/03/interface.jpg"}}{\fldrslt 
+\f1 \cf0 {{\NeXTGraphic interface.jpg \width6400 \height4800 \noorient
+}¬}}}\pard\pardeftab720\sa240
+\cf0 \
+If attempting these bends I would suggest you unscrew the circuit board containing the yamaha v9938 chip and solder the wiring to the leg pins on the underside. there is plenty of room for the wires to sit when the board is reseated and the internal wiring looks a little neater when you reasemble the machine.\
+\pard\pardeftab720\sa240
+{\field{\*\fldinst{HYPERLINK "http://animalsonwheels.co.uk/blog/wp-content/uploads/2007/03/internalwires.jpg"}}{\fldrslt 
+\f1 \cf0 {{\NeXTGraphic internalwires.jpg \width6400 \height4800 \noorient
+}¬}}}\pard\pardeftab720\sa240
+\cf0 \
+The xv-t33f is now a fantastic video glitch machine, ideal for live VJ\'92ing or animation creation. Here\'92s an example of some of the effects possible when using the new bend controller:\
+\pard\pardeftab720\sa240
+{\field{\*\fldinst{HYPERLINK "http://www.youtube.com/watch?v=odBDytzF7ko"}}{\fldrslt \cf2 \ul \ulc2 video bending youtube video}}\
+\
+}

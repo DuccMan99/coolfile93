@@ -1,0 +1,39 @@
+
+/*---:[ core layout elements ]:---*/
+
+#container { width: 100em; margin: 0 auto; }
+
+	#page { padding: 2em; }
+
+		#content_box { width: 100%; }
+
+			#content { width: 51.3em; border-width: 0 0.1em 0 0; border-style: solid; border-color: #ddd; float: left; }
+			
+				.post_box { margin: 0 2.2em 0 1.1em; }
+
+			#sidebars { width: 44.6em; float: right; }
+
+				.sidebar { width: 50%; float: left; }
+		
+					#sidebar_1 ul.sidebar_list { padding-right: 1.1em; padding-left: 1.1em; border-width: 0 0.1em 0 0; border-style: dotted; border-color: #ddd; }
+		
+					#sidebar_2 ul.sidebar_list { padding-right: 1em; padding-left: 1.1em; }
+
+
+/*---:[ multimedia box elements ]:---*/
+
+#image_box img.four_by_three { width: 42em; height: 31.5em; }
+
+#image_box img.three_by_four { width: 42em; height: 56em; }
+
+#image_box img.three_by_two { width: 42em; height: 28em; }
+
+#image_box img.two_by_three { width: 42em; height: 63em; }
+
+#image_box img.five_by_four { width: 42em; height: 33.6em; }
+
+#image_box img.four_by_five { width: 42em; height: 52.5em; }
+
+#image_box img.sixteen_by_nine { width: 42em; height: 23.6em; margin: 0 auto; }
+
+#image_box img.nine_by_sixteen { width: 42em; height: 74.7em; margin: 0 auto; }

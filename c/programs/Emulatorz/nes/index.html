@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Embedding Example</title>
+		
+        <script src="js/nes.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/utils.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/cpu.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/controller.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/mappers.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/papu.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/ppu.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/tile.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/rom.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="nes_index.js"></script>
+		<script>window.onload = function(){nes_load_url("nes-canvas", "mm.nes");}</script>
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			#nes-canvas{
+				height: 100%; 
+				width: auto;
+				position: absolute;
+				image-rendering: auto;
+				image-rendering: crisp-edges;
+				image-rendering: pixelated;
+				top: 50%;
+			  	left: 50%;
+			  	transform: translate(-50%, -50%);
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="nes-canvas" width="256" height="240" style=""/>
+		
+		<!--<p>DPad: Arrow keys<br/>Start: Return, Select: Tab<br/>A Button: A, B Button: S</p>-->
+	</body>
+</html>

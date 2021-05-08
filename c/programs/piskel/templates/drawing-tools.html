@@ -1,0 +1,59 @@
+<div id="tool-section">
+    <div id="tools-container" class="tools-wrapper ui_combo">
+      <!-- Drawing tools will be inserted here -->
+    </div>
+    <div class="palette-wrapper">
+      <div
+        class="tool-icon tool-color-picker"
+        title="Primary - left mouse button"
+        rel="tooltip"
+        data-placement="right"
+      >
+        <input id="color-picker" class="color" type="text"/>
+      </div>
+      <div
+        class="tool-icon tool-color-picker"
+        title="Secondary - right mouse button"
+        rel="tooltip"
+        data-placement="right"
+      >
+        <input id="secondary-color-picker" class="secondary-color-picker color" type="text" />
+      </div>
+      <div
+        class="swap-colors-icon"
+        title="Swap colors (X)"
+        rel="tooltip"
+        data-placement="right"
+      ></div>
+    </div>
+
+  <!-- Templates -->
+
+  <!-- Drawing tool icon-button -->
+  <script type="text/template" id="drawingTool-item-template">
+    <button rel="tooltip" data-placement="{{tooltipposition}}" class="{{cssclass}}" data-tool-id="{{toolid}}" title="{{title}}"></button>
+  </script>
+
+  <!-- Drawing tool tooltip container -->
+  <script type="text/template" id="drawingTool-tooltipContainer-template">
+    <div class='tools-tooltip-container'>
+      <div>{{helptext}} <span class='tools-tooltip-shortcut'>{{shortcut}}</span></div>
+      {{descriptors}}
+    </div>
+  </script>
+
+  <!-- Drawing tool tooltip line for modifier -->
+  <script type="text/template" id="drawingTool-tooltipDescriptor-template">
+    <div class='tools-tooltip-descriptor'>
+      <span class='tools-tooltip-descriptor-button'>{{key}}</span>
+      {{description}}
+    </div>
+  </script>
+
+  <!-- Drawing tool tooltip line -->
+  <script type="text/template" id="drawingTool-simpleTooltipDescriptor-template">
+    <div class='tools-tooltip-descriptor'>
+      {{description}}
+    </div>
+  </script>
+</div>

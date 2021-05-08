@@ -1,0 +1,231 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg>
+<metadata>
+Created by FontForge 20090914 at Fri Feb 24 00:27:54 2012
+ By root
+1999&#226;&#128;&#144;2003 / yuji oshimo&#239;&#191;&#191;o / 04@dsg4.com / www.04.jp.org
+</metadata>
+<defs>
+<font id="04b11" horiz-adv-x="1050" >
+  <font-face 
+    font-family="04b11"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="1200"
+    panose-1="0 0 4 0 0 0 0 0 0 0"
+    ascent="900"
+    descent="-300"
+    x-height="600"
+    cap-height="750"
+    bbox="0 -300 1200 900"
+    underline-thickness="20"
+    underline-position="-123"
+    unicode-range="U+0020-U+00A0"
+  />
+<missing-glyph horiz-adv-x="600" 
+d="M75 0v900h450v-900h-450zM150 75h300v750h-300v-750z" />
+    <glyph glyph-name=".notdef" horiz-adv-x="600" 
+d="M75 0v900h450v-900h-450zM150 75h300v750h-300v-750z" />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="600" 
+ />
+    <glyph glyph-name="space" unicode=" " horiz-adv-x="600" 
+ />
+    <glyph glyph-name="exclam" unicode="!" horiz-adv-x="450" 
+d="M300 300v450h-300v-450h300zM300 0v150h-300v-150h300z" />
+    <glyph glyph-name="quotedbl" unicode="&#x22;" horiz-adv-x="900" 
+d="M0 750v-300h300v300h-300zM450 750v-300h300v300h-300z" />
+    <glyph glyph-name="numbersign" unicode="#" horiz-adv-x="1200" 
+d="M900 750h-300v-150h-150v150h-300v-150h-150v-150h150v-150h-150v-150h150v-150h300v150h150v-150h300v150h150v150h-150v150h150v150h-150v150zM450 300v150h150v-150h-150z" />
+    <glyph glyph-name="dollar" unicode="$" horiz-adv-x="1200" 
+d="M1050 600v150h-900v-150h-150v-300h300v-150h-300v-150h900v150h150v300h-300v150h300zM300 600h150v-150h-150v150zM750 150h-150v150h150v-150z" />
+    <glyph glyph-name="percent" unicode="%" 
+d="M300 750h-300v-300h300v300zM750 450v150h150v150h-300v-150h-150v-150h-150v-150h-150v-150h-150v-150h300v150h150v150h150v150h150zM600 0h300v300h-300v-300z" />
+    <glyph glyph-name="ampersand" unicode="&#x26;" 
+d="M600 300v150h150v150h-150v150h-450v-150h-150v-150h150v-150h-150v-150h150v-150h600v150h150v150h-300zM300 600h150v-150h-150v150zM300 150v150h150v-150h-150z" />
+    <glyph glyph-name="quotesingle" unicode="'" horiz-adv-x="450" 
+d="M0 750v-300h300v300h-300z" />
+    <glyph glyph-name="parenleft" unicode="(" horiz-adv-x="600" 
+d="M300 600h150v150h-300v-150h-150v-450h150v-150h300v150h-150v450z" />
+    <glyph glyph-name="parenright" unicode=")" horiz-adv-x="600" 
+d="M150 600h-150v150h300v-150h150v-450h-150v-150h-300v150h150v450z" />
+    <glyph glyph-name="asterisk" unicode="*" horiz-adv-x="900" 
+d="M750 600v150h-300v-150h-150v150h-300v-150h150v-150h-150v-150h300v150h150v-150h300v150h-150v150h150z" />
+    <glyph glyph-name="plus" unicode="+" 
+d="M600 450v300h-300v-300h-300v-150h300v-300h300v300h300v150h-300z" />
+    <glyph glyph-name="comma" unicode="," horiz-adv-x="450" 
+d="M0 300v-450h300v450h-300z" />
+    <glyph glyph-name="hyphen" unicode="-" 
+d="M0 450v-150h900v150h-900z" />
+    <glyph glyph-name="hyphen" unicode="&#x2010;" 
+d="M0 450v-150h900v150h-900z" />
+    <glyph glyph-name="period" unicode="." horiz-adv-x="450" 
+d="M0 300v-300h300v300h-300z" />
+    <glyph glyph-name="slash" unicode="/" 
+d="M600 750v-150h-150v-150h-150v-150h-150v-150h-150v-150h300v150h150v150h150v150h150v150h150v150h-300z" />
+    <glyph glyph-name="zero" unicode="0" 
+d="M750 0v150h150v450h-150v150h-600v-150h-150v-450h150v-150h600zM300 150v450h300v-450h-300z" />
+    <glyph glyph-name="one" unicode="1" horiz-adv-x="600" 
+d="M150 0h300v750h-450v-150h150v-600z" />
+    <glyph glyph-name="two" unicode="2" 
+d="M750 750h-750v-150h600v-150h-450v-150h-150v-300h900v150h-600v150h450v150h150v150h-150v150z" />
+    <glyph glyph-name="three" unicode="3" 
+d="M750 750h-750v-150h600v-150h-450v-150h450v-150h-600v-150h750v150h150v150h-150v150h150v150h-150v150z" />
+    <glyph glyph-name="four" unicode="4" 
+d="M750 750h-450v-150h-150v-150h-150v-300h450v-150h300v150h150v150h-150v450zM300 300v150h150v-150h-150z" />
+    <glyph glyph-name="five" unicode="5" 
+d="M750 0v150h150v150h-150v150h-450v150h600v150h-900v-450h600v-150h-600v-150h750z" />
+    <glyph glyph-name="six" unicode="6" 
+d="M900 300h-150v150h-450v150h450v150h-600v-150h-150v-450h150v-150h600v150h150v150zM300 150v150h300v-150h-300z" />
+    <glyph glyph-name="seven" unicode="7" 
+d="M600 600v-150h-150v-150h-150v-150h-150v-150h300v150h150v150h150v150h150v300h-900v-150h600z" />
+    <glyph glyph-name="eight" unicode="8" 
+d="M750 750h-600v-150h-150v-150h150v-150h-150v-150h150v-150h600v150h150v150h-150v150h150v150h-150v150zM600 150h-300v150h300v-150zM600 450h-300v150h300v-150z" />
+    <glyph glyph-name="nine" unicode="9" 
+d="M750 750h-600v-150h-150v-150h150v-150h450v-150h-450v-150h600v150h150v450h-150v150zM600 450h-300v150h300v-150z" />
+    <glyph glyph-name="colon" unicode=":" horiz-adv-x="450" 
+d="M300 450v150h-300v-150h300zM300 150v150h-300v-150h300z" />
+    <glyph glyph-name="semicolon" unicode=";" horiz-adv-x="450" 
+d="M300 450v150h-300v-150h300zM300 0v300h-300v-300h300z" />
+    <glyph glyph-name="less" unicode="&#x3c;" horiz-adv-x="750" 
+d="M300 750v-150h-150v-150h-150v-150h150v-150h150v-150h300v150h-150v150h-150v150h150v150h150v150h-300z" />
+    <glyph glyph-name="equal" unicode="=" 
+d="M0 600v-150h900v150h-900zM0 300v-150h900v150h-900z" />
+    <glyph glyph-name="greater" unicode="&#x3e;" horiz-adv-x="750" 
+d="M450 450v150h-150v150h-300v-150h150v-150h150v-150h-150v-150h-150v-150h300v150h150v150h150v150h-150z" />
+    <glyph glyph-name="question" unicode="?" 
+d="M750 750h-750v-150h450v-150h-300v-150h600v150h150v150h-150v150zM150 150v-150h300v150h-300z" />
+    <glyph glyph-name="at" unicode="@" horiz-adv-x="1200" 
+d="M900 750h-750v-150h-150v-450h150v-150h750v150h150v450h-150v150zM600 150v150h150v-150h-150zM750 450h-300v-300h-150v450h450v-150z" />
+    <glyph glyph-name="A" unicode="A" 
+d="M300 0v300h300v-300h300v600h-150v150h-600v-150h-150v-600h300zM600 600v-150h-300v150h300z" />
+    <glyph glyph-name="B" unicode="B" 
+d="M750 0v150h150v150h-150v150h150v150h-150v150h-750v-750h750zM600 150h-300v150h300v-150zM600 600v-150h-300v150h300z" />
+    <glyph glyph-name="C" unicode="C" 
+d="M750 750h-600v-150h-150v-450h150v-150h600v150h150v150h-300v-150h-300v450h300v-150h300v150h-150v150z" />
+    <glyph glyph-name="D" unicode="D" 
+d="M750 750h-750v-750h750v150h150v450h-150v150zM600 150h-300v450h300v-450z" />
+    <glyph glyph-name="E" unicode="E" 
+d="M0 750v-750h900v150h-600v150h450v150h-450v150h600v150h-900z" />
+    <glyph glyph-name="F" unicode="F" 
+d="M0 750v-750h300v300h450v150h-450v150h600v150h-900z" />
+    <glyph glyph-name="G" unicode="G" 
+d="M150 0h750v450h-450v-150h150v-150h-300v450h600v150h-750v-150h-150v-450h150v-150z" />
+    <glyph glyph-name="H" unicode="H" 
+d="M300 0v300h300v-300h300v750h-300v-300h-300v300h-300v-750h300z" />
+    <glyph glyph-name="I" unicode="I" horiz-adv-x="750" 
+d="M600 0v150h-150v450h150v150h-600v-150h150v-450h-150v-150h600z" />
+    <glyph glyph-name="J" unicode="J" 
+d="M300 750v-150h300v-450h-300v150h-300v-150h150v-150h600v150h150v600h-600z" />
+    <glyph glyph-name="K" unicode="K" 
+d="M600 750v-150h-150v-150h-150v300h-300v-750h300v300h150v-150h150v-150h300v150h-150v150h-150v150h150v150h150v150h-300z" />
+    <glyph glyph-name="L" unicode="L" 
+d="M900 0v150h-600v600h-300v-750h900z" />
+    <glyph glyph-name="M" unicode="M" horiz-adv-x="1200" 
+d="M300 0v300h150v-150h150v150h150v-300h300v750h-300v-150h-150v-150h-150v150h-150v150h-300v-750h300z" />
+    <glyph glyph-name="N" unicode="N" 
+d="M300 0v300h150v-150h150v-150h300v750h-300v-300h-150v150h-150v150h-300v-750h300z" />
+    <glyph glyph-name="O" unicode="O" 
+d="M750 0v150h150v450h-150v150h-600v-150h-150v-450h150v-150h600zM300 150v450h300v-450h-300z" />
+    <glyph glyph-name="P" unicode="P" 
+d="M750 750h-750v-750h300v150h450v150h150v300h-150v150zM600 300h-300v300h300v-300z" />
+    <glyph glyph-name="Q" unicode="Q" 
+d="M750 750h-600v-150h-150v-450h150v-150h300v-150h300v300h150v450h-150v150zM600 150h-300v450h300v-450z" />
+    <glyph glyph-name="R" unicode="R" 
+d="M750 750h-750v-750h300v150h150v-150h450v150h-150v150h150v300h-150v150zM600 300h-300v300h300v-300z" />
+    <glyph glyph-name="S" unicode="S" 
+d="M900 600v150h-750v-150h-150v-150h150v-150h450v-150h-600v-150h750v150h150v150h-150v150h-450v150h600z" />
+    <glyph glyph-name="T" unicode="T" 
+d="M300 600v-600h300v600h300v150h-900v-150h300z" />
+    <glyph glyph-name="U" unicode="U" 
+d="M600 750v-600h-300v600h-300v-600h150v-150h600v150h150v600h-300z" />
+    <glyph glyph-name="V" unicode="V" 
+d="M600 750v-300h-300v300h-300v-300h150v-300h150v-150h300v150h150v300h150v300h-300z" />
+    <glyph glyph-name="W" unicode="W" horiz-adv-x="1350" 
+d="M900 750v-450h-150v450h-300v-450h-150v450h-300v-600h150v-150h300v150h300v-150h300v150h150v600h-300z" />
+    <glyph glyph-name="X" unicode="X" 
+d="M300 0v150h300v-150h300v150h-150v150h-150v150h150v150h150v150h-300v-150h-300v150h-300v-150h150v-150h150v-150h-150v-150h-150v-150h300z" />
+    <glyph glyph-name="Y" unicode="Y" 
+d="M600 750v-300h-300v300h-300v-300h150v-150h150v-300h300v300h150v150h150v300h-300z" />
+    <glyph glyph-name="Z" unicode="Z" 
+d="M900 0v150h-450v150h150v150h150v150h150v150h-900v-150h450v-150h-150v-150h-150v-150h-150v-150h900z" />
+    <glyph glyph-name="bracketleft" unicode="[" horiz-adv-x="600" 
+d="M450 0v150h-150v450h150v150h-450v-750h450z" />
+    <glyph glyph-name="backslash" unicode="\" 
+d="M750 300h-150v150h-150v150h-150v150h-300v-150h150v-150h150v-150h150v-150h150v-150h300v150h-150v150z" />
+    <glyph glyph-name="bracketright" unicode="]" horiz-adv-x="600" 
+d="M0 0v150h150v450h-150v150h450v-750h-450z" />
+    <glyph glyph-name="asciicircum" unicode="^" horiz-adv-x="750" 
+d="M600 450v150h-150v150h-300v-150h-150v-150h600z" />
+    <glyph glyph-name="underscore" unicode="_" 
+d="M900 0v150h-900v-150h900z" />
+    <glyph glyph-name="grave" unicode="`" horiz-adv-x="600" 
+ />
+    <glyph glyph-name="a" unicode="a" 
+d="M150 600v-150h-150v-300h150v-150h750v600h-750zM300 150v300h300v-300h-300z" />
+    <glyph glyph-name="b" unicode="b" 
+d="M750 0v150h150v300h-150v150h-450v150h-300v-750h750zM600 450v-300h-300v300h300z" />
+    <glyph glyph-name="c" unicode="c" 
+d="M150 600v-150h-150v-300h150v-150h750v150h-600v300h600v150h-750z" />
+    <glyph glyph-name="d" unicode="d" 
+d="M600 750v-150h-450v-150h-150v-300h150v-150h750v750h-300zM300 150v300h300v-300h-300z" />
+    <glyph glyph-name="e" unicode="e" 
+d="M449 301v149h-149v-149h149zM750 450h150v-150h-450v-150h300v-150h-600v150h-150v300h150v150h600v-150z" />
+    <glyph glyph-name="f" unicode="f" 
+d="M900 600v150h-600v-150h-150v-150h-150v-150h150v-300h300v300h450v150h-450v150h450z" />
+    <glyph glyph-name="g" unicode="g" 
+d="M150 600v-150h-150v-300h150v-150h300v-150h-150v-150h300v150h150v150h150v600h-750zM300 150v300h300v-300h-300z" />
+    <glyph glyph-name="h" unicode="h" 
+d="M300 0v450h300v-450h300v450h-150v150h-450v150h-300v-750h300z" />
+    <glyph glyph-name="i" unicode="i" horiz-adv-x="450" 
+d="M0 750v-150h300v150h-300zM0 450v-450h300v450h-300z" />
+    <glyph glyph-name="j" unicode="j" horiz-adv-x="750" 
+d="M296 750v-150h300v150h-300zM296 450v-450h-146v-150h-150v-150h300v150h150v150h146v450h-300z" />
+    <glyph glyph-name="k" unicode="k" 
+d="M900 450v150h-450v-150h-150v300h-300v-750h300v300h150v-150h150v-150h300v150h-150v150h-150v150h300z" />
+    <glyph glyph-name="l" unicode="l" horiz-adv-x="450" 
+d="M0 750v-750h300v750h-300z" />
+    <glyph glyph-name="m" unicode="m" horiz-adv-x="1350" 
+d="M1050 600h-1050v-600h300v450h150v-450h300v450h150v-450h300v450h-150v150z" />
+    <glyph glyph-name="n" unicode="n" 
+d="M750 600h-750v-600h300v450h300v-450h300v450h-150v150z" />
+    <glyph glyph-name="o" unicode="o" 
+d="M750 600h-600v-150h-150v-300h150v-150h600v150h150v300h-150v150zM600 150h-300v300h300v-300z" />
+    <glyph glyph-name="p" unicode="p" 
+d="M750 600h-750v-750h300v150h450v150h150v300h-150v150zM600 150h-300v300h300v-300z" />
+    <glyph glyph-name="q" unicode="q" 
+d="M150 600v-150h-150v-300h150v-150h450v-150h300v750h-750zM300 150v300h300v-300h-300z" />
+    <glyph glyph-name="r" unicode="r" 
+d="M450 600v-150h-150v150h-300v-600h300v300h300v150h300v150h-450z" />
+    <glyph glyph-name="s" unicode="s" 
+d="M150 600v-150h-150v-150h300v-150h-300v-150h750v150h150v150h-300v150h300v150h-750z" />
+    <glyph glyph-name="t" unicode="t" 
+d="M450 600v150h-300v-150h-150v-150h150v-300h150v-150h450v150h150v150h-300v-150h-150v300h450v150h-450z" />
+    <glyph glyph-name="u" unicode="u" 
+d="M600 600v-450h-300v450h-300v-450h150v-150h600v150h150v450h-300z" />
+    <glyph glyph-name="v" unicode="v" 
+d="M600 600v-300h-300v300h-300v-300h150v-150h150v-150h300v150h150v150h150v300h-300z" />
+    <glyph glyph-name="w" unicode="w" horiz-adv-x="1350" 
+d="M900 600v-450h-150v450h-300v-450h-150v450h-300v-600h1050v150h150v450h-300z" />
+    <glyph glyph-name="x" unicode="x" 
+d="M750 450h150v150h-300v-150h-300v150h-300v-150h150v-300h-150v-150h300v150h300v-150h300v150h-150v300z" />
+    <glyph glyph-name="y" unicode="y" 
+d="M600 600v-450h-300v450h-300v-450h150v-150h450v-150h-150v-150h300v150h150v750h-300z" />
+    <glyph glyph-name="z" unicode="z" 
+d="M750 300v150h150v150h-900v-150h300v-150h-150v-150h-150v-150h900v150h-300v150h150z" />
+    <glyph glyph-name="braceleft" unicode="{" horiz-adv-x="750" 
+d="M150 0h450v150h-150v150h-150v150h150v150h150v150h-450v-300h-150v-150h150v-300z" />
+    <glyph glyph-name="bar" unicode="|" horiz-adv-x="450" 
+d="M0 750v-750h300v750h-300z" />
+    <glyph glyph-name="braceright" unicode="}" horiz-adv-x="750" 
+d="M450 0h-450v150h150v150h150v150h-150v150h-150v150h450v-300h150v-150h-150v-300z" />
+    <glyph glyph-name="asciitilde" unicode="~" horiz-adv-x="750" 
+d="M150 750v-150h-150v-150h450v150h150v150h-450z" />
+    <glyph glyph-name="nonbreakingspace" unicode="&#xa0;" horiz-adv-x="750" 
+ />
+    <glyph glyph-name="DEL" horiz-adv-x="600" 
+ />
+  </font>
+</defs></svg>

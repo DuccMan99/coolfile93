@@ -1,0 +1,5 @@
+*.php linguist-detectable=false
+*.csv linguist-detectable=false
+*.vba linguist-detectable=false
+*.svg linguist-detectable=false
+*.bas linguist-detectable=false

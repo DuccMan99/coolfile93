@@ -1,0 +1,1144 @@
+<!-- 
+WWW.WINDOWS93.NET TOUR !!
+JANKENPOPP + HASSAN K. + SYNDROME WPW + ZOMBECTRO
+
+24/02/15 - LILLE (FR) @CCL
+25/02/15 - PARIS (FR) @LA MECANIQUE
+26/02/15 - ROUEN (FR) @3 PIÈCES
+27/02/15 - LYON (FR) @LA TRIPERIE
+28/02/15 - GENÈVE (CH) @L'ÉCURIE
+01/03/15 - LAUSANNE (CH) @PORNO DIESEL
+
+CODE : JANKENPOPP 23/02/15
+MUSIC : VARIOUS VINTAGE FM MODULES 
+FM WEB PLAYER : www.wothke.ch
+GFX : GOGOLE IMAGES 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>WINDOWS 93 TOUR - SIMULATOR</title>
+
+
+    <style>
+        body {
+            font-size: 29px;
+            font-family: Impact, Haettenschweiler, Franklin Gothic Bold, Charcoal, Helvetica Inserat, Bitstream Vera Sans Bold, Arial Black, sans serif;
+            line-height: 29px;
+            text-shadow: 1px 0px 2px rgba(0, 0, 0, 1);
+            background: rgb(181, 189, 200);
+            /* Old browsers */
+            
+            background: -moz-linear-gradient(-45deg, rgba(181, 189, 200, 1) 0%, rgba(130, 140, 149, 1) 36%, rgba(40, 52, 59, 1) 100%);
+            /* FF3.6+ */
+            
+            background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(181, 189, 200, 1)), color-stop(36%, rgba(130, 140, 149, 1)), color-stop(100%, rgba(40, 52, 59, 1)));
+            /* Chrome,Safari4+ */
+            
+            background: -webkit-linear-gradient(-45deg, rgba(181, 189, 200, 1) 0%, rgba(130, 140, 149, 1) 36%, rgba(40, 52, 59, 1) 100%);
+            /* Chrome10+,Safari5.1+ */
+            
+            background: -o-linear-gradient(-45deg, rgba(181, 189, 200, 1) 0%, rgba(130, 140, 149, 1) 36%, rgba(40, 52, 59, 1) 100%);
+            /* Opera 11.10+ */
+            
+            background: -ms-linear-gradient(-45deg, rgba(181, 189, 200, 1) 0%, rgba(130, 140, 149, 1) 36%, rgba(40, 52, 59, 1) 100%);
+            /* IE10+ */
+            
+            background: linear-gradient(135deg, rgba(181, 189, 200, 1) 0%, rgba(130, 140, 149, 1) 36%, rgba(40, 52, 59, 1) 100%);
+            /* W3C */
+            
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b', GradientType=1);
+            /* IE6-9 fallback on horizontal gradient */
+        }
+        
+        #message {
+            margin: 0px;
+            color: #502E5E;
+            text-shadow: 1px 0px 2px rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+        }
+        
+        .menu {
+            position: absolute;
+            bottom: 23px;
+            margin: 0px;
+            font-size: 27px;
+        }
+        
+        .menu span {
+            cursor: pointer;
+            text-shadow: 1px 0px 2px rgba(0, 0, 0, 1);
+        }
+        
+        #menu1 {
+            display: block;
+            background-color: black;
+            padding: 20px;
+            left: 410px;
+            bottom: 20px;
+            -moz-box-shadow: 6px 10px 30px 0px #000000;
+            -webkit-box-shadow: 6px 10px 30px 0px #000000;
+            -o-box-shadow: 6px 10px 30px 0px #000000;
+            box-shadow: 6px 10px 30px 0px #000000;
+            filter: progid: DXImageTransform.Microsoft.Shadow(color=#000000, Direction=149, Strength=30);
+            border: 1px solid #111;
+            border-radius: 5px;
+        }
+        
+        #menu2 {
+            display: none;
+        }
+        
+        #bg {
+            image-rendering: crisp-edges;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: optimize-contrast;
+            -ms-interpolation-mode: nearest-neighbor;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: #000;
+            width: 640px;
+            height: 330px;
+            background-size: cover;
+            -moz-box-shadow: 10px 10px 20px 0px #656565;
+            -webkit-box-shadow: 10px 10px 20px 0px #656565;
+            -o-box-shadow: 10px 10px 20px 0px #656565;
+            box-shadow: 10px 10px 20px 0px #656565;
+            filter: progid: DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=20);
+            background-image: url('bg/wowow.jpg');
+        }
+        
+        #box {
+            padding: 20px;
+            position: absolute;
+            top: 330px;
+            left: 0px;
+            background-color: #444;
+            width: 600px;
+            height: 110px;
+            background: rgb(255, 0, 255);
+            /* Old browsers */
+            
+            background: -moz-linear-gradient(45deg, rgba(255, 0, 255, 1) 0%, rgba(251, 166, 225, 1) 50%, rgba(253, 137, 215, 1) 51%, rgba(0, 255, 255, 1) 100%);
+            /* FF3.6+ */
+            
+            background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255, 0, 255, 1)), color-stop(50%, rgba(251, 166, 225, 1)), color-stop(51%, rgba(253, 137, 215, 1)), color-stop(100%, rgba(0, 255, 255, 1)));
+            /* Chrome,Safari4+ */
+            
+            background: -webkit-linear-gradient(45deg, rgba(255, 0, 255, 1) 0%, rgba(251, 166, 225, 1) 50%, rgba(253, 137, 215, 1) 51%, rgba(0, 255, 255, 1) 100%);
+            /* Chrome10+,Safari5.1+ */
+            
+            background: -o-linear-gradient(45deg, rgba(255, 0, 255, 1) 0%, rgba(251, 166, 225, 1) 50%, rgba(253, 137, 215, 1) 51%, rgba(0, 255, 255, 1) 100%);
+            /* Opera 11.10+ */
+            
+            background: -ms-linear-gradient(45deg, rgba(255, 0, 255, 1) 0%, rgba(251, 166, 225, 1) 50%, rgba(253, 137, 215, 1) 51%, rgba(0, 255, 255, 1) 100%);
+            /* IE10+ */
+            
+            background: linear-gradient(45deg, rgba(255, 0, 255, 1) 0%, rgba(251, 166, 225, 1) 50%, rgba(253, 137, 215, 1) 51%, rgba(0, 255, 255, 1) 100%);
+            /* W3C */
+            
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ff00ff', endColorstr='#00ffff', GradientType=1);
+            /* IE6-9 fallback on horizontal gradient */
+        }
+        
+        #menu1 span.w {
+            color: #87e0fd;
+        }
+        
+        #menu1 span.w:hover {
+            color: #fff;
+        }
+        
+        #menu1 span.m {
+            color: #8692F9;
+        }
+        
+        #menu1 span.m:hover {
+            color: #fff;
+        }
+        
+        #menu1 span.p {
+            color: #C05BFF;
+        }
+        
+        #menu1 span.p:hover {
+            color: #fff;
+        }
+        
+        #menu1 span.a {
+            color: #FF5BF4;
+        }
+        
+        #menu1 span.a:hover {
+            color: #fff;
+        }
+        
+        #menu2 span.ok {
+            color: #87e0fd;
+        }
+        
+        #menu2 span.ok:hover {
+            color: #fff;
+        }
+        
+        .menu span:hover {}
+        
+        #perso {
+            position: absolute;
+            left: 300px;
+            top: 15px;
+            display: none;
+        }
+        
+        #stats {
+            display: none;
+        }
+    </style>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <script src="js/typed.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/web_adplug.js"></script>
+    <script type="text/javascript" src="js/sample_player.js"></script>
+    <script type="text/javascript" src="js/FM.js"></script>
+
+
+    </script>
+
+</head>
+
+
+<body onload="initFM();">
+
+
+    <div>
+        <div id="bg"></div>
+        <div id="perso"><img src="chr/hassanK.png" id="persoImage">
+        </div>
+
+        <div id="box">
+            <p id="message">WELCOME TO "WINDOWS 93
+                <br> TOUR SIMULATOR X.3 VISTA ME"
+                <br>CHOOSE YOUR CHARACTER.</p>
+            <div id="menu1" class="menu">
+                <span class="w">SYNDROME WPW</span>
+                <br>
+                <span class="m">HASSAN K.</span>
+                <br>
+                <span class="p">ZOMBECTRO</span>
+                <br>
+                <span class="a">JANKENPOPP</span>
+            </div>
+            <div id="menu2" class="menu">
+                <span class="ok">OK</span>
+            </div>
+        </div>
+
+
+        <div id="stats" style="position:absolute;z-index:300;color:yellow;">
+            DAY : <span id="day"></span>
+            <br>MANA : <span id="mana">-10</span>
+            <br>GLORY : <span id="glory">666</span>
+            <br>CASH : <span id="cash">0$</span>
+        </div>
+
+
+
+
+
+        <script>
+            if (window.jQuery) {
+
+
+                var day = 0;
+                var bg = "home/lazy.jpg";
+                //var message = "U PLAYZ ON TEH ST@GE, DAMN SON! PEEPOLE LOVED IT! YOU GET FREE BEERS AND 30 BEATCOINS! BRAVO!";
+                var message = ["Day 1", "WELCOME BACK STIVE.<br> WHAT WILL YOU DO TODAY?"];
+                var mana = 20;
+                var glory = 0;
+                var cash = 0;
+                var touring = 0;
+
+                function textTyper() {
+
+                    jQuery(function() {
+
+                        jQuery("#message").typed('reset');
+
+                        jQuery("#message").typed({
+                            strings: message,
+                            typeSpeed: 2,
+                            showCursor: false,
+                            backDelay: 700,
+                            loop: false,
+                            contentType: 'html', // or text
+                            // defaults to false for infinite loop
+                            loopCount: false,
+                            callback: function() {
+                                foo();
+                            },
+                            resetCallback: function() {
+                                newTyped();
+                            }
+                        });
+
+
+
+
+                    });
+
+                    function newTyped() { /* A new typed object */ }
+
+                    function foo() {
+                        console.log("Callback");
+                    }
+
+
+                }
+
+
+
+
+                function draw() {
+
+
+
+
+                    //DRAW
+
+
+                    //day = 0;
+                    document.getElementById("day").textContent = "" + (day + 1);
+
+                    //document.getElementById("message").textContent=""+message;
+
+                    document.getElementById("message").textContent = "" + message;
+                    textTyper();
+
+                    document.getElementById("mana").textContent = "" + mana;
+
+
+                    document.getElementById("glory").textContent = "" + glory;
+
+
+                    document.getElementById("cash").textContent = "" + cash + "$";
+
+                    //bg.src = 'bg/017.png';
+                    //context.drawImage(bg, 0, 0, bg.width, bg.height, 0, 0, canvas.width, canvas.height);
+
+
+                    jQuery('#bg').css('background-image', 'url(bg/' + bg + ')');
+
+                }
+
+
+                //draw();
+
+
+
+                jQuery(".menu span").click(function() {
+
+                    jQuery('#perso').css('display', 'none');
+                    jQuery('#stats').css('display', 'inline');
+
+
+                    //alert(jQuery(this).text());
+
+                    retour = jQuery(this).text();
+
+                    if (retour == "OK") {
+                        day = day + 1;
+
+                        homeBg = [
+                            "home/lazy.jpg", "home/lazy.jpg", "home/lazy.jpg", "home/lazy.jpg", "home/lazy.jpg", "home/lazy.jpg", "home/lazy.jpg", "home/TRAIN1.jpg", "office2.jpg", "office2.jpg", "office2.jpg", "office2.jpg", "office2.jpg", "office2.jpg", "WIN93.png"
+                        ];
+                        bg = homeBg[day];
+                        homeMessage = [
+                            ["day 1", "WELCOME BACK STIVE.<br> WHAT WILL YOU DO TODAY?"],
+                            ["day 2", "WELCOME BACK STIVE.<br> WHAT WILL YOU DO TODAY?"],
+                            ["day 3", "WELCOME BACK STIVE.<br> WHAT WILL YOU DO TODAY?"],
+                            ["day 4", "WELCOME BACK STIVE.<br> WHAT WILL YOU DO TODAY?"],
+                            ["day 5", "WELCOME BACK STIVE.<br> WHAT WILL YOU DO TODAY?"],
+                            ["day 6", "WELCOME BACK STIVE.<br> WHAT WILL YOU DO TODAY?"],
+                            ["day 7", "WELCOME BACK STIVE,<BR>WINDOWS93 TOUR STARTS<br>TOMOROW."],
+                            ["day 8", "SMS :", "''STIVE TAKE a TRAIN TO LILLE<br>we are waiting for u ;)''"],
+                            ["day 9", "I WAS SUPPOSED TO DO<BR>SOMETHING TODAY,<BR>BUT CAN'T REMEMBER WHAT."],
+                            ["day 10", "LAST NIGHT I HAD A HUGE VISION."],
+                            ["day 11", "PROGRESS 25%"],
+                            ["day 12", "PROGRESS 50%"],
+                            ["day 13", "PROGRESS 75%"],
+                            ["day 14", "PROGRESS 99%"],
+                            ["day 15", "WELCOME TO WINDOWS93 SON."]
+                        ];
+                        message = homeMessage[day];
+
+
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                    } else {
+                        jQuery('#menu1').css('display', 'none');
+                        jQuery('#menu2').css('display', 'block');
+                    }
+
+                    if ((retour == "WORK") || (retour == "CREATE MY OWN OPERATING SYSTEM")) {
+
+
+                        if (retour == "CREATE MY OWN OS") {
+                            glory = glory + 54;
+                            cash = cash - 10;
+                        }
+
+                        cash = cash + 10;
+                        mana = mana - 4;
+                        glory = glory - 4;
+                        workBg = [
+                            "work/coding.jpg", "computer.jpg", "computer.jpg", "computer.jpg", "computer.jpg", "computer.jpg", "computer.jpg", "work/coding.jpg", "work/coding.jpg", "work/coding.jpg", "work/coding.jpg", "work/coding.jpg", "work/coding.jpg", "work/coding.jpg", "work/coding.jpg"
+                        ];
+                        bg = workBg[day];
+                        workMessage = [
+
+                            ["Programmers are tools for converting caffeine into code."],
+                            ["YOU WORK ALL DAY ON TEH COMPUTER."],
+                            ["The more I C, the less I see."],
+                            ["Relax, its only ONES and ZEROS !"],
+                            ["YOU FEEL A LITTLE SAD."],
+                            ["YOU FEEL SAD."],
+                            ["AND SO YOU WORK ALL DAY ON TEH COMPUTER. <bR>BUT TOUR TOMOROW ;D"],
+
+                            //OS QUEST
+                            ["YOU CREATE SYS.42"],
+                            ["YOU CREATE TEH KERNEL."],
+                            ["YOU DELETE EVERYTHING AND START AGAIN FROM SCRATCH."],
+                            ["If at first you don't succeed;<br>call it version 1.0"],
+                            ["If brute force doesn't solve your problems, then you aren't using enough."],
+                            ["1f u c4n r34d th1s u r34lly n33d t0 g37 l41d."],
+                            ["My software never has bugs. It just develops random features."],
+                            ["My mind is going."]
+                        ];
+                        message = workMessage[day];
+                    }
+
+                    if (retour == "RANDOM CODING") {
+                        mana = mana + 5;
+                        cash = cash - 1;
+                        bg = "work/coding.jpg";
+                        message = ["YOU CREATE SYS.42"]
+                        jQuery('span.w').text("CREATE MY OWN OPERATING SYSTEM ");
+                    }
+
+
+                    if (retour == "MAKE MUSIC") {
+                        mana = mana + 5;
+                        cash = cash - 1;
+                        bg = "studio2.jpg";
+                        message = ["ALL DAY YOU STAY IN TEH STUDIO TO CREATE DA FATTEST GABBER KICK POSSIBLE."]
+                    }
+
+                    if (retour == "PROCRASTINATE") {
+                        glory = glory + 5;
+                        mana = mana - 1;
+                        cash = cash - 1;
+                        PROCRASTINATIONBg = [
+                            "pr/facebook-girl.jpg", "pr/dolphin.jpg", "pr/copypasta.jpg", "", "", "", "", "", "", "", "", "", "", "", ""
+                        ];
+                        bg = PROCRASTINATIONBg[day];
+                        PROCRASTINATIONMessage = [
+                            ["ALL DAY YOU WRITE PERSONAL PROBLEMS STATUS ON MYSPACE. AFTER POSTING 157 SELFIES YOU GO TO BED."],
+                            ["protip : if no one likes or comments facebook status then delete it."],
+                            ["copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta copypasta"],
+                            ["procrastination : we will find a picture for it later."],
+                            ["procrastination : we will find a picture for it later."],
+                            ["procrastination : we will find a picture for it later."],
+                            ["procrastination : we will find a picture for it later."],
+                            ["procrastination : we will find a picture for it later."],
+                            ["procrastination : we will find a picture for it later."],
+                            ["procrastination : we will find a picture for it later."],
+                            ["procrastination : we will find a picture for it later."],
+                            ["procrastination : we will find a picture for it later."],
+                            ["procrastination : we will find a picture for it later."],
+                            ["procrastination : we will find a picture for it later."],
+                            ["procrastination : we will find a picture for it later."]
+                        ];
+                        message = PROCRASTINATIONMessage[day];
+
+
+                    }
+
+                    if (retour == "TAKE ACID") {
+                        day = day + 1;
+                        cash = cash - 1;
+                        mana = mana + 10;
+                        bg = "acid.gif";
+                        jQuery('span.ok').text("OK");
+                        message = ["toutankhamon loves the acid."]
+                    }
+
+                    if (retour == "DRINK COFFEE") {
+                        mana = mana + 2;
+                        cash = cash - 1;
+                        bg = "coffee.jpg";
+                        message = ["drinking coffee all day, you feel super awake and super nervous. take it easy son."]
+                        jQuery('span.a').text('CIGARETTE');
+                    }
+
+                    if (retour == "CIGARETTE") {
+                        mana = mana + 3;
+                        cash = cash - 1;
+                        bg = "smoke.jpg";
+                        message = ["Smoking so much cigarettes a day makes u sing like a potatoe and reach a new swag level."]
+                        jQuery('span.a').text('SMOKE WEED');
+                    }
+
+                    if (retour == "SMOKE WEED") {
+                        //day = day + 1;
+                        mana = mana + 4;
+                        cash = cash - 1;
+                        bg = "weed.jpg";
+                        message = ["u put some music and roll a spliff. 20 minutes later it's allready tomorow. #peng"]
+                        jQuery('span.a').text('TAKE ACID');
+                    }
+
+                    if ((day == 7) && (retour == "OK")) {
+                        jQuery('span.w').text('TAKE THE TRAIN');
+                        jQuery('span.m').text('AUTO-STOP');
+
+                    }
+
+                    if ((day == 8) && (retour == "OK")) {
+
+                        jQuery('span.m').text('MAKE MUSIC');
+                        jQuery('span.m').css('display', 'NONE');
+                        jQuery('span.w').text('RANDOM CODING');
+                    }
+                    if ((day == 9) && (retour == "OK")) {
+
+                        jQuery('span.m').text('MAKE MUSIC');
+                        jQuery('span.m').css('display', 'NONE');
+                        jQuery('span.w').text('CREATE MY OWN OPERATING SYSTEM');
+                    }
+                    if ((day == 14) && (retour == "OK")) {
+
+                        jQuery('span.m').text('MAKE MUSIC');
+
+                        jQuery('span.w').text('LAUNCH WINDOWS 93');
+                        jQuery('span.m').css('display', 'inline');
+                    }
+
+
+                    if (retour == "TAKE THE TRAIN") {
+                        jQuery('#perso').css('display', 'inline');
+                        if (cash >= 10) {
+                            cash = cash - 10;
+                            bg = "train.jpg";
+                            message = ["as usual train company is on strike, but you succeed to arrive in less than 15 hours @Lille."]
+                            jQuery('span.ok').text('#WIN');
+                            touring = 1;
+                        } else {
+                            bg = "noMoney.jpg";
+                            message = ["u don't have enought cash son.<br>but you can hitch-hike (auto-stop)."]
+                            day = day - 1;
+
+                        }
+                    }
+
+                    // live lille
+                    if (retour == "#WIN") {
+                        jQuery('#perso').css('display', 'inline');
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                        bg = "ccl.jpg";
+                        message = ["welcome back stive.", "you are in CCL @Lille,<bR>you play in 1 hour.<br>What do you want to do ?"];
+
+                        jQuery('span.w').text('SOUND CHECK');
+                        jQuery('span.m').text('DRINK');
+                        jQuery('span.p').text('PROCR@STINATION');
+                        jQuery('span.a').text('TAKE ACID');
+
+                    }
+
+
+                    //LIVEEEEEEEEEEE LILLLE
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+                    //LIVE DRINK
+                    if (retour == "DRINK") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "live.jpg";
+                        mana = mana + 10;
+                        var bonus = (glory + mana);
+                        mana = mana - Math.round(bonus / 4);
+                        glory = glory + Math.round(bonus / 4);
+                        cash = cash + bonus;
+                        jQuery('span.ok').text("GREAT, LET'S GO TO PARIS NOW");
+                        if (bonus < 0) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "drunk as f*ck and perform a catastrophic live show...", "people are making fun of u and share videos of ur set... u instantly become a meme on teh interweb.", "Da boss of DA venue is so angry against you that you have to pay him " + bonus + "$"];
+                        }
+                        if (bonus >= 0) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "Dude even drunk as hell dat live you just perform was pretty OK!", "Da boss of DA venue gives you " + bonus + "$"];
+                        }
+                        if (bonus >= 20) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "Son dat live you played was f***cking massive!<br>#utimate_rave_power_forever!", "you did a good job son, but now you're too drunk to talk with girls", "anyway Da boss of DA venue is proud to give you " + bonus + "$"];
+                        }
+                    }
+                    //LIVE SOUNDCHECK
+                    if (retour == "SOUND CHECK") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "live.jpg";
+                        var bonus = (glory + mana);
+                        mana = mana - Math.round(bonus / 4);
+                        glory = glory + Math.round(bonus / 4);
+                        cash = cash + bonus;
+                        jQuery('span.ok').text("GREAT, LET'S GO TO PARIS NOW");
+                        if (bonus < 0) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "dude your live was such a total catastrophe...<br>everybody went home before you finish...", "Da boss of DA venue is so angry against you that you have to pay him " + bonus + "$"];
+                        }
+                        if (bonus >= 0) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "Dude that live you did was pretty OK!<br>some old trashy guy offer you whisky...", "...but then you have to listen his stories for hours...", "anyway Da boss of DA venue gives you " + bonus + "$"];
+                        }
+                        if (bonus >= 20) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "Son dat live you played was f***cking massive!", "right now you really feel like full power level 9999", "Da boss of DA venue is proud to give you " + bonus + "$"];
+                        }
+                    }
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+
+
+
+                    if (retour == "AUTO-STOP") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "autostop.jpg";
+                        message = ["It's faster to go by feet :-/"];
+                        jQuery('span.ok').text('GO BY FEET ANYWAY');
+
+                    }
+                    if (retour == "GO BY FEET ANYWAY") {
+                        jQuery('#perso').css('display', 'inline');
+                        day = day + 1;
+                        bg = "paris.jpg";
+                        message = ["Day 9 : Dude Lille is so far.", "2 days later you arrive in Paris...<br>tonight you play a show @ la mécanique!"];
+                        jQuery('span.ok').text('#THIS_IS_SPARTA');
+
+                    }
+                    if (retour == "GREAT, LET'S GO TO PARIS NOW") {
+                        day = day + 1;
+                        bg = "hummer.jpg";
+                        message = ["Day 9 : going to paris by car with the guyz,<br>you play at @la mécanique tonight!"];
+                        jQuery('span.ok').text('#THIS_IS_SPARTA');
+
+                    }
+
+                    if ((day == 14) && (jQuery('span.w').text() == 'LAUNCH WINDOWS 93')) {
+
+                        jQuery('span.m').css('display', 'none');
+                        jQuery('span.p').css('display', 'none');
+
+                    }
+
+
+
+                    //LIVEEEEEEEEEEE PARIS
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+                    //LIVE DRINK
+
+                    // live paris
+                    if (retour == "#THIS_IS_SPARTA") {
+                        jQuery('#perso').css('display', 'inline');
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                        bg = "mecanique.jpg";
+                        message = ["welcome back stive.", "you are in @Paris,<bR>you play in 1 hour.<br>What do you want to do ?"];
+
+                        jQuery('span.w').text('BALANCES');
+                        jQuery('span.m').text('GET DRUNK');
+                        jQuery('span.p').text('PROCR@STINATION');
+                        jQuery('span.a').text('TAKE ACID');
+
+                    }
+
+
+                    if (retour == "GET DRUNK") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "live.jpg";
+                        mana = mana + 5;
+                        cash = cash - 5;
+                        var bonus = (glory + mana);
+                        mana = mana - Math.round(bonus / 4);
+                        glory = glory + Math.round(bonus / 4);
+                        cash = cash + bonus;
+                        jQuery('span.ok').text("ROUEN");
+                        if (bonus < 0) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "drunk as f*ck and perform a catastrophic live show...", "people are making fun of u and share videos of ur set... u instantly become a meme on teh interweb.", "Da boss of DA venue is so angry against you that you have to pay him " + bonus + "$"];
+                        }
+                        if (bonus >= 0) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "Dude even drunk as hell dat live you just perform was pretty OK!", "Da boss of DA venue gives you " + bonus + "$"];
+                        }
+                        if (bonus >= 20) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "Son dat live you played was f***cking massive!<br>#utimate_rave_power_forever!", "you did a good job son, but now you're too drunk to talk with girls", "anyway Da boss of DA venue is proud to give you " + bonus + "$"];
+                        }
+                    }
+                    //LIVE SOUNDCHECK
+                    if (retour == "BALANCES") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "live.jpg";
+                        var bonus = (glory + mana);
+                        mana = mana - Math.round(bonus / 4);
+                        glory = glory + Math.round(bonus / 4);
+                        cash = cash + bonus;
+                        jQuery('span.ok').text("ROUEN");
+                        if (bonus < 0) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "dude your live was such a total catastrophe...<br>everybody went home before you finish...", "Da boss of DA venue is so angry against you that you have to pay him " + bonus + "$"];
+                        }
+                        if (bonus >= 0) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "Dude that live you did was pretty OK!<br>some old trashy guy offer you whisky...", "...but then you have to listen his stories for hours...", "anyway Da boss of DA venue gives you " + bonus + "$"];
+                        }
+                        if (bonus >= 20) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "Son dat live you played was f***cking massive!", "Da boss of DA venue is proud to give you " + bonus + "$"];
+                        }
+                    }
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+
+
+                    //LIVEEEEEEEEEEE ROUEN
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+                    //LIVE DRINK
+
+                    // live ROUEN
+                    if (retour == "ROUEN") {
+                        jQuery('#perso').css('display', 'inline');
+                        day = day + 1;
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                        bg = "rouen.png";
+                        message = ["welcome back stive.", "you are in @Rouen,<bR>you play in 1 hour.<br>What do you want to do ?"];
+
+                        jQuery('span.w').text('CHECK SOUND');
+                        jQuery('span.m').text('BEERS');
+                        jQuery('span.p').text('PROCR@STIN@TION');
+                        jQuery('span.a').text('TAKE ACID');
+
+                    }
+
+
+                    if (retour == "BEERS") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "live.jpg";
+                        mana = mana + 5;
+                        cash = cash - 5;
+                        var bonus = (glory + mana);
+                        mana = mana - Math.round(bonus / 4);
+                        glory = glory + Math.round(bonus / 4);
+                        cash = cash + bonus;
+                        jQuery('span.ok').text("LYON");
+                        if (bonus < 0) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "drunk as f*ck and perform a catastrophic live show...", "people are making fun of u and share videos of ur set... u instantly become a meme on teh interweb.", "Da boss of DA venue is so angry against you that you have to pay him " + bonus + "$"];
+                        }
+                        if (bonus >= 0) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "Dude even drunk as hell dat live you just perform was pretty OK!", "Da boss of DA venue gives you " + bonus + "$"];
+                        }
+                        if (bonus >= 20) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "Son dat live you played was f***cking massive!<br>#utimate_rave_power_forever!", "you did a good job son, but now you're too drunk to talk with girls", "anyway Da boss of DA venue is proud to give you " + bonus + "$"];
+                        }
+                    }
+                    //LIVE SOUNDCHECK
+                    if (retour == "CHECK SOUND") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "live.jpg";
+                        var bonus = (glory + mana);
+                        mana = mana - Math.round(bonus / 4);
+                        glory = glory + Math.round(bonus / 4);
+                        cash = cash + bonus;
+                        jQuery('span.ok').text("LYON");
+                        if (bonus < 0) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "dude your live was such a total catastrophe...<br>everybody went home before you finish...", "Da boss of DA venue is so angry against you that you have to pay him " + bonus + "$"];
+                        }
+                        if (bonus >= 0) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "Dude that live you did was pretty OK!<br>some old trashy guy offer you whisky...", "...but then you have to listen his stories for hours...", "anyway Da boss of DA venue gives you " + bonus + "$"];
+                        }
+                        if (bonus >= 20) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "Son dat live you played was f***cking massive!", "Da boss of DA venue is proud to give you " + bonus + "$"];
+                        }
+                    }
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+
+
+
+
+                    //LIVEEEEEEEEEEE LYON
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+                    //LIVE DRINK
+
+                    // live Lyon
+                    if (retour == "LYON") {
+                        jQuery('#perso').css('display', 'inline');
+                        day = day + 1;
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                        bg = "lyon.jpg";
+                        message = ["welcome back stive.", "you are in @Lyon,<bR>you play in 1 hour.<br>What do you want to do ?"];
+
+                        jQuery('span.w').text('LOOK4 MINI-JACK');
+                        jQuery('span.m').text('VODKAZ');
+                        jQuery('span.p').text('PROCRASTIN@TION');
+                        jQuery('span.a').text('TAKE ACID');
+
+                    }
+
+
+                    if ((retour == "PROCRASTIN@TION") || (retour == "PROCR@STIN@TION") || (retour == "PROCR@STINATION")) {
+                        day = day - 1;
+                        bg = ""
+                        message = "procrastination!";
+
+
+                    }
+
+
+
+                    if (retour == "VODKAZ") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "live.jpg";
+                        mana = mana + 5;
+                        cash = cash - 10;
+                        var bonus = (glory + mana);
+                        mana = mana - Math.round(bonus / 4);
+                        glory = glory + Math.round(bonus / 4);
+                        cash = cash + bonus;
+                        jQuery('span.ok').text("GENEVE");
+                        if (bonus < 0) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "drunk as f*ck and perform a catastrophic live show...", "people are making fun of u and share videos of ur set... u instantly become a meme on teh interweb.", "Da boss of DA venue is so angry against you that you have to pay him " + bonus + "$"];
+                        }
+                        if (bonus >= 0) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "Dude even drunk as hell dat live you just perform was pretty OK!", "Da boss of DA venue gives you " + bonus + "$"];
+                        }
+                        if (bonus >= 20) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "Son dat live you played was f***cking massive!<br>#utimate_rave_power_forever!", "you did a good job son, but now you're too drunk to talk with girls", "anyway Da boss of DA venue is proud to give you " + bonus + "$"];
+                        }
+                    }
+                    //LIVE SOUNDCHECK
+                    if (retour == "LOOK4 MINI-JACK") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "live.jpg";
+                        var bonus = (glory + mana);
+                        mana = mana - Math.round(bonus / 4);
+                        glory = glory + Math.round(bonus / 4);
+                        cash = cash + bonus;
+                        jQuery('span.ok').text("GENEVE");
+                        if (bonus < 0) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "dude your live was such a total catastrophe...<br>everybody went home before you finish...", "Da boss of DA venue is so angry against you that you have to pay him " + bonus + "$"];
+                        }
+                        if (bonus >= 0) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "Dude that live you did was pretty OK!<br>some old trashy guy offer you whisky...", "...but then you have to listen his stories for hours...", "anyway Da boss of DA venue gives you " + bonus + "$"];
+                        }
+                        if (bonus >= 20) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "Son dat live you played was f***cking massive!", "Da boss of DA venue is proud to give you " + bonus + "$"];
+                        }
+                    }
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+
+
+
+                    //LIVEEEEEEEEEEE GENEVE
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+                    //LIVE DRINK
+
+                    // live geneve
+                    if (retour == "GENEVE") {
+                        jQuery('#perso').css('display', 'inline');
+                        day = day + 1;
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                        bg = "geneve.jpg";
+                        message = ["welcome back stive.", "you are in @Geneve,<bR>you play in 1 hour.<br>What do you want to do ?"];
+
+                        jQuery('span.w').text('PLUG STUFF');
+                        jQuery('span.m').text('CHAMPAGNE');
+                        jQuery('span.p').text('PROCRASTIN@TION');
+                        jQuery('span.a').text('TAKE ACID');
+
+                    }
+
+
+                    if (retour == "CHAMPAGNE") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "live.jpg";
+                        mana = mana + 5;
+                        cash = cash - 20;
+                        var bonus = (glory + mana);
+                        mana = mana - Math.round(bonus / 4);
+                        glory = glory + Math.round(bonus / 4);
+                        cash = cash + bonus;
+                        jQuery('span.ok').text("LAUSANNE");
+                        if (bonus < 0) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "drunk as f*ck and perform a catastrophic live show...", "people are making fun of u and share videos of ur set... u instantly become a meme on teh interweb.", "Da boss of DA venue is so angry against you that you have to pay him " + bonus + "$"];
+                        }
+                        if (bonus >= 0) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "Dude even drunk as hell dat live you just perform was pretty OK!", "Da boss of DA venue gives you " + bonus + "$"];
+                        }
+                        if (bonus >= 20) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "Son dat live you played was f***cking massive!<br>#utimate_rave_power_forever!", "you did a good job son, but now you're too drunk to talk with girls", "anyway Da boss of DA venue is proud to give you " + bonus + "$"];
+                        }
+                    }
+                    //LIVE SOUNDCHECK
+                    if (retour == "PLUG STUFF") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "live.jpg";
+                        var bonus = (glory + mana);
+                        mana = mana - Math.round(bonus / 4);
+                        glory = glory + Math.round(bonus / 4);
+                        cash = cash + bonus;
+                        jQuery('span.ok').text("LAUSANNE");
+                        if (bonus < 0) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "dude your live was such a total catastrophe...<br>everybody went home before you finish...", "Da boss of DA venue is so angry against you that you have to pay him " + bonus + "$"];
+                        }
+                        if (bonus >= 0) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "Dude that live you did was pretty OK!<br>some old trashy guy offer you whisky...", "...but then you have to listen his stories for hours...", "anyway Da boss of DA venue gives you " + bonus + "$"];
+                        }
+                        if (bonus >= 20) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "Son dat live you played was f***cking massive!", "Da boss of DA venue is proud to give you " + bonus + "$"];
+                        }
+                    }
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+
+
+                    //LIVEEEEEEEEEEE GENEVE
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+                    //LIVE DRINK
+
+                    // live lausanne
+                    if (retour == "LAUSANNE") {
+                        jQuery('#perso').css('display', 'inline');
+                        day = day + 1;
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                        bg = "lausanne.jpg";
+                        message = ["welcome back stive.", "you are in @LAUSANNE,<bR>you play in 1 hour.<br>What do you want to do ?"];
+
+                        jQuery('span.w').text('SET UP');
+                        jQuery('span.m').text('WHISKY');
+                        jQuery('span.p').text('PROCRASTIN@TION');
+                        jQuery('span.a').text('TAKE ACID');
+
+                    }
+
+
+                    if (retour == "WHISKY") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "live.jpg";
+                        cash = cash - 15;
+                        mana = mana + 5;
+                        var bonus = (glory + mana);
+                        mana = mana - Math.round(bonus / 4);
+                        glory = glory + Math.round(bonus / 4);
+                        cash = cash + bonus;
+                        jQuery('span.ok').text("GO BACK HOME");
+                        if (bonus < 0) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "drunk as f*ck and perform a catastrophic live show...", "people are making fun of u and share videos of ur set... u instantly become a meme on teh interweb.", "Da boss of DA venue is so angry against you that you have to pay him " + bonus + "$"];
+                        }
+                        if (bonus >= 0) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "Dude even drunk as hell dat live you just perform was pretty OK!", "Da boss of DA venue gives you " + bonus + "$"];
+                        }
+                        if (bonus >= 20) {
+                            message = ["FIRST GET DRUNK THEN PLAY SHOW...", "Son dat live you played was f***cking massive!<br>#utimate_rave_power_forever!", "you did a good job son, but now you're too drunk to talk with girls", "anyway Da boss of DA venue is proud to give you " + bonus + "$"];
+                        }
+                    }
+                    //LIVE SOUNDCHECK
+                    if (retour == "SET UP") {
+                        jQuery('#perso').css('display', 'inline');
+                        bg = "live.jpg";
+                        var bonus = (glory + mana);
+                        mana = mana - Math.round(bonus / 4);
+                        glory = glory + Math.round(bonus / 4);
+                        cash = cash + bonus;
+                        jQuery('span.ok').text("GO BACK HOME");
+                        if (bonus < 0) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "dude your live was such a total catastrophe...<br>everybody went home before you finish...", "Da boss of DA venue is so angry against you that you have to pay him " + bonus + "$"];
+                        }
+                        if (bonus >= 0) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "Dude that live you did was pretty OK!<br>some old trashy guy offer you whisky...", "...but then you have to listen his stories for hours...", "anyway Da boss of DA venue gives you " + bonus + "$"];
+                        }
+                        if (bonus >= 20) {
+                            message = ["YOU SOUND CHECK THEN PERFORM...", "Son dat live you played was f***cking massive!", "Da boss of DA venue is proud to give you " + bonus + "$"];
+                        }
+                    }
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+                    //LIVEEEEEEEEEEE
+
+
+                    if (retour == "GO BACK HOME") {
+                        day = day + 1;
+                        bg = "office2.jpg";
+                        message = ['welcome back STIVE,<br>feels good to be home again, no?'];
+                        jQuery('span.ok').text("WELL...");
+                    }
+
+
+                    if ((retour == "LAUNCH WINDOWS 93") || (retour == "WELL...")) {
+                        day = day + 1;
+                        bg = "end.jpg";
+                        score = cash + mana + glory;
+                        message2 = '';
+                        if (score <= 0) {
+                            message2 = '#SUCKER'
+                        }
+                        if (score > 0) {
+                            message2 = '#DAMN_SON'
+                        }
+                        if (score > 50) {
+                            message2 = '#not_bad'
+                        }
+                        if (score > 100) {
+                            message2 = '#HERO'
+                        }
+                        if (score > 200) {
+                            message2 = '#SUPER_PENG'
+                        }
+                        if (score > 300) {
+                            message2 = '#LIKE_OTTO'
+                        }
+                        if (score > 500) {
+                            message2 = '#ARE_U_A_WIZARD?'
+                        }
+                        if (score > 9999) {
+                            message2 = '#GOD_MODE_ENGAGED!'
+                        }
+                        message = ['TEH GAME IZ OVER, YOUR SCORE IZ : ' + score + '<br>' + message2];
+                        jQuery('span.ok').text("PLAY AGAIN?");
+
+
+
+                        jQuery('#stats').css('display', 'none');
+                    }
+
+
+                    if (retour == "PLAY AGAIN?") {
+
+
+                        day = 0;
+                        bg = "wowow.jpg";
+                        //var message = "U PLAYZ ON TEH ST@GE, DAMN SON! PEEPOLE LOVED IT! YOU GET FREE BEERS AND 30 BEATCOINS! BRAVO!";
+                        message = ["WELCOME BACK STIVE.<br>CHOOSE YOUR CHARACTER."];
+                        mana = 20;
+                        glory = 0;
+                        cash = 0;
+                        touring = 0;
+                        jQuery('span.w').css('display', 'inline');
+                        jQuery('span.m').css('display', 'inline');
+                        jQuery('span.p').css('display', 'inline');
+                        jQuery('span.a').css('display', 'inline');
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                        jQuery('#stats').css('display', 'none');
+                        jQuery('span.w').text("SYNDROME WPW");
+                        jQuery('span.m').text("HASSAN K.");
+                        jQuery('span.p').text("ZOMBECTRO");
+                        jQuery('span.a').text("JANKENPOPP");
+                        jQuery('span.ok').text("OK");
+
+
+                    }
+
+
+                    //START MENU
+                    if (retour == 'SYNDROME WPW') {
+
+                        jQuery('span.w').text("WORK");
+                        jQuery('span.m').text("MAKE MUSIC");
+                        jQuery('span.p').text("PROCRASTINATE");
+                        jQuery('span.a').text("DRINK COFFEE");
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                        jQuery("#persoImage").attr("src", "chr/syndromeWPW.png");
+                        message = ["day 1", "WELCOME BACK STIVE.<br> WHAT WILL YOU DO TODAY?"];
+                        bg = 'home/lazy.jpg';
+
+
+                    }
+                    if (retour == 'HASSAN K.') {
+                        jQuery('span.w').text("WORK");
+                        jQuery('span.m').text("MAKE MUSIC");
+                        jQuery('span.p').text("PROCRASTINATE");
+                        jQuery('span.a').text("DRINK COFFEE");
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                        jQuery("#persoImage").attr("src", "chr/hassanK.png");
+                        message = ["day 1", "WELCOME BACK STIVE.<br> WHAT WILL YOU DO TODAY?"];
+                        bg = 'home/lazy.jpg';
+                    }
+                    if (retour == 'ZOMBECTRO') {
+                        jQuery('span.w').text("WORK");
+                        jQuery('span.m').text("MAKE MUSIC");
+                        jQuery('span.p').text("PROCRASTINATE");
+                        jQuery('span.a').text("DRINK COFFEE");
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                        jQuery("#persoImage").attr("src", "chr/zomb.png");
+                        message = ["day 1", "WELCOME BACK STIVE.<br> WHAT WILL YOU DO TODAY?"];
+                        bg = 'home/lazy.jpg';
+                    }
+                    if (retour == 'JANKENPOPP') {
+                        jQuery('span.w').text("WORK");
+                        jQuery('span.m').text("MAKE MUSIC");
+                        jQuery('span.p').text("PROCRASTINATE");
+                        jQuery('span.a').text("DRINK COFFEE");
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                        jQuery("#persoImage").attr("src", "chr/janken.png");
+                        message = ["day 1", "WELCOME BACK STIVE.<br> WHAT WILL YOU DO TODAY?"];
+                        bg = 'home/lazy.jpg';
+                    }
+
+
+                    if ((retour == 'OK') && (day >= 15)) {
+                        day = 0;
+                        jQuery('span.w').text("WORK");
+                        jQuery('span.m').text("MAKE MUSIC");
+                        jQuery('span.p').text("PROCRASTINATE");
+                        jQuery('span.a').text("DRINK COFFEE");
+                        jQuery('#menu1').css('display', 'block');
+                        jQuery('#menu2').css('display', 'none');
+                        jQuery('span.m').css('display', 'inline');
+                        jQuery('span.p').css('display', 'inline');
+                        jQuery("#persoImage").attr("src", "chr/syndromeWPW.png");
+                        message = ["STRANGE VORTEX!!!", "day 1", "WELCOME BACK STIVE.<br> WHAT WILL YOU DO TODAY?"];
+                        bg = 'vortex.gif';
+                    }
+
+
+
+
+                    draw();
+
+                });
+
+
+
+
+            } else {
+
+            }
+        </script>
+
+
+</body>
+
+</html>

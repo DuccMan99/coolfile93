@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <style type="text/css">
+      #mainCanvas{
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: auto;
+        background-color: silver;
+      }
+      html, body{
+        overflow: hidden;
+        /*background-color: #181010;*/
+        height: 100%;
+        width: 100%;
+        margin:0px;
+        padding:0px;
+      }
+      #gameboy_shell{
+        width: 100%;
+        height: 100%;
+      }
+      #canvas_container{
+        height: 100%;
+        width: auto;
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="gameboy_shell">
+        <div id="canvas_container">
+          <canvas id="mainCanvas">No Canvas Support</canvas>
+        </div>
+    </div>
+    <script>
+
+    var data = '';
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
+    }
+
+    if (getUrlVars()["data"]!=undefined) {
+      data = "data/"+getUrlVars()["data"];
+    };
+
+    function windowingInitialize() {
+      //cout("windowingInitialize() called.", 0);
+      mainCanvas = document.getElementById("mainCanvas");
+      registerTouchEventShim();
+      window.onunload = autoSave;
+      ("MozActivity" in window ? loadViaMozActivity : loadViaXHR)(data);
+    }
+
+    </script>
+    <script src="js/other/child.js"></script>
+    <script src="js/other/base64.js"></script>
+    <script src="js/other/json2.js"></script>
+    <script src="js/other/swfobject.js"></script>
+    <script src="js/other/resampler.js"></script>
+    <script src="js/other/XAudioServer.js"></script>
+    <script src="js/other/resize.js"></script>
+    <script src="js/GameBoyCore.js"></script>
+    <script src="js/GameBoyIO.js"></script>
+
+  </body>
+</html>

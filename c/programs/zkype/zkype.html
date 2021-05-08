@@ -1,0 +1,50 @@
+<style>
+  #app_zkype #overlay, #app_zkype #webgl {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    -o-transform : scaleX(-1);
+    -webkit-transform : scaleX(-1);
+    transform : scaleX(-1);
+    -ms-filter : fliph;
+    filter : fliph;
+  }
+  #app_zkype #videoel {
+    -o-transform : scaleX(-1);
+    -webkit-transform : scaleX(-1);
+    transform : scaleX(-1);
+    -ms-filter : fliph;
+    filter : fliph;
+    background: #666;
+  }
+  #app_zkype .select_user {
+    padding: 3px;
+    padding-left: 25px;
+    background: url('/c/programs/zkype/icon.gif') no-repeat left;
+    cursor: pointer;
+    color: #000;
+  }
+  #app_zkype .select_user:hover {
+    color: #666;
+  }
+  #app_zkype .select_user.active {
+    background-color: #ccc;
+  }
+</style>
+
+<div id="app_zkype" class="ui_layout">
+  <article>
+    <aside id="contacts" class="skin_light skin_inset w150p pa5 overflow">
+    </aside>
+    <section class="skin_dark pa0">
+      <div class="ui_layout">
+        <div class="relative ui_layout_center">
+          <video id="videoel" width="500" height="375" preload="auto"></video>
+          <canvas id="overlay" width="500" height="375"></canvas>
+          <canvas id="webgl" width="500" height="375"></canvas>
+          <canvas id="webgl2" class="hide" width="500" height="375"></canvas>
+        </div>
+      </div>
+    </section>
+  </article>
+</div>

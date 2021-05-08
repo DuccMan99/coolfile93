@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'TopazPlus_a1200';
+  src: url('t!s-af10/eot/TopazPlus_a1200_v1.0.eot');
+  src: url('t!s-af10/eot/TopazPlus_a1200_v1.0.eot?#iefix') format('embedded-opentype'),
+       url('t!s-af10/woff/TopazPlus_a1200_v1.0.woff2') format('woff2'),
+       url('t!s-af10/woff/TopazPlus_a1200_v1.0.woff') format('woff'),
+       url('t!s-af10/ttf/TopazPlus_a1200_v1.0.ttf') format('truetype'),
+       url('t!s-af10/svg/TopazPlus_a1200_v1.0.svg#topazplus_a600a1200a4000Rg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,263 @@
+AN INTRODUCTION TO UNDERSTANDING/HACKING 8 BIT GRAPHICS
+WRITTEN BY: PREZ  prez@lfx.org
+                  http://prez.lfx.org
+                  efnets #romhacking
+
+
+x. PREFACE
+
+btw, i'm sorry if i'm not a good text writter,
+it's just i had a hard time finding a text that
+explained this, so i sat down for a night and
+figured it all out myself. by the time your done
+reading this text, you should understand how the
+nes's 8 bit graphics work, and how to hack them
+(manually, for whatever reason you would want
+to). THIS DOCUMENT IS NOT FOR NEWBIES, the only
+reason i wrote this text is because i couldn't
+find anyone else who would explain it, so maybe
+now they'll know how to when someone else wants
+to know. i repeat, NOT FOR NEWBIES, this is not
+the kinda thing your going to want to read if
+all you want to do is change a sprite in a game.
+there is software for doing that stuff.. however
+if you plan on making software that does that
+kind of thing.. this might be the document for
+you :)
+
+
+
+1. WHAT ARE WE HACKING PREZ?
+
+ok, nes sprites are stored in 8-bit hex strings
+like the following:
+
+01 02 03 04 05 06 07 08 11 12 13 14 15 16 17 18
+
+by the time your done reading this document, you
+should understand how that string works, and how
+to hack it. although this isn't all logic, and you
+will either have to remember some things, or make
+a chart.. if you know binary, your all set, that's
+all there is to it.
+
+
+
+
+2. WHY ARE WE NOT DIVING RIGHT INTO 8-BIT?
+
+another good question, the reason i'm going to start
+with bpp1 8x8 sprites is because there's no point in
+trying to understand bpp1 overlays (which is what i
+call nes sprites) without understanding bpp1. all nes
+sprites are is two bpp1 sprites put on top of each
+other.
+
+
+
+
+3. OK, THEN BPP1 WILL DO.. START TEACHING
+
+ok, as i explained above, nes sprites are just two
+bpp1 sprites put on top of eachother.. if you don't
+understand what i'm talking about.. good, you don't
+have to yet. anyways, since a nes sprite is two
+bpp1 sprites, the hex code we have for a nes sprite:
+
+01 02 03 04 05 06 07 08 11 12 13 14 15 16 17 18
+
+can be separated into two bpp1 sprites:
+
+01 02 03 04 05 06 07 08
+and
+11 12 13 14 15 16 17 18
+
+and since we're only dealing with one bpp1 sprite,
+we'll just take the latter one for our examples.
+
+
+
+4. OK, SO WHAT DOES THIS HEX STRING DO?
+
+well, obviously the hex string contains the data
+that will be present in the sprite, but how do we
+convert the hex to a 8x8 sprite? pretty easy. you
+see, each hex code is responsible for 1 line of
+the 8x8 sprite. (see diagram)
+
+                      11 12 13 14 15 16 17 18
+                      |  |  |  |  |  |  |  |
+ A A A A A A A A -----+  |  |  |  |  |  |  |
+ A A A A A A A A --------+  |  |  |  |  |  |
+ A A A A A A A A -----------+  |  |  |  |  |
+ A A A A A A A A --------------+  |  |  |  |
+ A A A A A A A A -----------------+  |  |  |
+ A A A A A A A A --------------------+  |  |
+ A A A A A A A A -----------------------+  |
+ A A A A A A A A --------------------------+
+
+
+to break it down even more, each character in the
+hex string is responible for one half of the 1
+line in the 8x8 string. the first half of the hex
+code represents the first four pixels, and the
+second half of the hex code represents the last
+four pixels.. (see next diagram)
+
+  hex code:   13    1        3
+                    A A A A  A A A A
+
+
+now, each letter/number from 0-F (you know your hex,
+don't you?!) represents a certain sequence of pixels,
+(see NEXT diagram)
+
+0	. . . .
+1	. . . X
+2	. . X .
+3	. . X X
+4	. X . .
+5	. X . X
+6	. X X .
+7	. X X X
+8	X . . .
+9	X . . X
+A	X . X .
+B	X . X X
+C	X X . .
+D	X X . X
+E	X X X .
+F	X X X X
+
+
+if you looked very cafefully (or even glanced) at the
+diagram above, you will notice that the chart is perfect
+binary ascention.. making this pattern pretty easy to
+remember.. so you find your first and second half of the
+hex code's pixel counterpart, and put them together, then
+you have the line.. do that for all 8 hex codes, and you
+will have yourself a complete 8x8 bpp1 sprite..
+
+so ok, before you forget all of this, lets do a little
+example sample :P
+
+
+
+
+5. YAY, an example sample..
+
+take the following string, and use the chart above
+(or your head, if your name is prez's computer and
+you have a pentuim based processor for a brain) to
+'calculate' the bpp1 sprite.
+
+00 7C 82 80 7C 02 82 7C
+
+
+now, i expect you to do it.. but if your
+understanding this pretty solidly, you don't really
+have to ;P you can just look at what i got.
+
+0	. . . . | . . . .	0  (00)
+7	. X X X | X X . .	C  (7C)
+8	X . . . | . . X .	2  (82)
+8	X . . . | . . . .	0  (80)
+7	. X X X | X X . .	C  (7C)
+0	. . . . | . . X .	2  (02)
+8	X . . . | . . X .	2  (82)
+7	. X X X | X X . .	C  (7C)
+
+
+whoa, it's an "S" from everyones favorite game,
+Fairy Princess!#%$.. wasn't that fun?
+
+
+
+
+6. uhm. prez.. my nes hacking..
+
+yeah yeah yeah, i'm getting there.. anyways, as
+we all know, each nes sprite has a 4 color
+limited pallette.. and we'll call these four
+colors black, dark, light, and white. you might
+be catching on, but if your not..
+
+to get four colors, they put two bpp1 sprites
+on top of eachother.. now, when sprite number
+1's "on" pixels are put into sprite number 2's
+"on" pixels, you'll get "white".. get it? here's
+a quick chart for really stupid people who
+haven't caught on..
+
+OFF + OFF = OFF (BLACK)
+ON  + OFF = 50/50 (DARK)
+OFF + ON  = 50/50 (LIGHT)
+ON  + ON  = ON (WHITE)
+
+i'm having a hard time explaing this since it's
+3:01am.. so i'll use another diagram incase you
+STILL haven't understood my babblings.
+
+   . . . . . . . .        X . . X . . . .
+   . X X X X X . .        . X . X . . . .
+   X . . . . . X .        . . X X . . . .
+   X . . . . . . .        . . . X . . . .
+   . X X X X X . .  plus  . . . X X . . .
+   . . . . . . X .        . . . X . X . .
+   X . . . . . X .        . . . X . . X .
+   . X X X X X . .        . . . X . . . X
+
+
+would have overlapping pixels, that make ON/ON,
+ON/OFF, OFF/ON, and OFF/OFF combinations, until
+we have ONE sprite.. which would look like:
+
+            Y . . X . . . .
+            . O X O X X . .
+            X . Y X . . X .
+            X . . X . . . .
+            . X X O O X . .
+            . . . Y . Y X .
+            X . . Y . . O .
+            . X X O X X . Y
+
+which, with Y O X . representing the four
+different colors in the pallette.. would be a
+NES sprite.. the product of two overlapped bpp1
+8x8 sprites..
+
+
+
+7. now that i've confused you, lets conclude.
+
+so, the nes sprite hex string:
+
+01 02 03 04 05 06 07 08 11 12 13 14 15 16 17 18
+
+is actually just two bpp1 strings put together..
+and that took far too long to explain.
+
+i'm really sorry if i confused anyone, but you
+can forward any questions my way, and reach me
+at prez@execulink.com.. or on efnet's #romhack.
+
+
+
+
+8. greetings and thanks..
+
+
+snowbro,  hexposer and tlayer.. the first two
+          romhacking tools i ever used..
+
+mdw2,     hexecute, open source baby:)
+
+ballzy,
+braxton,
+ff2nce:   my favorite romhacking project of all
+          time boys.. regardless of the out come.
+          i look forward to more projects from you.
+
+#romhack, ignoring me for so long that i had
+          to figure stuff out myself :) gotta
+          love the warm crowd.

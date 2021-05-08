@@ -1,0 +1,122 @@
+form { width: 100%; }
+#trollbox {
+  font-family: _tomo, monospace;
+}
+#trollbox_scroll {
+  background-color: #272822;
+  color: #f8f8f2;
+  margin-right: 3px;
+  margin-top: 1px;
+  margin-bottom: 3px;
+  padding: 5px 0;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+#trollbox_infos {
+  background-color: #272822;
+  color: #f8f8f2;
+  padding: 5px;
+  margin-top: 1px;
+  margin-bottom: 3px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+#trollbox_input {
+  width: 100%;
+}
+.trollbox_line > span {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+.trollbox_line span {
+  display: inline-block;
+  vertical-align: top;
+}
+.trollbox_line {
+  vertical-align: top;
+}
+.trollbox_line_bot {
+  padding: 0 5px;
+  font-family: px_sans_nouveaux;
+  color: #ddd;
+  font-style: italic;
+}
+.ui_group>.trollbox_h {
+  padding: 0 5px;
+  color: #555;
+}
+.ui_group>.trollbox_msg {
+  padding: 0 5px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: left;
+  border-left: 1px solid #333;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.trollbox_nick,
+.ui_group>.trollbox_nick {
+  white-space: nowrap;
+  font-family: _tomo, monospace;
+  font-style: normal;
+  text-align: right;
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  /*padding: 0;*/
+  /*line-height: 1;*/
+}
+.ui_group>.trollbox_nick {
+  padding: 0 5px;
+  width: 90px;
+}
+.trollbox_msg .trollbox_nick {
+  padding: 0;
+}
+.trollbox_msg > em {
+  opacity: 0.7;
+}
+.trollbox_exe {
+  color: #c3ff00;
+  background-color: #000;
+  border-bottom: 1px solid #333;
+}
+.trollbox_exe button {
+  opacity: 0.5;
+  margin-right: 10px;
+}
+a {
+  color: #fff;
+}
+img{
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+/*
+#trollbox_nick_btn {
+  display: none;
+}
+*/
+/*
+#emoticons{
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  width: calc( 50% - 1px );
+  height: calc( 100% - 57px );
+  display: block;
+  background-color: white;
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  box-shadow: 1px 0 #fff,0 1px #fff,1px 1px #fff;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  padding: 4px 5px;
+}
+*/

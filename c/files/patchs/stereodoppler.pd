@@ -1,0 +1,1006 @@
+#N canvas 137 157 1238 532 10;
+#X text 248 12 ax;
+#X text 299 15 ay;
+#X text 262 65 bx;
+#X text 308 65 by;
+#X text 140 38 lxl;
+#X text 179 38 lyl;
+#X text 382 41 lxr;
+#X text 425 43 lyr;
+#X text 248 53 direction vector;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array audio 75647 float 2;
+#X coords 0 1 75647 -1 500 140 1;
+#X restore 46 190 graph;
+#X obj 46 89 bng 30 250 50 0 Load empty Load_Audio 0 -7 0 10 -4160
+-1 -1;
+#X obj 45 32 tgl 40 0 onoff bang1 Audio_On/Off 0 -7 0 10 -45076 -262144
+-1 1 1;
+#X obj 82 135 bng 30 250 50 0 endrec empty End_Rec 0 -7 0 10 -261682
+-1 -1;
+#X obj 46 135 bng 30 250 50 0 startrec empty Rec 0 -7 0 10 -258113
+-1 -1;
+#X obj 494 125 tgl 35 0 liveonoff empty Live_sound_On/Off 0 -7 0 12
+-258113 -262144 -1 0 1;
+#X obj 493 68 tgl 35 0 looponoff bang1 Loop_on/off 0 -7 0 12 -258113
+-262144 -1 1 1;
+#X obj 631 66 tgl 15 0 sourceonoff bang4 empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X text 654 81 Moving observer on/off;
+#X text 654 64 Moving source on/off;
+#X obj 628 263 bng 60 250 50 0 go empty GO! 0 -7 0 10 -4034 -1 -1;
+#X obj 694 264 bng 40 250 50 0 reset bang1 reset 0 -7 0 10 -84314 -1
+-1;
+#X obj 46 336 hsl 128 15 0.01 1 1 0 volume empty empty -2 -8 0 10 -4160
+-1 -1 12085 1;
+#X text 103 355 Master volume;
+#X obj 631 151 bng 15 250 50 0 preset1 bang1 empty 17 7 0 10 -261234
+-1 -1;
+#X obj 632 224 bng 15 250 50 0 preset2 empty empty 17 7 0 10 -261234
+-1 -1;
+#X obj 632 85 tgl 15 0 loopobs bang2 empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X floatatom 153 98 5 0 0 0 - distancel -;
+#X text 142 78 distance;
+#X text 386 81 distance;
+#X floatatom 396 102 5 0 0 0 - distancer -;
+#X floatatom 152 143 5 0 0 0 - delayl1 -;
+#X text 151 126 delay;
+#X floatatom 396 146 5 0 0 0 - delayr1 -;
+#X floatatom 279 163 5 0 0 2 ITD itd -;
+#X text 393 125 delay;
+#X floatatom 366 337 5 0 0 0 - relativespeed -;
+#X text 364 354 Relative speed;
+#X floatatom 281 334 5 0 0 0 - as -;
+#X text 277 351 Actual speed;
+#X floatatom 466 335 5 0 0 0 - dopc -;
+#X text 459 366 (if negative the sound is heard backwards);
+#X text 144 22 LEFT EAR;
+#X text 391 22 RIGHT EAR;
+#X floatatom 212 335 5 0 0 0 - t -;
+#X obj 242 33 nbx 5 14 -1e+37 1e+37 0 0 ax ax1 empty 0 -8 0 10 -257985
+-1 -1 -400 256;
+#X obj 302 33 nbx 5 14 -1e+37 1e+37 0 0 ay ay1 empty 0 -8 0 10 -257985
+-1 -1 3 256;
+#X obj 242 82 nbx 5 14 -1e+37 1e+37 0 0 bx bx1 empty 0 -8 0 10 -257985
+-1 -1 80 256;
+#X obj 309 82 nbx 5 14 -1e+37 1e+37 0 0 by by1 empty 0 -8 0 10 -257985
+-1 -1 0 256;
+#X obj 119 58 nbx 5 14 -1e+37 1e+37 0 0 lxl lxl1 empty 0 -8 0 10 -262130
+-1 -1 -0.09 256;
+#X obj 177 58 nbx 5 14 -1e+37 1e+37 0 0 lyl lyl1 empty 0 -8 0 10 -262130
+-1 -1 0 256;
+#X obj 364 60 nbx 5 14 -1e+37 1e+37 0 0 lxr lxr1 empty 0 -8 0 10 -262130
+-1 -1 0.09 256;
+#X obj 430 60 nbx 5 14 -1e+37 1e+37 0 0 lyr lyr1 empty 0 -8 0 10 -262130
+-1 -1 0 256;
+#N canvas 0 90 1440 810 main 1;
+#X obj 62 382 line;
+#X floatatom 62 413 5 0 0 0 - - t;
+#X floatatom 311 123 5 0 0 0 - - -;
+#X floatatom 468 120 5 0 0 0 - - -;
+#N canvas 671 22 450 300 dtl 1;
+#X text 46 34 f1=t f2=ax f3=ay f4=bx f5=by f6=lx f7=ly;
+#X floatatom 42 123 5 0 0 0 - t -;
+#X floatatom 267 122 5 0 0 0 - by -;
+#X floatatom 216 121 5 0 0 0 - bx -;
+#X floatatom 159 124 5 0 0 0 - ay -;
+#X floatatom 98 124 5 0 0 0 - ax -;
+#X floatatom 318 123 5 0 0 0 - lxl -;
+#X floatatom 378 121 5 0 0 0 - lyl -;
+#X text 158 100 ay;
+#X text 214 98 bx;
+#X text 268 97 by;
+#X floatatom 45 195 5 0 0 0 - - -;
+#X text 87 188 d(t) \, distance between sound source (ax+tbx \, ay+tby)
+and observer (lx \, ly) at time t;
+#X floatatom 353 34 5 0 0 0 - - ax;
+#X text 92 95 ax;
+#X text 32 93 t;
+#X obj 47 227 outlet;
+#X text 315 98 lxl;
+#X text 377 98 lyl;
+#X obj 46 155 expr sqrt(pow(($f1*$f4+$f2-$f6) \, 2)+pow(($f1*$f5+$f3-$f7)
+\, 2));
+#X text 39 39 comment;
+#X connect 1 0 19 0;
+#X connect 2 0 19 4;
+#X connect 3 0 19 3;
+#X connect 4 0 19 2;
+#X connect 5 0 19 1;
+#X connect 6 0 19 5;
+#X connect 7 0 19 6;
+#X connect 11 0 16 0;
+#X connect 19 0 11 0;
+#X restore 311 99 pd dtl;
+#N canvas 733 359 450 300 dtr 0;
+#X text 46 34 f1=t f2=ax f3=ay f4=bx f5=by f6=lx f7=ly;
+#X obj 46 155 expr sqrt(pow(($f1*$f4+$f2-$f6) \, 2)+pow(($f1*$f5+$f3-$f7)
+\, 2));
+#X floatatom 42 123 5 0 0 0 - t -;
+#X floatatom 267 122 5 0 0 0 - by -;
+#X floatatom 216 121 5 0 0 0 - bx -;
+#X floatatom 159 124 5 0 0 0 - ay -;
+#X floatatom 98 124 5 0 0 0 - ax -;
+#X floatatom 318 123 5 0 0 0 - lxr -;
+#X floatatom 378 121 5 0 0 0 - lyr -;
+#X text 158 100 ay;
+#X text 214 98 bx;
+#X text 268 97 by;
+#X floatatom 45 195 5 0 0 0 - - -;
+#X text 87 188 d(t) \, distance between sound source (ax+tbx \, ay+tby)
+and observer (lx \, ly) at time t;
+#X floatatom 353 34 5 0 0 0 - - ax;
+#X text 92 95 ax;
+#X text 32 93 t;
+#X obj 47 227 outlet;
+#X text 315 98 lxr;
+#X text 377 98 lyr;
+#X connect 1 0 12 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 4;
+#X connect 4 0 1 3;
+#X connect 5 0 1 2;
+#X connect 6 0 1 1;
+#X connect 7 0 1 5;
+#X connect 8 0 1 6;
+#X connect 12 0 17 0;
+#X restore 468 96 pd dtr;
+#N canvas 714 63 450 300 delayl 1;
+#X obj 93 41 inlet;
+#X floatatom 94 71 5 0 0 0 - - -;
+#X obj 94 103 expr $f1/343;
+#X floatatom 94 131 5 0 0 0 - - -;
+#X obj 92 206 outlet;
+#X floatatom 92 179 5 0 0 0 - - -;
+#X obj 94 155 * 1000;
+#X text 149 130 delay in seconds;
+#X text 143 182 delay in milliseconds;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X restore 310 148 pd delayl;
+#N canvas 874 75 450 300 delayr 0;
+#X obj 93 41 inlet;
+#X floatatom 94 71 5 0 0 0 - - -;
+#X obj 94 103 expr $f1/343;
+#X floatatom 94 129 5 0 0 0 - - -;
+#X obj 94 211 outlet;
+#X obj 94 158 * 1000;
+#X floatatom 95 185 5 0 0 0 - - -;
+#X text 158 131 delay in seconds;
+#X text 152 183 delay in milliseconds;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X restore 467 147 pd delayr;
+#X floatatom 309 180 5 0 0 0 - - -;
+#X floatatom 468 170 5 0 0 0 - - -;
+#X text 309 72 left ear;
+#X text 465 73 right ear;
+#X text 357 116 distance;
+#X text 516 120 distance;
+#X text 355 182 delay;
+#X text 510 169 delay;
+#X obj 95 577 delwrite~ lyd 10000;
+#X obj 383 438 dac~;
+#X obj 368 393 *~;
+#X obj 411 394 *~;
+#X floatatom 473 388 5 0 0 0 - - -;
+#X obj 502 366 hsl 128 15 0.01 1 1 0 empty volume empty -2 -8 0 10
+-262144 -1 -1 12085 1;
+#X text 515 385 master volume;
+#N canvas 611 307 450 300 level 0;
+#X obj 148 47 inlet;
+#X floatatom 211 53 5 0 0 0 - - -;
+#X obj 211 87 expr 1/(4*3.1415*pow($f1 \, 2));
+#X floatatom 216 120 5 0 0 0 - - -;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X restore 549 227 pd level;
+#X obj 298 232 line~;
+#X obj 319 272 vd~ lyd 1;
+#X obj 445 270 vd~ lyd 1;
+#X obj 473 225 line~;
+#X obj 470 203 pack 0 100;
+#X obj 303 206 pack 0 100;
+#N canvas 220 22 601 309 vt 1;
+#X text 56 16 f1=t f2=ax f3=ay f4=bx f5=by f6=lx f7=ly;
+#X obj 65 102 expr ($f1*(pow($f4 \, 2)+pow($f5 \, 2))+$f2*$f4-$f6*$f4+$f3*$f5-$f7*$f5)/sqrt(pow(($f1*$f4+$f2-$f6)
+\, 2)+pow(($f1*$f5+$f3-$f7) \, 2));
+#X floatatom 63 74 5 0 0 0 - t -;
+#X floatatom 288 73 5 0 0 0 - by -;
+#X floatatom 237 72 5 0 0 0 - bx -;
+#X floatatom 180 75 5 0 0 0 - ay -;
+#X floatatom 119 75 5 0 0 0 - ax -;
+#X floatatom 339 74 5 0 0 0 - lxl -;
+#X floatatom 399 72 5 0 0 0 - lyl -;
+#X text 179 51 ay;
+#X text 235 49 bx;
+#X text 289 48 by;
+#X text 113 46 ax;
+#X text 53 44 t;
+#X text 336 49 lxl;
+#X text 398 49 lyl;
+#X obj 64 192 outlet;
+#X floatatom 65 159 5 0 0 0 - - -;
+#X text 130 156 speed in m/s;
+#X connect 1 0 17 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 4;
+#X connect 4 0 1 3;
+#X connect 5 0 1 2;
+#X connect 6 0 1 1;
+#X connect 7 0 1 5;
+#X connect 8 0 1 6;
+#X connect 17 0 16 0;
+#X restore 882 24 pd vt;
+#X floatatom 883 55 5 0 0 0 - - -;
+#X floatatom 883 143 5 0 0 0 - - -;
+#X text 944 144 degree of pitch change;
+#X msg 146 377 0;
+#N canvas 0 22 450 300 fart 0;
+#X obj 154 95 expr sqrt(pow($f1 \, 2)+pow($f2 \, 2));
+#X obj 152 137 outlet;
+#X floatatom 348 35 5 0 0 0 - by -;
+#X floatatom 157 45 5 0 0 0 - bx -;
+#X connect 0 0 1 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 0;
+#X restore 622 136 pd fart;
+#X floatatom 622 164 5 0 0 0 - - as;
+#N canvas 332 35 450 300 moving 0;
+#X obj 113 43 inlet;
+#X floatatom 114 76 5 0 0 0 - - -;
+#X floatatom 114 139 5 0 0 0 - - -;
+#X obj 111 186 outlet;
+#X obj 115 108 expr 343/(343+$f1);
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X restore 722 97 pd moving sound source;
+#X floatatom 806 140 5 0 0 0 - - -;
+#X obj 831 182 expr $f1/$f2;
+#X floatatom 788 300 5 0 0 0 - - -;
+#X obj 401 214 -;
+#X floatatom 401 245 5 0 0 0 - - itd;
+#X obj 835 520 *~ 1;
+#X obj 860 500 tgl 15 0 empty looponoff empty 17 7 0 10 -262144 -1
+-1 1 1;
+#X obj 229 272 vd~ loop 1;
+#X obj 515 272 vd~ loop 1;
+#X floatatom 855 390 5 0 0 0 - - -;
+#X obj 872 359 loadbang 1;
+#X obj 813 340 * 1;
+#X obj 831 319 tgl 15 0 loopsource sourceonoff empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 770 369 == 0;
+#X floatatom 784 398 5 0 0 0 - - -;
+#X obj 819 418 +;
+#X floatatom 806 438 5 0 0 0 - - -;
+#X text 886 500 loop on/off;
+#X text 860 315 moving source on;
+#X obj 132 553 *~ 1;
+#X obj 157 533 tgl 15 0 empty liveonoff empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X text 184 534 live on/off;
+#X obj 814 551 delwrite~ loop 10000;
+#N canvas 693 22 747 304 volume 1;
+#X obj 149 101 *~;
+#X floatatom 192 93 5 0 0 0 - - -;
+#X floatatom 203 173 5 0 0 0 - - -;
+#X obj 198 144 env~ 128;
+#X floatatom 263 27 5 0 0 0 - distancel -;
+#X floatatom 262 106 5 0 0 0 - - -;
+#X obj 288 145 +;
+#X floatatom 292 172 5 0 0 0 - - -;
+#X floatatom 313 89 5 0 0 0 - ctrl -;
+#X obj 195 56 expr 1/$f1;
+#X obj 111 -20 inlet~;
+#X obj 129 178 outlet~;
+#X text 240 173 control;
+#X floatatom 67 60 5 0 0 0 - - ctrl;
+#X obj 62 31 env~ 128;
+#X obj 331 113 +;
+#X floatatom 363 110 5 0 0 0 - - -;
+#X floatatom 329 135 5 0 0 0 - - -;
+#X msg 424 88 11;
+#X obj 448 54 loadbang;
+#X obj 269 62 expr -8.6561702*log($f1)-11;
+#X connect 0 0 3 0;
+#X connect 0 0 11 0;
+#X connect 1 0 0 1;
+#X connect 3 0 2 0;
+#X connect 4 0 9 0;
+#X connect 4 0 20 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 15 0;
+#X connect 9 0 1 0;
+#X connect 10 0 0 0;
+#X connect 10 0 14 0;
+#X connect 14 0 13 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 1;
+#X connect 17 0 6 1;
+#X connect 18 0 16 0;
+#X connect 19 0 18 0;
+#X connect 20 0 5 0;
+#X restore 318 322 pd volume l;
+#X floatatom 252 148 5 0 0 0 - - distancel;
+#N canvas 603 22 837 314 volume 1;
+#X obj 158 121 *~;
+#X floatatom 202 103 5 0 0 0 - - -;
+#X floatatom 213 183 5 0 0 0 - - -;
+#X obj 208 154 env~ 128;
+#X floatatom 273 37 5 0 0 0 - distancer -;
+#X obj 279 72 expr -8.6561702*ln($f1)-11;
+#X floatatom 272 116 5 0 0 0 - - -;
+#X obj 298 155 +;
+#X floatatom 302 182 5 0 0 0 - - -;
+#X floatatom 321 94 5 0 0 0 - ctrr -;
+#X obj 205 66 expr 1/$f1;
+#X obj 121 -10 inlet~;
+#X obj 139 188 outlet~;
+#X text 250 183 control;
+#X floatatom 68 83 5 0 0 0 - - ctrr;
+#X obj 63 54 env~ 128;
+#X msg 434 99 11;
+#X obj 450 73 loadbang;
+#X floatatom 380 102 5 0 0 0 - - -;
+#X obj 345 118 +;
+#X floatatom 345 142 5 0 0 0 - - -;
+#X connect 0 0 3 0;
+#X connect 0 0 12 0;
+#X connect 1 0 0 1;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 4 0 10 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 19 0;
+#X connect 10 0 1 0;
+#X connect 11 0 0 0;
+#X connect 11 0 15 0;
+#X connect 15 0 14 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 0;
+#X connect 18 0 19 1;
+#X connect 19 0 20 0;
+#X connect 20 0 7 1;
+#X restore 420 320 pd volume r;
+#X floatatom 538 146 5 0 0 0 - - distancer;
+#N canvas 367 64 450 300 loopgate 0;
+#X obj 107 22 inlet~;
+#X obj 107 84 *~ 1;
+#X obj 135 58 tgl 15 0 empty loopsource empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 105 140 outlet~;
+#X obj 215 141 outlet~;
+#X obj 218 92 *~ 1;
+#X obj 246 66 tgl 15 0 empty loopobs empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X connect 0 0 1 0;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 5 0 4 0;
+#X connect 6 0 5 1;
+#X restore 332 350 pd loopgate;
+#N canvas 408 179 450 300 loopgate 1;
+#X obj 107 22 inlet~;
+#X obj 107 84 *~ 1;
+#X obj 135 58 tgl 15 0 empty loopsource empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 105 140 outlet~;
+#X obj 215 141 outlet~;
+#X obj 218 92 *~ 1;
+#X obj 246 66 tgl 15 0 empty loopobs empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X connect 0 0 1 0;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 5 0 4 0;
+#X connect 6 0 5 1;
+#X restore 422 351 pd loopgate;
+#X text 100 412 t in seconds;
+#N canvas 306 23 961 693 import 0;
+#X obj 317 126 soundfiler;
+#X floatatom 317 149 15 0 0 0 - - -;
+#X obj 272 332 phasor~;
+#X obj 272 355 *~ 44100;
+#X obj 272 205 /;
+#X floatatom 272 279 5 0 0 0 - - -;
+#X obj 272 165 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 211 281 5 0 0 0 - - -;
+#X floatatom 272 304 5 0 0 0 - - -;
+#X obj 211 304 *;
+#X msg 272 184 44100;
+#X obj 272 378 tabread4~ audio;
+#N canvas 298 230 450 300 record 0;
+#X obj -103 79 writesf~ 1;
+#X msg -76 -19 open -bytes 3 -rate 44100 test.wav;
+#X msg -103 -39 start;
+#X msg -225 -38 stop;
+#X obj -133 10 adc~;
+#X obj -103 -71 t b b;
+#X obj -252 -69 t b b;
+#X obj -252 -97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg -251 -18 read -resize test.wav audio;
+#X obj -103 -97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -251 69 outlet;
+#X obj -105 -126 inlet;
+#X obj -246 -126 inlet;
+#X obj -192 -53 delay 100;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X connect 5 1 1 0;
+#X connect 6 0 13 0;
+#X connect 6 1 3 0;
+#X connect 7 0 6 0;
+#X connect 8 0 10 0;
+#X connect 9 0 5 0;
+#X connect 11 0 7 0;
+#X connect 12 0 9 0;
+#X connect 13 0 8 0;
+#X restore 316 72 pd record;
+#N canvas 0 22 450 300 open 0;
+#X obj 31 61 openpanel;
+#X msg 31 37 bang;
+#X obj 31 17 bng 15 250 50 0 empty Load empty 17 7 0 10 -262144 -1
+-1;
+#X msg 31 87 read -resize \$1 audio;
+#X obj 31 115 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X restore 328 93 pd open file;
+#N canvas 0 22 450 300 noteon 0;
+#X obj -87 34 notein;
+#X obj -71 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -32 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -71 66 moses 1;
+#X obj -77 140 outlet;
+#X obj -33 140 outlet;
+#X connect 0 1 3 0;
+#X connect 1 0 5 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 3 1 2 0;
+#X restore 298 19 pd noteon record;
+#X obj 316 46 bng 15 250 50 0 empty startrec empty 17 7 0 10 -262144
+-1 -1;
+#X obj 367 46 bng 15 250 50 0 empty endrec empty 17 7 0 10 -262144
+-1 -1;
+#X obj 272 407 outlet~;
+#X obj 125 196 loadbang 1;
+#X obj 210 160 inlet;
+#N canvas 276 48 730 572 notetempo 0;
+#X obj -135 145 f;
+#X obj -135 96 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom -135 172 10 0 0 0 - - -;
+#X obj -109 145 + 1;
+#X obj -273 203 f;
+#X obj -247 203 + 1;
+#X floatatom -273 228 5 0 0 0 - - -;
+#X obj -250 175 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -274 124 notein;
+#X obj -274 152 stripnote;
+#X obj -273 251 %;
+#X obj -135 119 metro;
+#X floatatom -201 258 5 0 0 0 - - -;
+#X floatatom -201 324 5 0 0 0 - - -;
+#X msg -201 128 0;
+#X obj -201 295 / 25;
+#X msg -185 214 25000;
+#X obj -201 355 outlet;
+#X obj -135 65 inlet;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 1 0 11 0;
+#X connect 2 0 15 1;
+#X connect 3 0 0 1;
+#X connect 4 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 6 0 10 0;
+#X connect 7 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 9 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 15 0;
+#X connect 13 0 17 0;
+#X connect 14 0 0 0;
+#X connect 15 0 13 0;
+#X connect 15 0 14 0;
+#X connect 16 0 12 0;
+#X connect 18 0 1 0;
+#X restore 571 368 pd notetempo;
+#X obj 571 339 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 205 446 Adapted from Joshua Sadler's Pitch Control Looper:
+http://www.joshuasadler.net/experiments-in-pure-data-generative-audio-and-pitch-control-looper
+;
+#X connect 0 0 1 0;
+#X connect 1 0 3 1;
+#X connect 1 0 4 1;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 11 0;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 5 0 9 1;
+#X connect 6 0 10 0;
+#X connect 7 0 9 0;
+#X connect 8 0 2 0;
+#X connect 9 0 8 0;
+#X connect 10 0 4 0;
+#X connect 11 0 17 0;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 12 0;
+#X connect 14 1 12 1;
+#X connect 15 0 12 0;
+#X connect 16 0 12 1;
+#X connect 18 0 7 0;
+#X connect 19 0 7 0;
+#X connect 21 0 20 0;
+#X restore 831 469 pd import;
+#X text 404 269 ITD;
+#X msg 23 341 10 10000;
+#N canvas 451 41 450 300 moving 1;
+#X obj 103 33 inlet;
+#X floatatom 104 66 5 0 0 0 - - -;
+#X floatatom 104 129 5 0 0 0 - - -;
+#X text 158 130 degree of pitch change;
+#X obj 101 176 outlet;
+#X floatatom 4 87 5 0 0 0 - - -;
+#X obj 105 98 expr (343-$f1)/343;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 0;
+#X connect 6 0 2 0;
+#X restore 873 98 pd moving observer;
+#X obj 579 431 tgl 15 0 empty onoff empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 579 458 \; pd dsp \$1;
+#X obj 99 518 adc~;
+#X obj 157 356 bng 15 250 50 0 empty reset empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1111 438 bng 15 250 50 0 empty preset1 empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1096 522 bng 15 250 50 0 empty preset2 empty 17 7 0 10 -262144
+-1 -1;
+#X msg 1135 550 \; ax1 -2000 \; ay1 10 \; bx1 686 \; by1 0 \;;
+#X floatatom 260 196 5 0 0 0 - - delayl1;
+#X floatatom 550 198 5 0 0 0 - - delayr1;
+#X floatatom 937 75 5 0 0 0 - - relativespeed;
+#X floatatom 930 180 5 0 0 0 - - -;
+#X obj 757 209 * 1;
+#X obj 941 216 * 1;
+#X floatatom 849 284 5 0 0 0 - - dopc;
+#X obj 851 245 +;
+#X obj 792 187 tgl 15 0 empty sourceonoff empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 981 189 tgl 15 0 empty loopobs empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X obj 201 486 loadbang;
+#X obj 154 499 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 661 464 == 0;
+#X obj 645 429 tgl 15 0 empty sourceonoff empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 651 496 tgl 15 0 bang2 empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 1205 406 bng 15 250 50 0 empty preset3 empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 954 46 450 300 position 1;
+#X floatatom 63 65 5 0 0 0 - t -;
+#X floatatom 112 67 5 0 0 0 - ax -;
+#X floatatom 161 69 5 0 0 0 - bx -;
+#X floatatom 121 160 5 0 0 0 - - posx;
+#X text 134 183 x;
+#X floatatom 212 65 5 0 0 0 - t -;
+#X floatatom 261 67 5 0 0 0 - ay -;
+#X floatatom 310 69 5 0 0 0 - by -;
+#X floatatom 179 160 5 0 0 0 - - posy;
+#X text 177 185 y;
+#X obj 66 102 expr $f2+$f1*$f3;
+#X obj 215 102 expr $f2+$f1*$f3;
+#X connect 0 0 10 0;
+#X connect 1 0 10 1;
+#X connect 2 0 10 2;
+#X connect 5 0 11 0;
+#X connect 6 0 11 1;
+#X connect 7 0 11 2;
+#X connect 10 0 3 0;
+#X connect 11 0 8 0;
+#X restore 614 221 pd position;
+#X obj 467 426 env~;
+#X floatatom 467 448 5 0 0 0 - - -;
+#X obj 467 470 - 100;
+#X obj 467 492 nbx 5 14 -1e+37 1e+37 0 0 vur empty empty 0 -8 0 10
+-262144 -1 -1 -100 256;
+#X obj 336 418 env~;
+#X floatatom 336 440 5 0 0 0 - - -;
+#X obj 336 462 - 100;
+#X obj 336 484 nbx 5 14 -1e+37 1e+37 0 0 vul empty empty 0 -8 0 10
+-262144 -1 -1 -100 256;
+#X msg 1123 61 \; lxl1 -0.09 \; lyl1 0 \; lxr1 0.09 \; lyr1 0 \;;
+#X text 1215 85 north;
+#X msg 1214 432 \; ax1 800 \; ay1 5 \; bx1 -250 \; by1 0 \;;
+#X text 1213 162 east;
+#X msg 1123 143 \; lxl1 0 \; lyl1 0.09 \; lxr1 0 \; lyr1 -0.09 \;;
+#X text 1210 256 south;
+#X msg 1124 323 \; lxl1 0 \; lyl1 -0.09 \; lxr1 0 \; lyr1 0.09 \;;
+#X obj 1126 26 bng 15 250 50 0 empty bang1 empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1149 22 bng 15 250 50 0 empty north empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1093 128 bng 15 250 50 0 empty east empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1089 204 bng 15 250 50 0 empty south empty 17 7 0 10 -262144
+-1 -1;
+#X text 1209 351 west;
+#X obj 1095 305 bng 15 250 50 0 empty west empty 17 7 0 10 -262144
+-1 -1;
+#X obj 421 520 loadbang;
+#X obj 377 549 bng 15 250 50 0 bang1 empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 1122 228 \; lxl1 0.09 \; lyl1 0 \; lxr1 -0.09 \; lyr1 0 \;;
+#X msg 93 333 15 15000;
+#X msg 159 336 20 20000;
+#X floatatom 141 225 5 0 0 0 - - -;
+#X obj 47 307 sel 10;
+#X msg 6 189 1;
+#X obj 12 167 bng 15 250 50 0 empty go empty 17 7 0 10 -262144 -1 -1
+;
+#X obj 46 166 bng 15 250 50 0 empty reset empty 17 7 0 10 -262144 -1
+-1;
+#X obj 103 306 sel 15;
+#X obj 160 311 sel 20;
+#X obj 117 165 bng 15 250 50 0 empty 10 empty 17 7 0 10 -262144 -1
+-1;
+#X obj 156 173 bng 15 250 50 0 empty 15 empty 17 7 0 10 -262144 -1
+-1;
+#X obj 202 153 bng 15 250 50 0 empty 20 empty 17 7 0 10 -262144 -1
+-1;
+#X obj 89 162 bng 15 250 50 0 empty bang1 empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 98 275 5 0 0 0 - - -;
+#X msg 122 196 9;
+#X msg 153 196 14;
+#X msg 192 196 19;
+#X obj 89 244 +;
+#X floatatom 41 227 5 0 0 0 - - -;
+#X msg 40 189 -1;
+#X text 85 116 Time:;
+#X text 383 37 Delay/volume;
+#X text 934 52 relative speed in m/s;
+#X text 896 468 import/loop;
+#X text 1121 -23 presets:;
+#X text 815 -17 import sound/record loop:;
+#X text 129 462 livesound;
+#X text 993 99 Doppler;
+#X obj 697 413 bng 20 250 50 0 bang4 bang1 empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 694 302 5 0 0 0 - - -;
+#X obj 725 277 * 1;
+#X obj 749 254 tgl 15 0 empty liveonoff empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 696 334 > 0.01;
+#X floatatom 697 358 5 0 0 0 - - -;
+#X obj 697 382 sel 1;
+#X text 182 553 comment;
+#X msg 1135 463 \; ax1 -400 \; ay1 3 \; bx1 80 \; by1 0 \;;
+#X obj 709 220 loadbang;
+#X obj 705 251 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 363 204 450 300 adjust 0;
+#X floatatom 92 168 5 0 0 0 - - bx1;
+#X text 142 169 bx;
+#X floatatom 95 93 5 0 0 0 - - -;
+#X floatatom 292 83 5 0 0 0 - by -;
+#X text 285 58 by;
+#X obj 94 129 expr sqrt(pow($f1 \, 2)-pow($f2 \, 2));
+#X obj 90 66 inlet;
+#X connect 2 0 5 0;
+#X connect 3 0 5 1;
+#X connect 5 0 0 0;
+#X connect 6 0 2 0;
+#X restore 593 107 pd adjust speed;
+#X floatatom 590 86 5 0 0 0 - speed3 -;
+#X obj 1265 14 bng 15 250 50 0 empty semipre empty 17 7 0 10 -262144
+-1 -1;
+#X msg 1279 63 \; ax1 -40 \; ay1 1.2 \; bx1 9.903 \; by1 0 \; semi
+1 \;;
+#X connect 0 0 1 0;
+#X connect 2 0 6 0;
+#X connect 2 0 62 0;
+#X connect 3 0 7 0;
+#X connect 3 0 64 0;
+#X connect 4 0 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 29 0;
+#X connect 8 0 79 0;
+#X connect 8 0 41 0;
+#X connect 9 0 28 0;
+#X connect 9 0 80 0;
+#X connect 9 0 41 1;
+#X connect 18 0 17 0;
+#X connect 18 0 100 0;
+#X connect 19 0 17 1;
+#X connect 19 0 96 0;
+#X connect 20 0 19 1;
+#X connect 20 0 18 1;
+#X connect 21 0 20 0;
+#X connect 24 0 25 0;
+#X connect 24 0 45 0;
+#X connect 25 0 61 0;
+#X connect 26 0 63 0;
+#X connect 27 0 26 0;
+#X connect 27 0 46 0;
+#X connect 28 0 27 0;
+#X connect 29 0 24 0;
+#X connect 30 0 31 0;
+#X connect 31 0 71 0;
+#X connect 31 0 37 0;
+#X connect 31 0 81 0;
+#X connect 32 0 39 1;
+#X connect 32 0 82 0;
+#X connect 34 0 0 0;
+#X connect 35 0 36 0;
+#X connect 37 0 38 0;
+#X connect 38 0 39 0;
+#X connect 38 0 83 0;
+#X connect 39 0 40 0;
+#X connect 40 0 49 0;
+#X connect 41 0 42 0;
+#X connect 43 0 60 0;
+#X connect 44 0 43 1;
+#X connect 45 0 61 0;
+#X connect 46 0 63 0;
+#X connect 47 0 53 1;
+#X connect 48 0 47 0;
+#X connect 49 0 47 0;
+#X connect 49 0 51 0;
+#X connect 50 0 49 1;
+#X connect 51 0 52 0;
+#X connect 52 0 53 0;
+#X connect 53 0 54 0;
+#X connect 54 0 68 0;
+#X connect 57 0 16 0;
+#X connect 58 0 57 1;
+#X connect 61 0 65 0;
+#X connect 63 0 66 0;
+#X connect 65 0 18 0;
+#X connect 65 1 19 0;
+#X connect 66 0 19 0;
+#X connect 66 1 18 0;
+#X connect 68 0 43 0;
+#X connect 70 0 0 0;
+#X connect 71 0 32 0;
+#X connect 72 0 73 0;
+#X connect 74 0 57 0;
+#X connect 75 0 34 0;
+#X connect 76 0 156 0;
+#X connect 77 0 78 0;
+#X connect 82 0 84 0;
+#X connect 83 0 86 0;
+#X connect 83 0 150 0;
+#X connect 84 0 86 1;
+#X connect 86 0 85 0;
+#X connect 87 0 83 1;
+#X connect 88 0 84 1;
+#X connect 89 0 58 0;
+#X connect 89 0 90 0;
+#X connect 90 0 58 0;
+#X connect 91 0 93 0;
+#X connect 92 0 91 0;
+#X connect 94 0 106 0;
+#X connect 96 0 97 0;
+#X connect 97 0 98 0;
+#X connect 98 0 99 0;
+#X connect 100 0 101 0;
+#X connect 101 0 102 0;
+#X connect 102 0 103 0;
+#X connect 111 0 104 0;
+#X connect 112 0 104 0;
+#X connect 113 0 108 0;
+#X connect 114 0 119 0;
+#X connect 116 0 110 0;
+#X connect 117 0 118 0;
+#X connect 120 0 0 0;
+#X connect 121 0 0 0;
+#X connect 122 0 137 1;
+#X connect 123 0 70 0;
+#X connect 124 0 138 0;
+#X connect 125 0 124 0;
+#X connect 126 0 139 0;
+#X connect 127 0 120 0;
+#X connect 128 0 121 0;
+#X connect 129 0 134 0;
+#X connect 130 0 135 0;
+#X connect 131 0 136 0;
+#X connect 132 0 134 0;
+#X connect 133 0 123 0;
+#X connect 133 0 127 0;
+#X connect 133 0 128 0;
+#X connect 134 0 122 0;
+#X connect 135 0 122 0;
+#X connect 136 0 122 0;
+#X connect 137 0 133 0;
+#X connect 138 0 137 0;
+#X connect 139 0 138 0;
+#X connect 149 0 152 0;
+#X connect 150 0 149 0;
+#X connect 151 0 150 1;
+#X connect 152 0 153 0;
+#X connect 153 0 154 0;
+#X connect 154 0 148 0;
+#X connect 157 0 151 0;
+#X connect 157 0 158 0;
+#X connect 158 0 151 0;
+#X connect 160 0 159 0;
+#X connect 161 0 162 0;
+#X restore 410 -24 pd main;
+#X obj 534 71 bng 20 250 50 0 bang4 bang1 empty 17 7 0 10 -4032 -1
+-1;
+#X text 532 90 Observer/Source;
+#X obj 631 178 bng 15 250 50 0 preset3 empty empty 17 7 0 10 -261234
+-1 -1;
+#N canvas 181 22 1130 636 help 0;
+#X text 103 91 To Dopplerize live audio \, click 'live sound on/off'.
+This function only works in moving observer mode;
+#X text 102 129 The starting position is the position at which you
+want the moving object (sound source or observer) to start \, given
+in coordinates (m) relative to the stationary object. ax= 200 \, ay=0
+\, (200 \, 0) for instance \, gives a starting position 200 m east
+of the stationary object.;
+#X text 99 203 The direction vector gives the speed and direction of
+the moving object. Basically \, bx gives how many metres the object
+moves per second in the x direction \, and by gives how many metres
+it moves per second in the y direction. bx= -80 \, by=0 \, (-80 \,
+0) for instance \, gives a speed of 80 m/s westwards.;
+#X text 103 31 Click load audio to import a sound file or record your
+own loop by clicking the 'rec' and 'end rec' buttons. Toggle between
+moving observer and moving source mode by pressing the Observer/Source
+button next to 'loop on/off';
+#X text 91 495 The grey boxes gives output from various calculations
+inside the main program;
+#X text 97 286 (lxl \, lyl) and (lxr \, lyr) gives the position of
+the left and right ear \, respectively \, relative to the origin when
+the program is in 'moving source' mode and relative to the moving observer
+when the program is in 'moving observer' mode. Choose one of the presets
+(northwards \, eastwards etc) or insert your own numbers (warning:
+positioning the ears unnaturally far away from each other will ruin
+the effect!);
+#X text 514 275 Audio looper by Joshua Sadler (www.joshuasadler.net)
+;
+#X text 514 207 Credits:;
+#X text 513 29 Troubleshooting:;
+#X text 514 47 No sound/no Doppler effect: - Make sure there is a white
+cross in the Audio on/off box (if it's not: click it) - Import/record
+sound or choose live input - Turn up the volume (blue slider) - Press
+'reset' - Press GO!;
+#X text 513 111 The program looks a mess: - Choose a different font
+size (10). - Deal with it!;
+#X text 94 430 Change speed by choosing a desired musical interval
+in semitones (i.e. the desired drop in pitch as the observer/source
+is passing) \, choosing different values for bx and by \, or adjusting
+the yellow slider;
+#X text 514 257 myspace.com/oysteinkapperud;
+#X text 513 242 facebook.com/oysteinkapperud;
+#X text 514 226 Made by Øystein Kapperud;
+#X text 97 385 For somewhat complicated reasons \, the moving source
+does not work for sources travelling at the speed of sound (343 m/s)
+(no sonic boom messing up your ears \, then);
+#X text 512 148 A more thorough descrpition of the program and its
+underlying maths can be downloaded from http://uio.academia.edu/OysteinKapperud
+;
+#X text 514 304 Questions \, comments or suggestions: oystein_kapperud@hotmail.com
+;
+#X restore 408 -47 pd help;
+#X floatatom 251 121 5 0 0 0 X posx -;
+#X floatatom 307 122 5 0 0 0 Y posy -;
+#X text 268 103 position;
+#X text 209 350 time in s;
+#X obj 16 293 bng 15 250 50 0 empty bang1 empty 17 7 0 10 -262144 -1
+-1;
+#X obj 552 207 vu 15 120 vul empty -1 -8 0 10 -66577 -1 0 0;
+#X obj 573 207 vu 15 120 vur empty -1 -8 0 10 -66577 -1 1 0;
+#X msg 17 315 0.8;
+#X text 462 353 Pitch change (factor);
+#X text 495 -61 Face:;
+#X obj 499 -43 bng 15 250 50 0 north empty northwards_(default) 17
+7 0 10 -260097 -1 -1;
+#X obj 498 -21 bng 15 250 50 0 east empty eastwards 17 7 0 10 -260097
+-1 -1;
+#X obj 498 -2 bng 15 250 50 0 south empty southwards 17 7 0 10 -260097
+-1 -1;
+#X obj 498 16 bng 15 250 50 0 west empty westwards 17 7 0 10 -260097
+-1 -1;
+#X text 242 0 starting position;
+#X text 625 327 REMEMBER TO RESET BEFORE EACH GO!;
+#X obj 44 357 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-170615 -1 -1 0.80011 256;
+#X text 656 217 travelling twice the speed of sound makes you catch
+up with the sound and hear it backwards! (set to moving observer);
+#X obj 778 268 bng 15 250 50 0 10 empty 10_sec_(default) 17 7 0 10
+-203904 -1 -1;
+#X obj 778 287 bng 15 250 50 0 15 empty 15_sec 17 7 0 10 -203904 -1
+-1;
+#X obj 778 305 bng 15 250 50 0 20 empty 20_sec 17 7 0 10 -203904 -1
+-1;
+#X text 772 248 Duration:;
+#X text 653 97 (Please don't turn on both at once. Use the Observer/Source
+toggle);
+#X text 652 144 Eastwards in 80 m/s passing three meters north for
+source/observer (default);
+#X text 654 171 Westwards in 250 m/s passing five meters north for
+source/observer;
+#N canvas 489 347 450 300 interval 0;
+#X obj 109 68 expr 343*((pow(2 \, $f1/12)-1)/(pow(2 \, $f1/12)+1))
+;
+#X floatatom 108 44 5 0 0 0 - - -;
+#X floatatom 109 92 5 0 0 0 - - -;
+#X obj 108 19 inlet;
+#X obj 110 119 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X restore 653 -36 pd interval;
+#X obj 653 -53 nbx 5 14 -1e+37 1e+37 0 0 empty semi empty 0 -8 0 10
+-232576 -1 -1 0 256;
+#X floatatom 654 -15 5 0 0 0 - - -;
+#X text 712 -58 Input interval in semitones;
+#X text 713 -15 Speed to produce given interval;
+#X obj 657 6 hsl 128 15 7 700 1 0 speed3 empty empty -2 -8 0 10 -257985
+-1 -1 0 1;
+#X text 624 130 Presets:;
+#X text 40 -50 Welcome to the Doppler simulator! Feel free to fool
+around with the funny-colored boxes \, but stay off the dull grey ones!
+Click pd help for help. Cheers!;
+#X text 533 146 only!;
+#X text 532 123 Moving;
+#X text 532 134 observer;
+#X text 651 26 Change speed by choosing a musical interval \, choosing
+different values for bx and by or ajusting the yellow slider;
+#X text 42 377 Øystein Kapperud (facebook.com/oysteinkapperud);
+#X floatatom 837 5 5 0 0 0 - as -;
+#X text 875 6 m/s;
+#X text 793 7 Speed:;
+#X obj 632 200 bng 15 250 50 0 semipre empty empty 17 7 0 10 -261234
+-1 -1;
+#X text 655 199 Semitone;
+#X connect 21 0 73 0;
+#X connect 61 0 64 0;
+#X connect 64 0 21 0;
+#X connect 82 0 84 0;
+#X connect 83 0 82 0;
+#X connect 84 0 87 0;

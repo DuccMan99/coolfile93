@@ -1,0 +1,14 @@
+/*
+Theme Name: Curious
+Theme URI: http://webrevolutionary.com/curious/
+Description: A curious WordPress theme by <a href="http://webrevolutionary.com/">WebRevolutionary</a>.
+Version: 1.1.0
+Author: E. Harrison
+Author URI: http://webrevolutionary.com/
+Tags: curious, dark, humorous
+*/
+
+/* import stylesheets and hide from ie/mac \*/
+@import url("master.css");
+@import url("ie.css");
+/* end import/hide */

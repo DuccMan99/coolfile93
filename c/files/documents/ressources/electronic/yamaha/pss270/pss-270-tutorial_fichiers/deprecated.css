@@ -1,0 +1,10 @@
+/*
+Description:	Styles for deprecated HTML elements are housed here
+Author:			Chris Pearson of http://www.pearsonified.com
+*/
+
+.format_text img[align="left"] { margin: 0 1.571em 1.571em 0; float: left; clear: left; }
+
+.format_text img[align="right"] { margin: 0 0 1.571em 1.571em; float: right; clear: right; }
+
+.format_text img[align="middle"] { display: block; margin: 0 auto 1.571em auto; float: none; clear: both; }

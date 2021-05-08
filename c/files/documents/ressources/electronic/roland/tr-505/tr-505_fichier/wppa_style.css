@@ -1,0 +1,226 @@
+/* This is the standard wppa_style.css file. See http://www.opajaap.nl/ where it is used
+/* If you want to modify the layout make a copy of this file and place it in your theme's directory
+/* The copy in your theme's directory has precedense over the original version in wp-photo-album-pls/theme
+/* This assures that your version is not overwritten after an upgrade of the plugin.
+/* 
+/* NOTE: As per version 2.1.0 most of the settings you would like to change are now configurable in the wppa admin settings screen.
+/* It is strongly reccomended that you try to achieve the appearance you like by those settings as they will be independant of future updates.
+/*
+/* You may always look into a newer version of this file to see what new classes and id's come with an upgrade
+/*
+/* This is version 2.2.0
+*/
+
+/* Navigation */
+.prev {
+	float: left;
+    text-align: left;
+}
+.next {
+	float: right;
+    text-align: right;
+}
+.speed0, .startstop, .speed1, .prev-arrow, .next-arrow, .arrow {
+	cursor: pointer;
+}
+/* Admin settings page defines background and border color */
+.wppa-nav {
+	clear: both;
+    margin: 10px auto 16px auto;
+    padding: 2px;
+}
+/* All boxes. Admin settings page defines border thickness and border radius */
+.wppa-box {
+}
+.wppa-mini-box {
+}
+/* Boxes in a list like album covers. Admin settings page defines background and border color */
+.wppa-even {
+}
+.wppa-alt {
+}
+/* Cover and popup photo. Admin settings page defines background color */
+.wppa-img {
+}
+
+/* Wrapper for albums, and thumbnails when display is like albums */
+.albumlist, .thumblist {
+	clear: both;
+} 
+
+/* Wrapper for album etc */
+.albumlist .album, .thumblist .thumb {
+	margin: 7px 0;
+	padding: 7px;
+}
+
+/* Album name */
+.wppa-title {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	clear: none;
+}
+
+/* Description of album */
+.album .description {
+    min-height: 45px;
+	margin-bottom: 16px;
+}
+
+/* fonts used in wppa boxes */
+.wppa-box-text {
+}
+.wppa-nav-text {
+}
+.wppa-title {
+}
+.wppa-fulldesc {
+}
+.wppa-fulltitle {
+}
+
+/* default text attributes */
+.wppa-black {
+	font-weight:normal; 
+	color:black; 
+	cursor:default; 
+	text-decoration:none;
+}
+
+/* Wrapper for coverphoto background */
+.coverphoto_frame, .thumbphoto_frame {
+}
+
+/* Coverphoto */
+.coverphoto_frame .image, .thumbphoto_frame .image { 
+	position: relative;
+	float: right; 		/* Change this to float: left; if you want the coverphoto left */
+	margin-left: 5px;	/* and this to margin-right: 5px; */
+	border: 1px #bbdd99 solid;
+	padding: 4px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+/* Wrapper for thumbnail area */
+.thumbnail_area {
+	margin: 7px 0; 
+	padding: 7px 0 7px 7px;
+	border: 1px #bbdd99 solid;
+    -moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	position: relative;
+}
+
+/* Wrapper for thumbnail background */
+.thumbnail_frame {
+	height: 100px;	/* Increase this value if you changed the thumbnail size and experience that rows of thumbnails overlap or you enabled text under thumbnails */
+	width: 100px;	/* You may want to change this also */
+	float: left;
+	margin: 2px;
+	background-color: transparent;
+	display: inline;
+}
+.thumb-text {
+	font-size: 10px;
+	line-height: 12px;
+	text-align: center;
+	width: 100px;
+}
+
+.thumbs {
+	position: relative;
+}
+.thumbs img {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* The popup small image */
+.wppa-popup {
+	position: absolute;
+	padding: 5px;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #888;
+	border-bottom: 1px solid #888;
+	background-color: white; 
+	font-size: 10px;
+	line-height: 12px;
+}
+
+/* Full size photo */
+.imagetitle {
+    text-align: center;
+    font-size: 1em;
+}
+    
+.imagedesc {
+    text-align: center;
+    font-size: 1.4em;
+}
+
+/* Slideshow */
+.slide_frame {
+	position: relative;
+	width: 100%;
+}
+
+.wideentry .slide_frame {
+	padding: 0;
+	background-color: #eef7e6; 
+}
+
+.theslide {
+	position: absolute;
+	background-color: transparent;
+}
+
+.theimg {
+	display: block;
+}
+
+.spinner {
+	width: 16px;
+	height: 16px;
+	position: relative;
+	background-color: transparent;
+}
+
+/* Photo name in breadcrumb */
+.bc-pname {
+	font-weight: normal;
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Sidebar widget */
+.wppa-widget {
+padding: 5px 0 0 5px;
+}
+
+.wppa-widget-text {
+margin: 5px;
+text-align: center;
+}
+
+/* General purpose classes */
+.big {
+display: block;
+margin: 0 auto;
+}
+
+.clear { 
+    clear: both; 
+}
+
+a, a:visited{color:#0B96D0; text-decoration:none}
+
+a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover{color:#fff; text-decoration:none; background:#f00}
