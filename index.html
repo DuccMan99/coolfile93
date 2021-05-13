@@ -11,7 +11,7 @@
     <meta name="author" content="jankenpopp, zombectro">
     <meta http-equiv="Content-Language" content="en_US" />
     <meta name="google" content="notranslate" />
-    <link href="/rss" rel="alternate" type="application/rss+xml" title="windows93" />
+    <link href="rss" rel="alternate" type="application/rss+xml" title="windows93" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
     <link rel="stylesheet" href="c/sys42.css">
@@ -129,7 +129,7 @@
                                                                                 <button type="button" id="s42_start"><img width="16" heigth="16" src="c/sys/skins/w93/16/start.png"><span><b>Start</b></span></button>
                                                                                 <div id="s42_dock" class="ui_combo_one__main ui_window_dock"></div>
                                                                                 <div id="s42_notif" class="skin_inset">
-                                                                                    <a id="s42_feed" target="_blank" href="/rss"><img src="c/sys/skins/w93/16/rss.png" alt="rss"></a>
+                                                                                    <a id="s42_feed" target="_blank" href="rss"><img src="c/sys/skins/w93/16/rss.png" alt="rss"></a>
                                                                                     <span id="s42_clock"></span>
                                                                                 </div>
                                                                             </div>
@@ -248,18 +248,18 @@
             };
         };
     </script>
-    <script src="/c/sys42.js"></script>
-    <script src="/sys/start.js"></script>
-    <script src="/sys/desktop.js"></script>
-    <script src="/sys/upgrade.js"></script>
-    <script src="/sys/apps.js"></script>
-    <script src="/sys/apps/clippy.js"></script>
-    <script src="/sys/apps/code.js"></script>
-    <script src="/sys/apps/crazy.js"></script>
-    <script src="/sys/apps/layer.js"></script>
-    <script src="/sys/apps/pony.js"></script>
-    <script src="/sys/apps/sp3.js"></script>
-    <script src="/sys/apps/g80.m3u.js"></script>
+    <script src="c/sys42.js"></script>
+    <script src="sys/start.js"></script>
+    <script src="sys/desktop.js"></script>
+    <script src="sys/upgrade.js"></script>
+    <script src="sys/apps.js"></script>
+    <script src="sys/apps/clippy.js"></script>
+    <script src="sys/apps/code.js"></script>
+    <script src="sys/apps/crazy.js"></script>
+    <script src="sys/apps/layer.js"></script>
+    <script src="sys/apps/pony.js"></script>
+    <script src="sys/apps/sp3.js"></script>
+    <script src="sys/apps/g80.m3u.js"></script>
     <script>
         document.documentElement.classList.remove("no-js");
         $boot.BIOSERROR.className = "";
@@ -335,9 +335,9 @@
                         // },
                         // skin: "w93",
                         sounds: {
-                            boot: "/c/sys/sounds/BOOT.ogg",
-                            alert: "/c/sys/sounds/CHORD.ogg",
-                            error: "/c/sys/sounds/QUACK.ogg"
+                            boot: "c/sys/sounds/BOOT.ogg",
+                            alert: "c/sys/sounds/CHORD.ogg",
+                            error: "c/sys/sounds/QUACK.ogg"
                         },
                         noSplash: false,
                         defaultApp: {
@@ -384,9 +384,9 @@
                         }
                     },
                     _temp: {
-                        files: '/files.json',
-                        mimetypes: "/c/mimetypes.json",
-                        splash: "/c/sys/boot/splash.html",
+                        files: 'files.json',
+                        mimetypes: "c/mimetypes.json",
+                        splash: "c/sys/boot/splash.html",
                         init: {}
                     },
                     _icons: {
